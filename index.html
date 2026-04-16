@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Axiscore Mission Control</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0e17;
+  --surface: #111827;
+  --surface-2: #1a2234;
+  --surface-hover: #1e293b;
+  --border: #1e293b;
+  --border-light: #2d3a4f;
+  --text: #e2e8f0;
+  --text-muted: #8896ab;
+  --text-dim: #4a5568;
+  --accent: #7BC142;
+  --accent-dim: rgba(123,193,66,0.15);
+  --accent-hover: #8fd156;
+  --red: #ef4444;
+  --red-dim: rgba(239,68,68,0.15);
+  --amber: #f59e0b;
+  --amber-dim: rgba(245,158,11,0.15);
+  --blue: #3b82f6;
+  --blue-dim: rgba(59,130,246,0.15);
+  --purple: #a78bfa;
+  --purple-dim: rgba(167,139,250,0.15);
+  --cyan: #22d3ee;
+  --cyan-dim: rgba(34,211,238,0.15);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+/* ---- HEADER ---- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.logo {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.logo-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sync-status {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-family: 'JetBrains Mono', monospace;
+}
+.sync-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 6px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.btn-refresh {
+  background: var(--surface-2);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+}
+.btn-refresh:hover { background: var(--surface-hover); color: var(--text); }
+/* ---- NAV TABS ---- */
+.nav {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0 32px;
+}
+.nav-tab {
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  user-select: none;
+}
+.nav-tab:hover { color: var(--text); }
+.nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 6px;
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+/* ---- MAIN CONTENT ---- */
+.main { padding: 24px 32px; max-width: 1400px; margin: 0 auto; }
+.view { display: none; }
+.view.active { display: block; }
+/* ---- WEEK HEADER ---- */
+.week-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.week-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+.week-nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.week-nav button {
+  background: var(--surface-2);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.week-nav button:hover { background: var(--surface-hover); color: var(--text); }
+.week-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  min-width: 180px;
+  text-align: center;
+}
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.progress-bar {
+  width: 200px;
+  height: 6px;
+  background: var(--surface-2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+.progress-text {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+/* ---- DAY SECTIONS ---- */
+.day-section {
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.day-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: var(--surface-2);
+  cursor: pointer;
+  user-select: none;
+}
+.day-name {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.day-date {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-family: 'JetBrains Mono', monospace;
+}
+.day-count {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.day-body { padding: 4px 0; }
+.day-body.collapsed { display: none; }
+/* ---- TASK ROWS ---- */
+.task-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.task-row:last-child { border-bottom: none; }
+.task-row:hover { background: var(--surface-hover); }
+.task-row.done { opacity: 0.5; }
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-light);
+  border-radius: 5px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  background: transparent;
+}
+.task-checkbox:hover { border-color: var(--accent); }
+.task-checkbox.checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.task-checkbox.checked::after {
+  content: 'â';
+  color: var(--bg);
+  font-size: 12px;
+  font-weight: 700;
+}
+.task-content { flex: 1; min-width: 0; }
+.task-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.task-row.done .task-text { text-decoration: line-through; color: var(--text-dim); }
+.task-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+.tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.tag-ppc { background: var(--blue-dim); color: var(--blue); }
+.tag-ip { background: var(--red-dim); color: var(--red); }
+.tag-bids { background: var(--purple-dim); color: var(--purple); }
+.tag-shopify { background: var(--cyan-dim); color: var(--cyan); }
+.tag-catalog { background: var(--amber-dim); color: var(--amber); }
+.tag-returns { background: var(--accent-dim); color: var(--accent); }
+.tag-walmart { background: var(--purple-dim); color: var(--purple); }
+.tag-ebay { background: var(--cyan-dim); color: var(--cyan); }
+.tag-taxes { background: var(--red-dim); color: var(--red); }
+.tag-admin { background: rgba(148,163,184,0.15); color: #94a3b8; }
+.tag-p1 { background: var(--red-dim); color: var(--red); }
+.tag-p2 { background: var(--amber-dim); color: var(--amber); }
+.tag-p3 { background: rgba(148,163,184,0.15); color: #94a3b8; }
+.task-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.task-row:hover .task-actions { opacity: 1; }
+.task-action-btn {
+  background: none;
+  border: 1px solid var(--border-light);
+  color: var(--text-dim);
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+.task-action-btn:hover { background: var(--surface-2); color: var(--text); }
+/* ---- ADD TASK ---- */
+.add-task-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.add-task-input {
+  flex: 1;
+  background: var(--surface-2);
+  border: 1px solid var(--border-light);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+}
+.add-task-input:focus { border-color: var(--accent); }
+.add-task-input::placeholder { color: var(--text-dim); }
+.add-task-select {
+  background: var(--surface-2);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  outline: none;
+}
+.add-task-btn {
+  background: var(--accent);
+  border: none;
+  color: var(--bg);
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s;
+}
+.add-task-btn:hover { background: var(--accent-hover); }
+/* ---- DASHBOARD VIEW ---- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.ws-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.ws-card:hover { border-color: var(--border-light); }
+.ws-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.ws-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+.ws-status {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.ws-status.active { background: var(--accent-dim); color: var(--accent); }
+.ws-status.paused { background: rgba(148,163,184,0.1); color: #64748b; }
+.ws-status.blocked { background: var(--red-dim); color: var(--red); }
+.ws-metric {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.ws-next {
+  font-size: 12px;
+  color: var(--text-dim);
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  line-height: 1.5;
+}
+.ws-next strong { color: var(--text-muted); font-weight: 500; }
+/* ---- QUICK TASKS VIEW ---- */
+.quick-tasks-list {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.qt-header-row {
+  display: grid;
+  grid-template-columns: 36px 1fr 140px 100px 60px;
+  padding: 10px 20px;
+  background: var(--surface-2);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.qt-row {
+  display: grid;
+  grid-template-columns: 36px 1fr 140px 100px 60px;
+  padding: 10px 20px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  transition: background 0.15s;
+}
+.qt-row:hover { background: var(--surface-hover); }
+.qt-row:last-child { border-bottom: none; }
+/* ---- LOADING ---- */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  color: var(--text-dim);
+  font-size: 14px;
+}
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-light);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 12px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+/* ---- MODAL ---- */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 24px;
+  width: 500px;
+  max-width: 90vw;
+}
+.modal h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.modal-field {
+  margin-bottom: 12px;
+}
+.modal-field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.modal-field input,
+.modal-field select,
+.modal-field textarea {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--border-light);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+}
+.modal-field textarea { resize: vertical; min-height: 60px; }
+.modal-field input:focus,
+.modal-field select:focus,
+.modal-field textarea:focus { border-color: var(--accent); }
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+.modal-btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  border: 1px solid var(--border-light);
+  transition: all 0.2s;
+}
+.modal-btn.cancel { background: var(--surface-2); color: var(--text-muted); }
+.modal-btn.cancel:hover { background: var(--surface-hover); }
+.modal-btn.save { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 600; }
+.modal-btn.save:hover { background: var(--accent-hover); }
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .header { padding: 12px 16px; }
+  .nav { padding: 0 16px; overflow-x: auto; }
+  .nav-tab { padding: 10px 16px; white-space: nowrap; }
+  .main { padding: 16px; }
+  .week-header { flex-direction: column; gap: 12px; align-items: flex-start; }
+  .add-task-bar { flex-wrap: wrap; }
+  .add-task-input { min-width: 100%; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .qt-header-row, .qt-row { grid-template-columns: 36px 1fr 100px; }
+  .qt-header-row > :nth-child(4),
+  .qt-header-row > :nth-child(5),
+  .qt-row > :nth-child(4),
+  .qt-row > :nth-child(5) { display: none; }
+}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <div>
+      <div class="logo">AXISCORE</div>
+      <div class="logo-sub">Mission Control</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <span class="sync-status"><span class="sync-dot"></span><span id="syncText">Connecting...</span></span>
+    <button class="btn-refresh" onclick="loadAll()">â» Refresh</button>
+  </div>
+</div>
+<!-- NAV -->
+<div class="nav">
+  <div class="nav-tab active" data-view="weekly" onclick="switchView('weekly')">
+    Weekly Schedule <span class="tab-badge" id="weeklyBadge">0</span>
+  </div>
+  <div class="nav-tab" data-view="dashboard" onclick="switchView('dashboard')">
+    Dashboard
+  </div>
+  <div class="nav-tab" data-view="quick" onclick="switchView('quick')">
+    Quick Tasks <span class="tab-badge" id="quickBadge">0</span>
+  </div>
+</div>
+<!-- MAIN -->
+<div class="main">
+  <!-- WEEKLY VIEW -->
+  <div class="view active" id="view-weekly">
+    <div class="week-header">
+      <div>
+        <div class="week-title" id="weekTitle">This Week</div>
+        <div class="progress-bar-container" style="margin-top:8px">
+          <div class="progress-bar"><div class="progress-fill" id="weekProgress" style="width:0%"></div></div>
+          <span class="progress-text" id="weekProgressText">0/0 done</span>
+        </div>
+      </div>
+      <div class="week-nav">
+        <button onclick="changeWeek(-1)">â</button>
+        <span class="week-label" id="weekLabel"></span>
+        <button onclick="changeWeek(1)">â</button>
+      </div>
+    </div>
+    <!-- ADD TASK BAR -->
+    <div class="add-task-bar">
+      <input type="text" class="add-task-input" id="addTaskInput" placeholder="Add a task..." onkeydown="if(event.key==='Enter')addWeeklyTask()">
+      <select class="add-task-select" id="addTaskWorkstream">
+        <option value="">Workstream</option>
+        <option value="PPC">PPC</option>
+        <option value="IP Violations">IP Violations</option>
+        <option value="Federal Bids">Federal Bids</option>
+        <option value="Shopify Build">Shopify Build</option>
+        <option value="Catalog Expansion">Catalog</option>
+        <option value="Returns/Ops">Returns/Ops</option>
+        <option value="Walmart Revival">Walmart</option>
+        <option value="eBay Activation">eBay</option>
+        <option value="Taxes">Taxes</option>
+        <option value="Admin">Admin</option>
+      </select>
+      <select class="add-task-select" id="addTaskPriority">
+        <option value="P2">Priority</option>
+        <option value="P1">P1 â Critical</option>
+        <option value="P2">P2 â Important</option>
+        <option value="P3">P3 â Normal</option>
+      </select>
+      <select class="add-task-select" id="addTaskDay">
+        <option value="">Day</option>
+        <option value="Monday">Mon</option>
+        <option value="Tuesday">Tue</option>
+        <option value="Wednesday">Wed</option>
+        <option value="Thursday">Thu</option>
+        <option value="Friday">Fri</option>
+        <option value="Saturday">Sat</option>
+      </select>
+      <button class="add-task-btn" onclick="addWeeklyTask()">Add</button>
+    </div>
+    <div id="weeklyContent">
+      <div class="loading"><div class="spinner"></div>Loading tasks...</div>
+    </div>
+  </div>
+  <!-- DASHBOARD VIEW -->
+  <div class="view" id="view-dashboard">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+      <h2 style="font-size:22px;font-weight:700">Workstream Dashboard</h2>
+    </div>
+    <div class="dashboard-grid" id="dashboardGrid">
+      <div class="loading"><div class="spinner"></div>Loading dashboard...</div>
+    </div>
+  </div>
+  <!-- QUICK TASKS VIEW -->
+  <div class="view" id="view-quick">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+      <h2 style="font-size:22px;font-weight:700">Quick Tasks</h2>
+      <button class="add-task-btn" onclick="openQuickTaskModal()">+ New Task</button>
+    </div>
+    <div class="add-task-bar" style="margin-bottom:16px">
+      <input type="text" class="add-task-input" id="quickAddInput" placeholder="Quick add: type a task and hit Enter..." onkeydown="if(event.key==='Enter')quickAddTask()">
+      <select class="add-task-select" id="quickAddWorkstream">
+        <option value="">Workstream</option>
+        <option value="PPC">PPC</option>
+        <option value="IP Violations">IP Violations</option>
+        <option value="Federal Bids">Federal Bids</option>
+        <option value="Shopify Build">Shopify Build</option>
+        <option value="Catalog Expansion">Catalog</option>
+        <option value="Returns/Ops">Returns/Ops</option>
+        <option value="Amazon">Amazon</option>
+        <option value="Admin">Admin</option>
+      </select>
+      <button class="add-task-btn" onclick="quickAddTask()">Add</button>
+    </div>
+    <div class="quick-tasks-list" id="quickTasksList">
+      <div class="loading"><div class="spinner"></div>Loading tasks...</div>
+    </div>
+  </div>
+</div>
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h3 id="modalTitle">Add Quick Task</h3>
+    <div class="modal-field">
+      <label>Task</label>
+      <textarea id="modalTask"></textarea>
+    </div>
+    <div class="modal-field">
+      <label>Workstream</label>
+      <select id="modalWorkstream">
+        <option value="">None</option>
+        <option value="PPC">PPC</option>
+        <option value="IP Violations">IP Violations</option>
+        <option value="Federal Bids">Federal Bids</option>
+        <option value="Shopify Build">Shopify Build</option>
+        <option value="Catalog Expansion">Catalog</option>
+        <option value="Returns/Ops">Returns/Ops</option>
+        <option value="Amazon">Amazon</option>
+        <option value="Admin">Admin</option>
+      </select>
+    </div>
+    <div class="modal-field">
+      <label>Notes</label>
+      <input type="text" id="modalNotes" placeholder="Optional notes...">
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn cancel" onclick="closeModal()">Cancel</button>
+      <button class="modal-btn save" onclick="saveQuickTask()">Save</button>
+    </div>
+  </div>
+</div>
+<script>
+// ========================================
+// CONFIG
+// ========================================
+const API_KEY = 'AIzaSyAJGq_n2C9SfY9wGzPb3OZC24sonQSuG8w';
+// Three separate Google Sheets (one per data type)
+const WEEKLY_SHEET_ID = '1uaBi_GU44F2Out8Iw2YRuQBmGxvOEGJDFoe6E5dMlnY';
+const WORKSTREAM_SHEET_ID = '1fj2iWxrJlq5X8FbYKbDSS-oVCEpvtVN1aPRfLoiu3o8';
+const QUICK_SHEET_ID = '1MpF68CuxPe_gwF1I5H2CJYu1C9kby8WvSRtfHYlzc3E';
+// External tracker sheet IDs  
+const BID_TRACKER_ID = '18ZG4TtfxpFp_a-T9cRwBBvN4M3Gdi7B4HDRVG30sLY8';
+const VIOLATIONS_TRACKER_ID = '1T3qFj2IR1qSNhTPxuQSmIZCBilHah2VPSsSk77K7bUc';
+// State
+let currentWeekOffset = 0;
+let weeklyTasks = [];
+let workstreams = [];
+let quickTasks = [];
+// ========================================
+// SHEETS API HELPERS
+// ========================================
+async function readSheet(sheetId, range) {
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${encodeURIComponent(range)}?key=${API_KEY}`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Sheets API error: ${res.status}`);
+  const data = await res.json();
+  return data.values || [];
+}
+async function appendRow(sheetId, range, values) {
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${encodeURIComponent(range)}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS&key=${API_KEY}`;
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ values: [values] })
+  });
+  if (!res.ok) throw new Error(`Append error: ${res.status}`);
+  return res.json();
+}
+async function updateCell(sheetId, range, value) {
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${encodeURIComponent(range)}?valueInputOption=USER_ENTERED&key=${API_KEY}`;
+  const res = await fetch(url, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ values: [[value]] })
+  });
+  if (!res.ok) throw new Error(`Update error: ${res.status}`);
+  return res.json();
+}
+// ========================================
+// DATE HELPERS
+// ========================================
+function getWeekDates(offset = 0) {
+  const now = new Date();
+  const monday = new Date(now);
+  monday.setDate(now.getDate() - now.getDay() + 1 + (offset * 7));
+  
+  const days = [];
+  const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  for (let i = 0; i < 6; i++) {
+    const d = new Date(monday);
+    d.setDate(monday.getDate() + i);
+    days.push({ name: dayNames[i], date: d, dateStr: d.toISOString().split('T')[0] });
+  }
+  return days;
+}
+function getWeekLabel(offset) {
+  const days = getWeekDates(offset);
+  const start = days[0].date;
+  const end = days[4].date;
+  const opts = { month: 'short', day: 'numeric' };
+  return `${start.toLocaleDateString('en-US', opts)} â ${end.toLocaleDateString('en-US', opts)}, ${end.getFullYear()}`;
+}
+function getWeekOf(offset) {
+  return getWeekDates(offset)[0].dateStr;
+}
+function todayStr() {
+  return new Date().toISOString().split('T')[0];
+}
+// ========================================
+// NAVIGATION
+// ========================================
+function switchView(viewName) {
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.toggle('active', t.dataset.view === viewName));
+  document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === `view-${viewName}`));
+}
+// ========================================
+// LOAD ALL DATA
+// ========================================
+async function loadAll() {
+  document.getElementById('syncText').textContent = 'Syncing...';
+  try {
+    await Promise.all([loadWeeklyTasks(), loadWorkstreams(), loadQuickTasks()]);
+    document.getElementById('syncText').textContent = `Synced ${new Date().toLocaleTimeString('en-US', {hour:'numeric',minute:'2-digit'})}`;
+  } catch (e) {
+    console.error(e);
+    document.getElementById('syncText').textContent = 'Sync error';
+  }
+}
+// ========================================
+// WEEKLY TASKS
+// ========================================
+async function loadWeeklyTasks() {
+  const rows = await readSheet(WEEKLY_SHEET_ID, 'Sheet1!A2:I200');
+  weeklyTasks = rows.map((r, i) => ({
+    rowIndex: i + 2,
+    task_id: r[0] || '',
+    week_of: r[1] || '',
+    workstream: r[2] || '',
+    task: r[3] || '',
+    priority: r[4] || 'P2',
+    status: r[5] || 'Open',
+    assigned_to: r[6] || '',
+    due_date: r[7] || '',
+    notes: r[8] || ''
+  }));
+  renderWeekly();
+}
+function renderWeekly() {
+  const weekOf = getWeekOf(currentWeekOffset);
+  const weekTasks = weeklyTasks.filter(t => t.week_of === weekOf);
+  
+  // Update header
+  document.getElementById('weekLabel').textContent = getWeekLabel(currentWeekOffset);
+  if (currentWeekOffset === 0) document.getElementById('weekTitle').textContent = 'This Week';
+  else if (currentWeekOffset === -1) document.getElementById('weekTitle').textContent = 'Last Week';
+  else if (currentWeekOffset === 1) document.getElementById('weekTitle').textContent = 'Next Week';
+  else document.getElementById('weekTitle').textContent = getWeekLabel(currentWeekOffset);
+  // Progress
+  const done = weekTasks.filter(t => t.status === 'Done').length;
+  const total = weekTasks.length;
+  document.getElementById('weekProgress').style.width = total ? `${(done/total*100)}%` : '0%';
+  document.getElementById('weekProgressText').textContent = `${done}/${total} done`;
+  document.getElementById('weeklyBadge').textContent = total - done;
+  // Group by day
+  const days = getWeekDates(currentWeekOffset);
+  const dayNames = days.map(d => d.name);
+  
+  let html = '';
+  for (const day of days) {
+    const dayTasks = weekTasks.filter(t => t.due_date === day.dateStr || t.due_date === day.name);
+    const isToday = day.dateStr === todayStr();
+    
+    html += `<div class="day-section">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-name">
+          ${isToday ? '<span style="color:var(--accent)">â</span>' : ''}
+          ${day.name}
+          <span class="day-date">${day.date.toLocaleDateString('en-US', {month:'short', day:'numeric'})}</span>
+        </div>
+        <div class="day-count">${dayTasks.filter(t=>t.status==='Done').length}/${dayTasks.length}</div>
+      </div>
+      <div class="day-body${isToday || dayTasks.length === 0 ? '' : ''}">`;
+    
+    if (dayTasks.length === 0) {
+      html += `<div style="padding:14px 20px;color:var(--text-dim);font-size:12px">No tasks scheduled</div>`;
+    } else {
+      for (const t of dayTasks) {
+        const isDone = t.status === 'Done';
+        const wsTag = getWorkstreamTag(t.workstream);
+        const prioTag = t.priority === 'P1' ? 'tag-p1' : t.priority === 'P3' ? 'tag-p3' : 'tag-p2';
+        
+        html += `<div class="task-row${isDone ? ' done' : ''}">
+          <div class="task-checkbox${isDone ? ' checked' : ''}" onclick="toggleWeeklyTask(${t.rowIndex})"></div>
+          <div class="task-content">
+            <div class="task-text">${escHtml(t.task)}</div>
+            <div class="task-meta">
+              ${t.workstream ? `<span class="tag ${wsTag}">${escHtml(t.workstream)}</span>` : ''}
+              ${t.priority && t.priority !== 'P2' ? `<span class="tag ${prioTag}">${t.priority}</span>` : ''}
+              ${t.notes ? `<span style="font-size:11px;color:var(--text-dim)">â ${escHtml(t.notes)}</span>` : ''}
+            </div>
+          </div>
+          <div class="task-actions">
+            <button class="task-action-btn" title="Delete" onclick="deleteWeeklyTask(${t.rowIndex})">â</button>
+          </div>
+        </div>`;
+      }
+    }
+    html += '</div></div>';
+  }
+  // Unassigned tasks (no day)
+  const unassigned = weekTasks.filter(t => {
+    const assigned = dayNames.includes(t.due_date) || days.some(d => d.dateStr === t.due_date);
+    return !assigned;
+  });
+  
+  if (unassigned.length > 0) {
+    html += `<div class="day-section">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-name">Unscheduled</div>
+        <div class="day-count">${unassigned.filter(t=>t.status==='Done').length}/${unassigned.length}</div>
+      </div>
+      <div class="day-body">`;
+    for (const t of unassigned) {
+      const isDone = t.status === 'Done';
+      const wsTag = getWorkstreamTag(t.workstream);
+      html += `<div class="task-row${isDone ? ' done' : ''}">
+        <div class="task-checkbox${isDone ? ' checked' : ''}" onclick="toggleWeeklyTask(${t.rowIndex})"></div>
+        <div class="task-content">
+          <div class="task-text">${escHtml(t.task)}</div>
+          <div class="task-meta">
+            ${t.workstream ? `<span class="tag ${wsTag}">${escHtml(t.workstream)}</span>` : ''}
+          </div>
+        </div>
+      </div>`;
+    }
+    html += '</div></div>';
+  }
+  document.getElementById('weeklyContent').innerHTML = html;
+}
+async function toggleWeeklyTask(rowIndex) {
+  const task = weeklyTasks.find(t => t.rowIndex === rowIndex);
+  if (!task) return;
+  const newStatus = task.status === 'Done' ? 'Open' : 'Done';
+  try {
+    await updateCell(WEEKLY_SHEET_ID, `Sheet1!F${rowIndex}`, newStatus);
+    task.status = newStatus;
+    renderWeekly();
+  } catch (e) {
+    console.error(e);
+    alert('Failed to update task. Check API key permissions.');
+  }
+}
+async function addWeeklyTask() {
+  const input = document.getElementById('addTaskInput');
+  const text = input.value.trim();
+  if (!text) return;
+  
+  const workstream = document.getElementById('addTaskWorkstream').value;
+  const priority = document.getElementById('addTaskPriority').value;
+  const day = document.getElementById('addTaskDay').value;
+  const weekOf = getWeekOf(currentWeekOffset);
+  
+  // Convert day name to date
+  let dueDate = day;
+  if (day) {
+    const days = getWeekDates(currentWeekOffset);
+    const match = days.find(d => d.name === day);
+    if (match) dueDate = match.dateStr;
+  }
+  
+  const taskId = `WT-${Date.now()}`;
+  
+  try {
+    await appendRow(WEEKLY_SHEET_ID, 'Sheet1!A:I', [taskId, weekOf, workstream, text, priority, 'Open', 'Ekene', dueDate, '']);
+    input.value = '';
+    await loadWeeklyTasks();
+  } catch (e) {
+    console.error(e);
+    alert('Failed to add task. Check API key permissions.');
+  }
+}
+async function deleteWeeklyTask(rowIndex) {
+  if (!confirm('Delete this task?')) return;
+  try {
+    // Mark as deleted by clearing the row (can't delete rows via simple API)
+    await updateCell(WEEKLY_SHEET_ID, `Sheet1!F${rowIndex}`, 'Deleted');
+    const task = weeklyTasks.find(t => t.rowIndex === rowIndex);
+    if (task) task.status = 'Deleted';
+    weeklyTasks = weeklyTasks.filter(t => t.status !== 'Deleted');
+    renderWeekly();
+  } catch (e) { console.error(e); }
+}
+function changeWeek(delta) {
+  currentWeekOffset += delta;
+  renderWeekly();
+}
+function toggleDay(headerEl) {
+  const body = headerEl.nextElementSibling;
+  body.classList.toggle('collapsed');
+}
+// ========================================
+// DASHBOARD
+// ========================================
+async function loadWorkstreams() {
+  const rows = await readSheet(WORKSTREAM_SHEET_ID, 'Sheet1!A2:E20');
+  workstreams = rows.map(r => ({
+    name: r[0] || '',
+    status: r[1] || 'Active',
+    lastUpdated: r[2] || '',
+    keyMetric: r[3] || '',
+    nextAction: r[4] || ''
+  }));
+  renderDashboard();
+}
+function renderDashboard() {
+  let html = '';
+  for (const ws of workstreams) {
+    const statusClass = ws.status.toLowerCase();
+    const wsTag = getWorkstreamTag(ws.name);
+    
+    // Count open weekly tasks for this workstream
+    const weekOf = getWeekOf(0); // current week
+    const openTasks = weeklyTasks.filter(t => t.week_of === weekOf && t.workstream === ws.name && t.status !== 'Done').length;
+    
+    html += `<div class="ws-card">
+      <div class="ws-card-header">
+        <span class="ws-name"><span class="tag ${wsTag}" style="margin-right:6px">${escHtml(ws.name)}</span></span>
+        <span class="ws-status ${statusClass}">${ws.status}</span>
+      </div>
+      ${ws.keyMetric ? `<div class="ws-metric">${escHtml(ws.keyMetric)}</div>` : ''}
+      ${openTasks > 0 ? `<div class="ws-metric" style="color:var(--amber)">${openTasks} open task${openTasks>1?'s':''} this week</div>` : ''}
+      <div class="ws-next">
+        <strong>Next:</strong> ${ws.nextAction ? escHtml(ws.nextAction) : '<span style="color:var(--text-dim)">No action set</span>'}
+      </div>
+    </div>`;
+  }
+  document.getElementById('dashboardGrid').innerHTML = html || '<div style="color:var(--text-dim)">No workstreams found</div>';
+}
+// ========================================
+// QUICK TASKS
+// ========================================
+async function loadQuickTasks() {
+  const rows = await readSheet(QUICK_SHEET_ID, 'Sheet1!A2:F100');
+  quickTasks = rows.map((r, i) => ({
+    rowIndex: i + 2,
+    task_id: r[0] || '',
+    date_added: r[1] || '',
+    task: r[2] || '',
+    workstream: r[3] || '',
+    status: r[4] || 'Open',
+    notes: r[5] || ''
+  })).filter(t => t.status !== 'Deleted');
+  renderQuickTasks();
+}
+function renderQuickTasks() {
+  const open = quickTasks.filter(t => t.status !== 'Done' && t.status !== 'Deleted');
+  document.getElementById('quickBadge').textContent = open.length;
+  
+  let html = `<div class="qt-header-row">
+    <div></div><div>Task</div><div>Workstream</div><div>Status</div><div></div>
+  </div>`;
+  
+  // Open first, then done
+  const sorted = [...quickTasks].sort((a, b) => {
+    if (a.status === 'Done' && b.status !== 'Done') return 1;
+    if (a.status !== 'Done' && b.status === 'Done') return -1;
+    return 0;
+  });
+  
+  for (const t of sorted) {
+    const isDone = t.status === 'Done';
+    const wsTag = getWorkstreamTag(t.workstream);
+    
+    html += `<div class="qt-row" style="${isDone ? 'opacity:0.4' : ''}">
+      <div>
+        <div class="task-checkbox${isDone ? ' checked' : ''}" style="width:18px;height:18px" onclick="toggleQuickTask(${t.rowIndex})"></div>
+      </div>
+      <div>
+        <div style="font-size:13px;${isDone?'text-decoration:line-through;color:var(--text-dim)':''}">${escHtml(t.task)}</div>
+        ${t.notes ? `<div style="font-size:11px;color:var(--text-dim);margin-top:2px">${escHtml(t.notes)}</div>` : ''}
+      </div>
+      <div>${t.workstream ? `<span class="tag ${wsTag}">${escHtml(t.workstream)}</span>` : ''}</div>
+      <div><span style="font-size:11px;color:${isDone ? 'var(--accent)' : 'var(--amber)'}">${t.status}</span></div>
+      <div style="text-align:right">
+        <span style="font-size:11px;color:var(--text-dim)">${t.date_added}</span>
+      </div>
+    </div>`;
+  }
+  
+  if (quickTasks.length === 0) {
+    html += '<div style="padding:20px;text-align:center;color:var(--text-dim)">No quick tasks yet</div>';
+  }
+  
+  document.getElementById('quickTasksList').innerHTML = html;
+}
+async function toggleQuickTask(rowIndex) {
+  const task = quickTasks.find(t => t.rowIndex === rowIndex);
+  if (!task) return;
+  const newStatus = task.status === 'Done' ? 'Open' : 'Done';
+  try {
+    await updateCell(QUICK_SHEET_ID, `Sheet1!E${rowIndex}`, newStatus);
+    task.status = newStatus;
+    renderQuickTasks();
+  } catch (e) { console.error(e); alert('Failed to update.'); }
+}
+async function quickAddTask() {
+  const input = document.getElementById('quickAddInput');
+  const text = input.value.trim();
+  if (!text) return;
+  const ws = document.getElementById('quickAddWorkstream').value;
+  const taskId = `QT-${Date.now()}`;
+  
+  try {
+    await appendRow(QUICK_SHEET_ID, 'Sheet1!A:F', [taskId, todayStr(), text, ws, 'Open', '']);
+    input.value = '';
+    await loadQuickTasks();
+  } catch (e) { console.error(e); alert('Failed to add task.'); }
+}
+function openQuickTaskModal() {
+  document.getElementById('modalOverlay').classList.add('open');
+  document.getElementById('modalTask').focus();
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.getElementById('modalTask').value = '';
+  document.getElementById('modalWorkstream').value = '';
+  document.getElementById('modalNotes').value = '';
+}
+async function saveQuickTask() {
+  const task = document.getElementById('modalTask').value.trim();
+  if (!task) return;
+  const ws = document.getElementById('modalWorkstream').value;
+  const notes = document.getElementById('modalNotes').value.trim();
+  const taskId = `QT-${Date.now()}`;
+  
+  try {
+    await appendRow(QUICK_SHEET_ID, 'Sheet1!A:F', [taskId, todayStr(), task, ws, 'Open', notes]);
+    closeModal();
+    await loadQuickTasks();
+  } catch (e) { console.error(e); alert('Failed to save.'); }
+}
+// ========================================
+// HELPERS
+// ========================================
+function getWorkstreamTag(ws) {
+  const map = {
+    'PPC': 'tag-ppc',
+    'IP Violations': 'tag-ip',
+    'Federal Bids': 'tag-bids',
+    'Shopify Build': 'tag-shopify',
+    'Catalog Expansion': 'tag-catalog',
+    'Catalog': 'tag-catalog',
+    'Returns/Ops': 'tag-returns',
+    'Walmart Revival': 'tag-walmart',
+    'Walmart': 'tag-walmart',
+    'eBay Activation': 'tag-ebay',
+    'eBay': 'tag-ebay',
+    'Taxes': 'tag-taxes',
+    'Admin': 'tag-admin',
+    'Amazon': 'tag-catalog'
+  };
+  return map[ws] || 'tag-admin';
+}
+function escHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+// Close modal on overlay click
+document.getElementById('modalOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+// ========================================
+// INIT
+// ========================================
+loadAll();
+// Auto-refresh every 2 minutes
+setInterval(loadAll, 120000);
+</script>
+</body>
+</html>

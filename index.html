@@ -458,6 +458,383 @@ body {
 }
 .qt-row:hover { background: var(--surface-hover); }
 .qt-row:last-child { border-bottom: none; }
+/* ---- BIDS VIEW ---- */
+.sub-nav {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  margin: 0 -32px 24px -32px;
+  padding: 0 32px;
+}
+.sub-tab {
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  user-select: none;
+}
+.sub-tab:hover { color: var(--text); }
+.sub-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.bids-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filter-bar label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.filter-bar select {
+  background: var(--surface-2);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  outline: none;
+}
+.filter-bar select:focus { border-color: var(--accent); }
+.bid-stats {
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.bid-stats strong { color: var(--text); }
+.bid-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.bid-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.bid-card:hover { border-color: var(--border-light); background: var(--surface-hover); }
+.bid-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.bid-status-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.bid-status-badge.awarded { background: var(--accent-dim); color: var(--accent); font-weight: 700; }
+.bid-status-badge.submitted { background: var(--blue-dim); color: var(--blue); }
+.bid-status-badge.active { background: var(--accent-dim); color: var(--accent); }
+.bid-status-badge.preparing { background: var(--amber-dim); color: var(--amber); }
+.bid-status-badge.tracking { background: rgba(37,99,235,0.06); color: #3b82f6; }
+.bid-status-badge.lost { background: var(--red-dim); color: var(--red); }
+.bid-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+  flex: 1;
+}
+.bid-solicitation {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+.bid-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.bid-tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.bid-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.bid-deadline {
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+.bid-decision {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.bid-decision.won { background: var(--accent-dim); color: var(--accent); }
+.bid-decision.lost { background: var(--red-dim); color: var(--red); }
+.bid-decision.pending { background: var(--amber-dim); color: var(--amber); }
+.bid-card.expanded {
+  grid-column: 1 / -1;
+  max-width: none;
+}
+.bid-card.expanded .bid-details {
+  display: block;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.bid-details { display: none; }
+.bid-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+}
+.bid-detail-row:last-child { border-bottom: none; }
+.bid-detail-label {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.bid-detail-value {
+  color: var(--text);
+  word-break: break-word;
+  max-width: 50%;
+  text-align: right;
+}
+.bid-notes-section {
+  margin-top: 16px;
+}
+.bid-notes-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.bid-notes-text {
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface-2);
+  padding: 12px;
+  border-radius: 6px;
+  line-height: 1.5;
+  resize: vertical;
+  min-height: 60px;
+  border: 1px solid var(--border-light);
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+}
+.bid-notes-text:focus { border-color: var(--accent); }
+.bid-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+.bid-drive-btn {
+  flex: 1;
+  background: var(--blue);
+  border: none;
+  color: var(--btn-text);
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.bid-drive-btn:hover { background: #1d4ed8; }
+.bid-close-btn {
+  flex: 1;
+  background: var(--surface-2);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+}
+.bid-close-btn:hover { background: var(--surface-hover); color: var(--text); }
+.channel-stats {
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.channel-stats strong { color: var(--text); }
+.channel-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.channel-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.channel-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: var(--surface-2);
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  color: var(--text);
+  transition: background 0.15s;
+}
+.channel-section-header:hover { background: var(--surface-hover); }
+.channel-section-toggle {
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+}
+.channel-section.collapsed .channel-section-toggle { transform: rotate(-90deg); }
+.channel-section.collapsed .channel-cards {
+  display: none;
+}
+.channel-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+  padding: 12px;
+}
+.channel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.channel-card:hover { border-color: var(--border-light); background: var(--surface-hover); }
+.channel-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.channel-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  flex: 1;
+}
+.channel-status-badge {
+  font-size: 9px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.channel-status-badge.registered { background: var(--accent-dim); color: var(--accent); }
+.channel-status-badge.active { background: var(--accent-dim); color: var(--accent); }
+.channel-status-badge.action-required { background: var(--amber-dim); color: var(--amber); }
+.channel-status-badge.submitted { background: var(--amber-dim); color: var(--amber); }
+.channel-status-badge.not-registered { background: rgba(100,116,139,0.12); color: #6b7280; }
+.channel-status-badge.research { background: var(--blue-dim); color: var(--blue); }
+.channel-status-badge.check-status { background: var(--blue-dim); color: var(--blue); }
+.channel-status-badge.failed { background: var(--red-dim); color: var(--red); }
+.channel-status-badge.past-performance { background: var(--purple-dim); color: var(--purple); }
+.channel-status-badge.existing-relationship { background: var(--accent-dim); color: var(--accent); font-weight: 700; }
+.channel-status-badge.not-targeted { background: rgba(100,116,139,0.08); color: #9ca3af; }
+.channel-status-badge.used { background: rgba(37,99,235,0.06); color: #60a5fa; }
+.channel-priority-badge {
+  font-size: 9px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-top: 8px;
+}
+.channel-priority-badge.high { background: var(--red-dim); color: var(--red); }
+.channel-priority-badge.med { background: var(--amber-dim); color: var(--amber); }
+.channel-priority-badge.low { background: rgba(100,116,139,0.12); color: #6b7280; }
+.channel-scope {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 8px 0;
+  line-height: 1.4;
+}
+.channel-url {
+  font-size: 11px;
+  color: var(--blue);
+  text-decoration: none;
+  word-break: break-all;
+  padding: 8px 0;
+}
+.channel-url:hover { text-decoration: underline; }
+.channel-card.expanded {
+  grid-column: 1 / -1;
+}
+.channel-details { display: none; }
+.channel-card.expanded .channel-details { display: block; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+.channel-detail-row {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.channel-detail-row strong { color: var(--text); }
 /* ---- LOADING ---- */
 .loading {
   display: flex;
@@ -495,6 +872,8 @@ body {
   padding: 24px;
   width: 500px;
   max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 .modal h3 {
   font-size: 16px;
@@ -564,6 +943,9 @@ body {
   .qt-header-row > :nth-child(5),
   .qt-row > :nth-child(4),
   .qt-row > :nth-child(5) { display: none; }
+  .bid-cards-grid { grid-template-columns: 1fr; }
+  .channel-cards { grid-template-columns: 1fr; }
+  .sub-nav { margin: 0 -16px 24px -16px; padding: 0 16px; }
 }
 </style>
 </head>
@@ -591,6 +973,9 @@ body {
   </div>
   <div class="nav-tab" data-view="quick" onclick="switchView('quick')">
     Quick Tasks <span class="tab-badge" id="quickBadge">0</span>
+  </div>
+  <div class="nav-tab" data-view="bids" onclick="switchView('bids')">
+    Federal Bids
   </div>
 </div>
 <!-- MAIN -->
@@ -682,6 +1067,71 @@ body {
       <div class="loading"><div class="spinner"></div>Loading tasks...</div>
     </div>
   </div>
+  <!-- FEDERAL BIDS VIEW -->
+  <div class="view" id="view-bids">
+    <!-- Sub-nav for Live Bids / Procurement Channels -->
+    <div class="sub-nav">
+      <div class="sub-tab active" data-sub="live-bids" onclick="switchBidsTab('live-bids')">
+        Live Bids
+      </div>
+      <div class="sub-tab" data-sub="channels" onclick="switchBidsTab('channels')">
+        Procurement Channels
+      </div>
+    </div>
+    <!-- Live Bids sub-view -->
+    <div id="sub-view-live-bids" class="sub-view active">
+      <div class="bids-header">
+        <h2 style="font-size:22px;font-weight:700">Live Bids</h2>
+        <button class="add-task-btn" onclick="openAddBidModal()">+ New Bid</button>
+      </div>
+      <div class="filter-bar">
+        <label>Filter by status:</label>
+        <select id="bidStatusFilter" onchange="filterBids()">
+          <option value="">All Status</option>
+          <option value="SUBMITTED">Submitted</option>
+          <option value="ACTIVE">Active</option>
+          <option value="PREPARING">Preparing</option>
+          <option value="TRACKING">Tracking</option>
+          <option value="AWARDED">Awarded</option>
+          <option value="LOST">Lost</option>
+          <option value="NO-BID">No-Bid</option>
+        </select>
+      </div>
+      <div class="bid-stats" id="bidStats">
+        <strong id="bidStatText">Loading...</strong>
+      </div>
+      <div class="bid-cards-grid" id="bidCardsGrid">
+        <div class="loading"><div class="spinner"></div>Loading live bids...</div>
+      </div>
+    </div>
+    <!-- Procurement Channels sub-view -->
+    <div id="sub-view-channels" class="sub-view">
+      <h2 style="font-size:22px;font-weight:700;margin-bottom:24px">Procurement Channels</h2>
+      <div class="filter-bar">
+        <label>Filter by status:</label>
+        <select id="channelStatusFilter" onchange="filterChannels()">
+          <option value="">All Status</option>
+          <option value="REGISTERED">Registered</option>
+          <option value="ACTIVE">Active</option>
+          <option value="ACTION REQUIRED">Action Required</option>
+          <option value="NOT REGISTERED">Not Registered</option>
+        </select>
+        <label>Filter by priority:</label>
+        <select id="channelPriorityFilter" onchange="filterChannels()">
+          <option value="">All Priority</option>
+          <option value="HIGH">High</option>
+          <option value="MED">Medium</option>
+          <option value="LOW">Low</option>
+        </select>
+      </div>
+      <div class="channel-stats" id="channelStats">
+        <strong id="channelStatText">Loading...</strong>
+      </div>
+      <div class="channel-sections" id="channelSections">
+        <div class="loading"><div class="spinner"></div>Loading channels...</div>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay">
@@ -715,6 +1165,85 @@ body {
     </div>
   </div>
 </div>
+<!-- BID MODAL -->
+<div class="modal-overlay" id="bidModalOverlay">
+  <div class="modal">
+    <h3 id="bidModalTitle">Add Bid</h3>
+    <div class="modal-field">
+      <label>Bid ID</label>
+      <input type="text" id="bidModalBidId" placeholder="BID-XXX">
+    </div>
+    <div class="modal-field">
+      <label>Opportunity Name</label>
+      <textarea id="bidModalOpportunity" placeholder="Full name of the opportunity"></textarea>
+    </div>
+    <div class="modal-field">
+      <label>Source Channel</label>
+      <input type="text" id="bidModalChannel" placeholder="e.g., GSA Schedule, Small Business...">
+    </div>
+    <div class="modal-field">
+      <label>Solicitation Number</label>
+      <input type="text" id="bidModalSolicitation" placeholder="e.g., W911NF-23-R-0001">
+    </div>
+    <div class="modal-field">
+      <label>Category</label>
+      <input type="text" id="bidModalCategory" placeholder="Product or service category">
+    </div>
+    <div class="modal-field">
+      <label>Estimated Value</label>
+      <input type="text" id="bidModalValue" placeholder="e.g., $500,000">
+    </div>
+    <div class="modal-field">
+      <label>Deadline</label>
+      <input type="date" id="bidModalDeadline">
+    </div>
+    <div class="modal-field">
+      <label>Status</label>
+      <select id="bidModalStatus">
+        <option value="TRACKING">Tracking</option>
+        <option value="PREPARING">Preparing</option>
+        <option value="ACTIVE">Active</option>
+        <option value="SUBMITTED">Submitted</option>
+        <option value="AWARDED">Awarded</option>
+        <option value="LOST">Lost</option>
+        <option value="NO-BID">No-Bid</option>
+      </select>
+    </div>
+    <div class="modal-field">
+      <label>Set-Aside</label>
+      <input type="text" id="bidModalSetAside" placeholder="e.g., 8(a), HUBZone, Women-owned...">
+    </div>
+    <div class="modal-field">
+      <label>Submission Portal</label>
+      <input type="text" id="bidModalPortal" placeholder="e.g., SAM.gov, GSA eOffer...">
+    </div>
+    <div class="modal-field">
+      <label>Key Contact</label>
+      <input type="text" id="bidModalContact" placeholder="Agency contact name">
+    </div>
+    <div class="modal-field">
+      <label>Decision</label>
+      <select id="bidModalDecision">
+        <option value="">Not yet decided</option>
+        <option value="Won">Won</option>
+        <option value="Lost">Lost</option>
+        <option value="Pending">Pending</option>
+      </select>
+    </div>
+    <div class="modal-field">
+      <label>Margin</label>
+      <input type="text" id="bidModalMargin" placeholder="Expected margin %">
+    </div>
+    <div class="modal-field">
+      <label>Notes</label>
+      <textarea id="bidModalNotes" placeholder="Additional notes..."></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn cancel" onclick="closeBidModal()">Cancel</button>
+      <button class="modal-btn save" onclick="saveBid()">Save</button>
+    </div>
+  </div>
+</div>
 <script>
 // ========================================
 // CONFIG
@@ -724,14 +1253,28 @@ const API_KEY = 'AIzaSyAJGq_n2C9SfY9wGzPb3OZC24sonQSuG8w';
 const WEEKLY_SHEET_ID = '1uaBi_GU44F2Out8Iw2YRuQBmGxvOEGJDFoe6E5dMlnY';
 const WORKSTREAM_SHEET_ID = '1fj2iWxrJlq5X8FbYKbDSS-oVCEpvtVN1aPRfLoiu3o8';
 const QUICK_SHEET_ID = '1MpF68CuxPe_gwF1I5H2CJYu1C9kby8WvSRtfHYlzc3E';
-// External tracker sheet IDs  
+// External tracker sheet IDs
 const BID_TRACKER_ID = '18ZG4TtfxpFp_a-T9cRwBBvN4M3Gdi7B4HDRVG30sLY8';
 const VIOLATIONS_TRACKER_ID = '1T3qFj2IR1qSNhTPxuQSmIZCBilHah2VPSsSk77K7bUc';
+// Federal Bids sheets
+const LIVE_BIDS_SHEET_ID = '1NHXISik-fIaanmtMwLqjdAWhO3KNGyDbm4ezGiUvdTE';
+const CHANNELS_SHEET_ID = '1uIYPMtZCM1jJBv2wHMZOVKqM6xogPfdPAs7i8nqrXno';
+// Bid folder IDs (column O mapping)
+const BID_FOLDERS = {
+  'BID-001 Goodbuy': '1fwNYKG2sKtAaMFb5sZemF_2uM-JXCkbI',
+  'BID-002 Fort Drum': '1GpHUmM4dn-xlfv3kMhPTybfalur-Ri6F',
+  'BID-003 GSA eBuy': '1j1j2CaKL3JE8PHezoNkJlqs5arvhvaj-'
+};
 // State
 let currentWeekOffset = 0;
 let weeklyTasks = [];
 let workstreams = [];
 let quickTasks = [];
+let liveBids = [];
+let channels = [];
+let currentBidStatusFilter = '';
+let currentChannelStatusFilter = '';
+let currentChannelPriorityFilter = '';
 // ========================================
 // SHEETS API HELPERS
 // ========================================
@@ -770,7 +1313,7 @@ function getWeekDates(offset = 0) {
   const dow = now.getDay(); // 0=Sun,1=Mon,...6=Sat
   const diff = dow === 0 ? -6 : 1 - dow; // Sun->prev Mon, else back to Mon
   monday.setDate(now.getDate() + diff + (offset * 7));
-  
+
   const days = [];
   const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   for (let i = 0; i < 6; i++) {
@@ -801,12 +1344,32 @@ function sameWeek(dateStr, weekMonday) {
 function todayStr() {
   return new Date().toISOString().split('T')[0];
 }
+function daysUntilDeadline(deadlineStr) {
+  if (!deadlineStr) return null;
+  const deadline = new Date(deadlineStr + 'T23:59:59');
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const diff = Math.ceil((deadline - today) / (1000 * 60 * 60 * 24));
+  return diff;
+}
 // ========================================
 // NAVIGATION
 // ========================================
 function switchView(viewName) {
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.toggle('active', t.dataset.view === viewName));
   document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === `view-${viewName}`));
+  if (viewName === 'bids') {
+    switchBidsTab('live-bids');
+  }
+}
+function switchBidsTab(subView) {
+  document.querySelectorAll('.sub-tab').forEach(t => t.classList.toggle('active', t.dataset.sub === subView));
+  document.querySelectorAll('.sub-view').forEach(v => v.classList.toggle('active', v.id === `sub-view-${subView}`));
+  if (subView === 'live-bids') {
+    renderLiveBids();
+  } else if (subView === 'channels') {
+    renderChannels();
+  }
 }
 // ========================================
 // LOAD ALL DATA
@@ -814,7 +1377,7 @@ function switchView(viewName) {
 async function loadAll() {
   document.getElementById('syncText').textContent = 'Syncing...';
   try {
-    const results = await Promise.allSettled([loadWeeklyTasks(), loadWorkstreams(), loadQuickTasks()]);
+    const results = await Promise.allSettled([loadWeeklyTasks(), loadWorkstreams(), loadQuickTasks(), loadLiveBids(), loadChannels()]);
     const failed = results.filter(r => r.status === 'rejected');
     if (failed.length > 0) {
       failed.forEach(f => console.error(f.reason));
@@ -849,7 +1412,7 @@ async function loadWeeklyTasks() {
 function renderWeekly() {
   const weekOf = getWeekOf(currentWeekOffset);
   const weekTasks = weeklyTasks.filter(t => t.week_of === weekOf || sameWeek(t.week_of, weekOf));
-  
+
   // Update header
   document.getElementById('weekLabel').textContent = getWeekLabel(currentWeekOffset);
   if (currentWeekOffset === 0) document.getElementById('weekTitle').textContent = 'This Week';
@@ -865,12 +1428,12 @@ function renderWeekly() {
   // Group by day
   const days = getWeekDates(currentWeekOffset);
   const dayNames = days.map(d => d.name);
-  
+
   let html = '';
   for (const day of days) {
     const dayTasks = weekTasks.filter(t => t.due_date === day.dateStr || t.due_date === day.name);
     const isToday = day.dateStr === todayStr();
-    
+
     html += `<div class="day-section">
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-name">
@@ -881,7 +1444,7 @@ function renderWeekly() {
         <div class="day-count">${dayTasks.filter(t=>t.status==='Done').length}/${dayTasks.length}</div>
       </div>
       <div class="day-body${isToday || dayTasks.length === 0 ? '' : ''}">`;
-    
+
     if (dayTasks.length === 0) {
       html += `<div style="padding:14px 20px;color:var(--text-dim);font-size:12px">No tasks scheduled</div>`;
     } else {
@@ -889,7 +1452,7 @@ function renderWeekly() {
         const isDone = t.status === 'Done';
         const wsTag = getWorkstreamTag(t.workstream);
         const prioTag = t.priority === 'P1' ? 'tag-p1' : t.priority === 'P3' ? 'tag-p3' : 'tag-p2';
-        
+
         html += `<div class="task-row${isDone ? ' done' : ''}">
           <div class="task-checkbox${isDone ? ' checked' : ''}" onclick="toggleWeeklyTask(${t.rowIndex})"></div>
           <div class="task-content">
@@ -913,7 +1476,7 @@ function renderWeekly() {
     const assigned = dayNames.includes(t.due_date) || days.some(d => d.dateStr === t.due_date);
     return !assigned;
   });
-  
+
   if (unassigned.length > 0) {
     html += `<div class="day-section">
       <div class="day-header" onclick="toggleDay(this)">
@@ -955,12 +1518,12 @@ async function addWeeklyTask() {
   const input = document.getElementById('addTaskInput');
   const text = input.value.trim();
   if (!text) return;
-  
+
   const workstream = document.getElementById('addTaskWorkstream').value;
   const priority = document.getElementById('addTaskPriority').value;
   const day = document.getElementById('addTaskDay').value;
   const weekOf = getWeekOf(currentWeekOffset);
-  
+
   // Convert day name to date
   let dueDate = day;
   if (day) {
@@ -968,9 +1531,9 @@ async function addWeeklyTask() {
     const match = days.find(d => d.name === day);
     if (match) dueDate = match.dateStr;
   }
-  
+
   const taskId = `WT-${Date.now()}`;
-  
+
   try {
     await appendRow(WEEKLY_SHEET_ID, 'Sheet1!A:I', [taskId, weekOf, workstream, text, priority, 'Open', 'Ekene', dueDate, '']);
     input.value = '';
@@ -1018,11 +1581,11 @@ function renderDashboard() {
   for (const ws of workstreams) {
     const statusClass = ws.status.toLowerCase();
     const wsTag = getWorkstreamTag(ws.name);
-    
+
     // Count open weekly tasks for this workstream
     const weekOf = getWeekOf(0); // current week
     const openTasks = weeklyTasks.filter(t => (t.week_of === weekOf || sameWeek(t.week_of, weekOf)) && t.workstream === ws.name && t.status !== 'Done').length;
-    
+
     html += `<div class="ws-card">
       <div class="ws-card-header">
         <span class="ws-name"><span class="tag ${wsTag}" style="margin-right:6px">${escHtml(ws.name)}</span></span>
@@ -1056,22 +1619,22 @@ async function loadQuickTasks() {
 function renderQuickTasks() {
   const open = quickTasks.filter(t => t.status !== 'Done' && t.status !== 'Deleted');
   document.getElementById('quickBadge').textContent = open.length;
-  
+
   let html = `<div class="qt-header-row">
     <div></div><div>Task</div><div>Workstream</div><div>Status</div><div></div>
   </div>`;
-  
+
   // Open first, then done
   const sorted = [...quickTasks].sort((a, b) => {
     if (a.status === 'Done' && b.status !== 'Done') return 1;
     if (a.status !== 'Done' && b.status === 'Done') return -1;
     return 0;
   });
-  
+
   for (const t of sorted) {
     const isDone = t.status === 'Done';
     const wsTag = getWorkstreamTag(t.workstream);
-    
+
     html += `<div class="qt-row" style="${isDone ? 'opacity:0.4' : ''}">
       <div>
         <div class="task-checkbox${isDone ? ' checked' : ''}" style="width:18px;height:18px" onclick="toggleQuickTask(${t.rowIndex})"></div>
@@ -1087,11 +1650,11 @@ function renderQuickTasks() {
       </div>
     </div>`;
   }
-  
+
   if (quickTasks.length === 0) {
     html += '<div style="padding:20px;text-align:center;color:var(--text-dim)">No quick tasks yet</div>';
   }
-  
+
   document.getElementById('quickTasksList').innerHTML = html;
 }
 async function toggleQuickTask(rowIndex) {
@@ -1110,7 +1673,7 @@ async function quickAddTask() {
   if (!text) return;
   const ws = document.getElementById('quickAddWorkstream').value;
   const taskId = `QT-${Date.now()}`;
-  
+
   try {
     await appendRow(QUICK_SHEET_ID, 'Sheet1!A:F', [taskId, todayStr(), text, ws, 'Open', '']);
     input.value = '';
@@ -1125,7 +1688,7 @@ function closeModal() {
   document.getElementById('modalOverlay').classList.remove('open');
   document.getElementById('modalTask').value = '';
   document.getElementById('modalWorkstream').value = '';
-  document.getElementById('modalNotes').value = '';
+  document.getElent.getElementById('modalNotes').value = '';
 }
 async function saveQuickTask() {
   const task = document.getElementById('modalTask').value.trim();
@@ -1133,12 +1696,331 @@ async function saveQuickTask() {
   const ws = document.getElementById('modalWorkstream').value;
   const notes = document.getElementById('modalNotes').value.trim();
   const taskId = `QT-${Date.now()}`;
-  
+
   try {
     await appendRow(QUICK_SHEET_ID, 'Sheet1!A:F', [taskId, todayStr(), task, ws, 'Open', notes]);
     closeModal();
     await loadQuickTasks();
   } catch (e) { console.error(e); alert('Failed to save.'); }
+}
+// ========================================
+// FEDERAL BIDS
+// ========================================
+async function loadLiveBids() {
+  const rows = await readSheet(LIVE_BIDS_SHEET_ID, 'Sheet1!A2:O100');
+  liveBids = rows.map((r, i) => ({
+    rowIndex: i + 2,
+    bid_id: r[0] || '',
+    opportunity_name: r[1] || '',
+    source_channel: r[2] || '',
+    solicitation_number: r[3] || '',
+    category: r[4] || '',
+    est_value: r[5] || '',
+    deadline: r[6] || '',
+    status: r[7] || '',
+    set_aside: r[8] || '',
+    submission_portal: r[9] || '',
+    key_contact: r[10] || '',
+    decision: r[11] || '',
+    margin: r[12] || '',
+    notes: r[13] || '',
+    assets_folder_id: r[14] || ''
+  }));
+  renderLiveBids();
+}
+function sortBidsByStatus(bids) {
+  const statusOrder = ['SUBMITTED', 'ACTIVE', 'PREPARING', 'TRACKING', 'AWARDED', 'LOST', 'NO-BID'];
+  return bids.sort((a, b) => {
+    const orderA = statusOrder.indexOf(a.status);
+    const orderB = statusOrder.indexOf(b.status);
+    if (orderA === -1) return 1;
+    if (orderB === -1) return 1;
+    if (orderA !== orderB) return orderA - orderB;
+
+    // Then by deadline
+    const daysA = daysUntilDeadline(a.deadline) || 999;
+    const daysB = daysUntilDeadline(b.deadline) || 999;
+    return daysA - daysB;
+  });
+}
+function renderLiveBids() {
+  let filtered = liveBids;
+  if (currentBidStatusFilter) {
+    filtered = filtered.filter(b => b.status === currentBidStatusFilter);
+  }
+
+  const sorted = sortBidsByStatus(filtered);
+
+  // Stats
+  const submitted = liveBids.filter(b => b.status === 'SUBMITTED').length;
+  const active = liveBids.filter(b => b.status === 'ACTIVE').length;
+  const awarded = liveBids.filter(b => b.decision === 'Won').length;
+  const lost = liveBids.filter(b => b.decision === 'Lost').length;
+  document.getElementById('bidStatText').textContent = `${awarded} awarded, ${lost} lost, ${submitted} submitted, ${active} active \u2014 ${liveBids.length} total bids`;
+
+  let html = '';
+  for (const bid of sorted) {
+    const daysLeft = daysUntilDeadline(bid.deadline);
+    const deadlineText = daysLeft === null ? 'No deadline' : daysLeft < 0 ? `${Math.abs(daysLeft)} days ago` : daysLeft === 0 ? 'Today' : `${daysLeft} days left`;
+
+    const statusClass = bid.status.toLowerCase().replace(/-/g, '-');
+    let statusDisplay = bid.status;
+
+    html += `<div class="bid-card" onclick="expandBidCard(this)">
+      <div class="bid-card-header">
+        <div class="bid-status-badge ${statusClass}">${bid.status}</div>
+      </div>
+      <div class="bid-card-title">${escHtml(bid.opportunity_name)}</div>
+      <div class="bid-solicitation">${escHtml(bid.solicitation_number)}</div>
+      <div class="bid-tags">
+        ${bid.source_channel ? `<span class="bid-tag">${escHtml(bid.source_channel)}</span>` : ''}
+        ${bid.category ? `<span class="bid-tag">${escHtml(bid.category)}</span>` : ''}
+      </div>
+      <div class="bid-value">${escHtml(bid.est_value)}</div>
+      <div class="bid-deadline">${deadlineText}</div>
+      ${bid.decision ? `<span class="bid-decision ${bid.decision.toLowerCase()}">${bid.decision}</span>` : ''}
+
+      <div class="bid-details">
+        <div class="bid-detail-row">
+          <span class="bid-detail-label">Set-Aside</span>
+          <span class="bid-detail-value">${escHtml(bid.set_aside) || '&mdash;'}</span>
+        </div>
+        <div class="bid-detail-row">
+          <span class="bid-detail-label">Portal</span>
+          <span class="bid-detail-value">${escHtml(bid.submission_portal) || '&mdash;'}</span>
+        </div>
+        <div class="bid-detail-row">
+          <span class="bid-detail-label">Contact</span>
+          <span class="bid-detail-value">${escHtml(bid.key_contact) || '&mdash;'}</span>
+        </div>
+        ${bid.margin ? `<div class="bid-detail-row">
+          <span class="bid-detail-label">Margin</span>
+          <span class="bid-detail-value">${escHtml(bid.margin)}</span>
+        </div>` : ''}
+        ${bid.notes ? `<div class="bid-notes-section">
+          <div class="bid-notes-label">Notes</div>
+          <div class="bid-notes-text">${escHtml(bid.notes)}</div>
+        </div>` : ''}
+        <div class="bid-actions">
+          ${bid.assets_folder_id ? `<a class="bid-drive-btn" href="https://drive.google.com/drive/folders/${bid.assets_folder_id}" target="_blank">Open in Drive</a>` : ''}
+          <button class="bid-close-btn" onclick="event.stopPropagation();collapseBidCard(this)">Close</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  if (sorted.length === 0) {
+    html = '<div style="padding:40px;text-align:center;color:var(--text-dim);grid-column:1/-1">No bids match this filter</div>';
+  }
+
+  document.getElementById('bidCardsGrid').innerHTML = html;
+}
+function expandBidCard(card) {
+  if (card.classList.contains('expanded')) return;
+  document.querySelectorAll('.bid-card.expanded').forEach(c => c.classList.remove('expanded'));
+  card.classList.add('expanded');
+}
+function collapseBidCard(btn) {
+  const card = btn.closest('.bid-card');
+  card.classList.remove('expanded');
+}
+function filterBids() {
+  currentBidStatusFilter = document.getElementById('bidStatusFilter').value;
+  renderLiveBids();
+}
+function openAddBidModal() {
+  document.getElementById('bidModalOverlay').classList.add('open');
+  document.getElementById('bidModalBidId').focus();
+}
+function closeBidModal() {
+  document.getElementById('bidModalOverlay').classList.remove('open');
+  document.getElementById('bidModalBidId').value = '';
+  document.getElementById('bidModalOpportunity').value = '';
+  document.getElementById('bidModalChannel').value = '';
+  document.getElementById('bidModalSolicitation').value = '';
+  document.getElementById('bidModalCategory').value = '';
+  document.getElementById('bidModalValue').value = '';
+  document.getElementById('bidModalDeadline').value = '';
+  document.getElementById('bidModalStatus').value = 'TRACKING';
+  document.getElementById('bidModalSetAside').value = '';
+  document.getElementById('bidModalPortal').value = '';
+  document.getElementById('bidModalContact').value = '';
+  document.getElementById('bidModalDecision').value = '';
+  document.getElementById('bidModalMargin').value = '';
+  document.getElementById('bidModalNotes').value = '';
+}
+async function saveBid() {
+  const bidId = document.getElementById('bidModalBidId').value.trim();
+  const opportunity = document.getElementById('bidModalOpportunity').value.trim();
+  if (!bidId || !opportunity) {
+    alert('Bid ID and Opportunity Name are required');
+    return;
+  }
+
+  const values = [
+    bidId,
+    opportunity,
+    document.getElementById('bidModalChannel').value,
+    document.getElementById('bidModalSolicitation').value,
+    document.getElementById('bidModalCategory').value,
+    document.getElementById('bidModalValue').value,
+    document.getElementById('bidModalDeadline').value,
+    document.getElementById('bidModalStatus').value,
+    document.getElementById('bidModalSetAside').value,
+    document.getElementById('bidModalPortal').value,
+    document.getElementById('bidModalContact').value,
+    document.getElementById('bidModalDecision').value,
+    document.getElementById('bidModalMargin').value,
+    document.getElementById('bidModalNotes').value,
+    ''
+  ];
+
+  try {
+    await appendRow(LIVE_BIDS_SHEET_ID, 'Sheet1!A:O', values);
+    closeBidModal();
+    await loadLiveBids();
+  } catch (e) {
+    console.error(e);
+    alert('Failed to save bid.');
+  }
+}
+// ========================================
+// PROCUREMENT CHANNELS
+// ========================================
+async function loadChannels() {
+  const rows = await readSheet(CHANNELS_SHEET_ID, 'Sheet1!A2:J200');
+  channels = rows.map((r, i) => ({
+    rowIndex: i + 2,
+    channel_id: r[0] || '',
+    channel_name: r[1] || '',
+    type: r[2] || '',
+    scope: r[3] || '',
+    relevant_categories: r[4] || '',
+    registration_url: r[5] || '',
+    registration_status: r[6] || '',
+    priority: r[7] || '',
+    notes: r[8] || '',
+    last_scouted: r[9] || ''
+  }));
+  renderChannels();
+}
+function getChannelGroupName(typeStr) {
+  if (!typeStr) return 'Other';
+  const type = typeStr.trim().toLowerCase();
+
+  if (type.includes('cooperative') && type.includes('national')) return 'National Cooperative';
+  if (type.includes('texas') || type.includes('esc')) return 'Texas ESC Cooperative';
+  if (type.includes('federal') || type.includes('gsa') || type.includes('dod')) return 'Federal Procurement';
+  if (type.includes('state') || type.includes('portal')) return 'State Portals';
+  if (type.includes('local') || type.includes('district') || type.includes('county') || type.includes('city') || type.includes('dc') || type.includes('md') || type.includes('va')) return 'DC/MD/VA &amp; Local';
+  if (type.includes('state') || type.includes('contract') || type.includes('higher') || type.includes('authority') || type.includes('transit') || type.includes('illinois')) return 'Illinois &amp; Regional';
+  if (type.includes('regional') || type.includes('mid-atlantic')) return 'Mid-Atlantic Regional';
+  if (type.includes('aggregator') || type.includes('bid')) return 'Bid Aggregators';
+
+  return 'Other';
+}
+function groupChannels() {
+  const groups = {};
+  const groupOrder = [
+    'National Cooperative',
+    'Texas ESC Cooperative',
+    'Federal Procurement',
+    'State Portals',
+    'DC/MD/VA &amp; Local',
+    'Illinois &amp; Regional',
+    'Mid-Atlantic Regional',
+    'Bid Aggregators',
+    'Other'
+  ];
+
+  for (const channel of channels) {
+    const groupName = getChannelGroupName(channel.type);
+    if (!groups[groupName]) groups[groupName] = [];
+    groups[groupName].push(channel);
+  }
+
+  const result = [];
+  for (const name of groupOrder) {
+    if (groups[name]) {
+      result.push({ name, channels: groups[name] });
+    }
+  }
+
+  return result;
+}
+function renderChannels() {
+  let filtered = channels;
+
+  if (currentChannelStatusFilter) {
+    filtered = filtered.filter(c => c.registration_status === currentChannelStatusFilter);
+  }
+  if (currentChannelPriorityFilter) {
+    filtered = filtered.filter(c => c.priority === currentChannelPriorityFilter);
+  }
+
+  // Stats
+  const registered = channels.filter(c => c.registration_status === 'REGISTERED' || c.registration_status === 'ACTIVE' || c.registration_status === 'EXISTING RELATIONSHIP').length;
+  const actionRequired = channels.filter(c => c.registration_status === 'ACTION REQUIRED' || c.registration_status === 'SUBMITTED').length;
+  document.getElementById('channelStatText').textContent = `${registered} registered, ${actionRequired} action required, ${channels.length} total channels`;
+
+  const groups = groupChannels();
+
+  let html = '';
+  for (const group of groups) {
+    const filtered_group = group.channels.filter(c => {
+      if (currentChannelStatusFilter && c.registration_status !== currentChannelStatusFilter) return false;
+      if (currentChannelPriorityFilter && c.priority !== currentChannelPriorityFilter) return false;
+      return true;
+    });
+
+    if (filtered_group.length === 0) continue;
+
+    html += `<div class="channel-section">
+      <div class="channel-section-header" onclick="toggleChannelSection(this)">
+        <span>${escHtml(group.name)}</span>
+        <span class="channel-section-toggle">&rsaquo;</span>
+      </div>
+      <div class="channel-cards">`;
+
+    for (const ch of filtered_group) {
+      const statusClass = ch.registration_status.toLowerCase().replace(/\s+/g, '-');
+      const priorityClass = ch.priority.toLowerCase();
+
+      html += `<div class="channel-card" onclick="expandChannelCard(this)">
+        <div class="channel-card-header">
+          <div class="channel-name">${escHtml(ch.channel_name)}</div>
+          <span class="channel-status-badge ${statusClass}">${escHtml(ch.registration_status)}</span>
+        </div>
+        ${ch.priority ? `<span class="channel-priority-badge ${priorityClass}">${ch.priority}</span>` : ''}
+        ${ch.scope ? `<div class="channel-scope">${escHtml(ch.scope)}</div>` : ''}
+        ${ch.registration_url ? `<a href="${escHtml(ch.registration_url)}" target="_blank" class="channel-url">${ch.registration_url.substring(0, 40)}...</a>` : ''}
+
+        <div class="channel-details">
+          ${ch.relevant_categories ? `<div class="channel-detail-row"><strong>Categories:</strong> ${escHtml(ch.relevant_categories)}</div>` : ''}
+          ${ch.notes ? `<div class="channel-detail-row"><strong>Notes:</strong> ${escHtml(ch.notes)}</div>` : ''}
+          ${ch.last_scouted ? `<div class="channel-detail-row"><strong>Last scouted:</strong> ${escHtml(ch.last_scouted)}</div>` : ''}
+        </div>
+      </div>`;
+    }
+
+    html += '</div></div>';
+  }
+
+  document.getElementById('channelSections').innerHTML = html;
+}
+function toggleChannelSection(header) {
+  const section = header.closest('.channel-section');
+  section.classList.toggle('collapsed');
+}
+function expandChannelCard(card) {
+  if (card.classList.contains('expanded')) return;
+  document.querySelectorAll('.channel-card.expanded').forEach(c => c.classList.remove('expanded'));
+  card.classList.add('expanded');
+}
+function filterChannels() {
+  currentChannelStatusFilter = document.getElementById('channelStatusFilter').value;
+  currentChannelPriorityFilter = document.getElementById('channelPriorityFilter').value;
+  renderChannels();
 }
 // ========================================
 // HELPERS
@@ -1170,6 +2052,9 @@ function escHtml(str) {
 // Close modal on overlay click
 document.getElementById('modalOverlay').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
+});
+document.getElementById('bidModalOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeBidModal();
 });
 // ========================================
 // INIT

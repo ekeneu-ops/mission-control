@@ -1707,7 +1707,7 @@ async function saveQuickTask() {
 // FEDERAL BIDS
 // ========================================
 async function loadLiveBids() {
-  const rows = await readSheet(LIVE_BIDS_SHEET_ID, 'Sheet1!A2:O100');
+  const rows = await readSheet(LIVE_BIDS_SHEET_ID, ''Live Bids'!A2:O100');
   liveBids = rows.map((r, i) => ({
     rowIndex: i + 2,
     bid_id: r[0] || '',
@@ -1876,7 +1876,7 @@ async function saveBid() {
   ];
 
   try {
-    await appendRow(LIVE_BIDS_SHEET_ID, 'Sheet1!A:O', values);
+    await appendRow(LIVE_BIDS_SHEET_ID, ''Live Bids'!A:O', values);
     closeBidModal();
     await loadLiveBids();
   } catch (e) {
@@ -1888,7 +1888,7 @@ async function saveBid() {
 // PROCUREMENT CHANNELS
 // ========================================
 async function loadChannels() {
-  const rows = await readSheet(CHANNELS_SHEET_ID, 'Sheet1!A2:J200');
+  const rows = await readSheet(CHANNELS_SHEET_ID, ''Procurement Channels'!A2:J200');
   channels = rows.map((r, i) => ({
     rowIndex: i + 2,
     channel_id: r[0] || '',

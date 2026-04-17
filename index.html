@@ -270,7 +270,7 @@ body {
   border-color: var(--accent);
 }
 .task-checkbox.checked::after {
-  content: '✓';
+  content: 'âœ“';
   color: var(--btn-text);
   font-size: 12px;
   font-weight: 700;
@@ -578,7 +578,7 @@ body {
   </div>
   <div class="header-right">
     <span class="sync-status"><span class="sync-dot"></span><span id="syncText">Connecting...</span></span>
-    <button class="btn-refresh" onclick="loadAll()">↻ Refresh</button>
+    <button class="btn-refresh" onclick="loadAll()">â†» Refresh</button>
   </div>
 </div>
 <!-- NAV -->
@@ -606,9 +606,9 @@ body {
         </div>
       </div>
       <div class="week-nav">
-        <button onclick="changeWeek(-1)">←</button>
+        <button onclick="changeWeek(-1)">â†</button>
         <span class="week-label" id="weekLabel"></span>
-        <button onclick="changeWeek(1)">→</button>
+        <button onclick="changeWeek(1)">â†’</button>
       </div>
     </div>
     <!-- ADD TASK BAR -->
@@ -629,9 +629,9 @@ body {
       </select>
       <select class="add-task-select" id="addTaskPriority">
         <option value="P2">Priority</option>
-        <option value="P1">P1 — Critical</option>
-        <option value="P2">P2 — Important</option>
-        <option value="P3">P3 — Normal</option>
+        <option value="P1">P1 â€” Critical</option>
+        <option value="P2">P2 â€” Important</option>
+        <option value="P3">P3 â€” Normal</option>
       </select>
       <select class="add-task-select" id="addTaskDay">
         <option value="">Day</option>
@@ -784,7 +784,7 @@ function getWeekLabel(offset) {
   const start = days[0].date;
   const end = days[4].date;
   const opts = { month: 'short', day: 'numeric' };
-  return `${start.toLocaleDateString('en-US', opts)} — ${end.toLocaleDateString('en-US', opts)}, ${end.getFullYear()}`;
+  return `${start.toLocaleDateString('en-US', opts)} â€” ${end.toLocaleDateString('en-US', opts)}, ${end.getFullYear()}`;
 }
 function getWeekOf(offset) {
   return getWeekDates(offset)[0].dateStr;
@@ -859,7 +859,7 @@ function renderWeekly() {
     html += `<div class="day-section">
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-name">
-          ${isToday ? '<span style="color:var(--accent)">��</span>' : ''}
+          ${isToday ? '<span style="color:var(--accent)">â—Ï</span>' : ''}
           ${day.name}
           <span class="day-date">${day.date.toLocaleDateString('en-US', {month:'short', day:'numeric'})}</span>
         </div>
@@ -882,11 +882,11 @@ function renderWeekly() {
             <div class="task-meta">
               ${t.workstream ? `<span class="tag ${wsTag}">${escHtml(t.workstream)}</span>` : ''}
               ${t.priority && t.priority !== 'P2' ? `<span class="tag ${prioTag}">${t.priority}</span>` : ''}
-              ${t.notes ? `<span style="font-size:11px;color:var(--text-dim)">— ${escHtml(t.notes)}</span>` : ''}
+              ${t.notes ? `<span style="font-size:11px;color:var(--text-dim)">â€” ${escHtml(t.notes)}</span>` : ''}
             </div>
           </div>
           <div class="task-actions">
-            <button class="task-action-btn" title="Delete" onclick="deleteWeeklyTask(${t.rowIndex})">✕</button>
+            <button class="task-action-btn" title="Delete" onclick="deleteWeeklyTask(${t.rowIndex})">âœ•</button>
           </div>
         </div>`;
       }

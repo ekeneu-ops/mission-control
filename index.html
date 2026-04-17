@@ -767,7 +767,9 @@ async function updateCell(sheetId, range, value) {
 function getWeekDates(offset = 0) {
   const now = new Date();
   const monday = new Date(now);
-  monday.setDate(now.getDate() - now.getDay() + 1 + (offset * 7));
+  const dow = now.getDay(); // 0=Sun,1=Mon,...6=Sat
+  const diff = dow === 0 ? -6 : 1 - dow; // Sun->prev Mon, else back to Mon
+  monday.setDate(now.getDate() + diff + (offset * 7));
   
   const days = [];
   const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -787,6 +789,14 @@ function getWeekLabel(offset) {
 }
 function getWeekOf(offset) {
   return getWeekDates(offset)[0].dateStr;
+}
+function sameWeek(dateStr, weekMonday) {
+  // Check if dateStr falls in the Mon-Sun week starting at weekMonday
+  if (!dateStr || !weekMonday) return false;
+  const d = new Date(dateStr + 'T00:00:00');
+  const m = new Date(weekMonday + 'T00:00:00');
+  const sun = new Date(m); sun.setDate(m.getDate() + 6);
+  return d >= m && d <= sun;
 }
 function todayStr() {
   return new Date().toISOString().split('T')[0];
@@ -838,7 +848,7 @@ async function loadWeeklyTasks() {
 }
 function renderWeekly() {
   const weekOf = getWeekOf(currentWeekOffset);
-  const weekTasks = weeklyTasks.filter(t => t.week_of === weekOf);
+  const weekTasks = weeklyTasks.filter(t => t.week_of === weekOf || sameWeek(t.week_of, weekOf));
   
   // Update header
   document.getElementById('weekLabel').textContent = getWeekLabel(currentWeekOffset);
@@ -1011,7 +1021,7 @@ function renderDashboard() {
     
     // Count open weekly tasks for this workstream
     const weekOf = getWeekOf(0); // current week
-    const openTasks = weeklyTasks.filter(t => t.week_of === weekOf && t.workstream === ws.name && t.status !== 'Done').length;
+    const openTasks = weeklyTasks.filter(t => (t.week_of === weekOf || sameWeek(t.week_of, weekOf)) && t.workstream === ws.name && t.status !== 'Done').length;
     
     html += `<div class="ws-card">
       <div class="ws-card-header">

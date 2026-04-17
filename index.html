@@ -783,7 +783,7 @@ function getWeekLabel(offset) {
   const start = days[0].date;
   const end = days[4].date;
   const opts = { month: 'short', day: 'numeric' };
-  return `${start.toLocaleDateString('en-US', opts)} &mdash; ${end.toLocaleDateString('en-US', opts)}, ${end.getFullYear()}`;
+  return `${start.toLocaleDateString('en-US', opts)} \u2014 ${end.toLocaleDateString('en-US', opts)}, ${end.getFullYear()}`;
 }
 function getWeekOf(offset) {
   return getWeekDates(offset)[0].dateStr;

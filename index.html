@@ -142,6 +142,10 @@ body {
 .main { padding: 24px 32px; max-width: 1400px; margin: 0 auto; }
 .view { display: none; }
 .view.active { display: block; }
+.sub-view { display: none; }
+.sub-view.active { display: block; }
+.bid-status-select { font-family: 'DM Sans', sans-serif; font-weight: 500; color: var(--text); }
+.bid-status-select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 /* ---- WEEK HEADER ---- */
 .week-header {
   display: flex;
@@ -1265,6 +1269,17 @@ const BID_FOLDERS = {
   'BID-002 Fort Drum': '1GpHUmM4dn-xlfv3kMhPTybfalur-Ri6F',
   'BID-003 GSA eBuy': '1j1j2CaKL3JE8PHezoNkJlqs5arvhvaj-'
 };
+// Solicitation URLs mapped by solicitation number
+const SOLICITATION_URLS = {
+  '26-27 2B000': 'https://goodbuy.esc2.net/',
+  'W911S226U2841': 'https://sam.gov/opp/W911S226U2841/view',
+  '47QSMS26D002Z': 'https://www.ebuy.gsa.gov/'
+};
+// Contact details mapped by key_contact name
+const CONTACT_DETAILS = {
+  'Sherri Fitzpatrick': { phone: '(361) 561-8400', email: 'sfitzpatrick@esc2.us', title: 'Manager, Goodbuy Purchasing' },
+  '316th CS': { phone: '(315) 774-0750', email: 'joshua.j.mcmiller.mil@mail.mil', title: '316th Contracting Squadron, Fort Drum' }
+};
 // State
 let currentWeekOffset = 0;
 let weeklyTasks = [];
@@ -1586,7 +1601,8 @@ function renderDashboard() {
     const weekOf = getWeekOf(0); // current week
     const openTasks = weeklyTasks.filter(t => (t.week_of === weekOf || sameWeek(t.week_of, weekOf)) && t.workstream === ws.name && t.status !== 'Done').length;
 
-    html += `<div class="ws-card">
+    const clickAction = ws.name === 'Federal Bids' ? ` onclick="switchView('bids')" style="cursor:pointer"` : '';
+    html += `<div class="ws-card"${clickAction}>
       <div class="ws-card-header">
         <span class="ws-name"><span class="tag ${wsTag}" style="margin-right:6px">${escHtml(ws.name)}</span></span>
         <span class="ws-status ${statusClass}">${ws.status}</span>
@@ -1688,7 +1704,7 @@ function closeModal() {
   document.getElementById('modalOverlay').classList.remove('open');
   document.getElementById('modalTask').value = '';
   document.getElementById('modalWorkstream').value = '';
-  document.getElent.getElementById('modalNotes').value = '';
+  document.getElementById('modalNotes').value = '';
 }
 async function saveQuickTask() {
   const task = document.getElementById('modalTask').value.trim();
@@ -1766,12 +1782,29 @@ function renderLiveBids() {
     const statusClass = bid.status.toLowerCase().replace(/-/g, '-');
     let statusDisplay = bid.status;
 
+    const solUrl = SOLICITATION_URLS[bid.solicitation_number] || '';
+    const portalLink = solUrl
+      ? `<a href="${solUrl}" target="_blank" style="color:var(--blue);text-decoration:underline">${escHtml(bid.submission_portal)}</a>`
+      : (escHtml(bid.submission_portal) || '&mdash;');
+    const contactInfo = CONTACT_DETAILS[bid.key_contact];
+    const contactDisplay = contactInfo
+      ? `<div style="line-height:1.6">${escHtml(bid.key_contact)}<br><span style="font-size:11px;color:var(--text-muted)">${escHtml(contactInfo.title)}</span><br><span style="font-size:11px">
+          <a href="tel:${contactInfo.phone}" style="color:var(--blue)">${contactInfo.phone}</a> &middot;
+          <a href="mailto:${contactInfo.email}" style="color:var(--blue)">${contactInfo.email}</a></span></div>`
+      : (escHtml(bid.key_contact) || '&mdash;');
+
+    const statusOptions = ['SUBMITTED', 'ACTIVE', 'PREPARING', 'TRACKING', 'AWARDED', 'LOST', 'NO-BID'];
+    const statusSelectHtml = `<select class="bid-status-select" onchange="event.stopPropagation();changeBidStatus('${bid.bid_id}', ${bid.rowIndex}, this.value)" style="font-size:11px;padding:2px 6px;border:1px solid var(--border);border-radius:4px;background:var(--surface);cursor:pointer">
+      ${statusOptions.map(s => `<option value="${s}"${s === bid.status ? ' selected' : ''}>${s}</option>`).join('')}
+    </select>`;
+
     html += `<div class="bid-card" onclick="expandBidCard(this)">
       <div class="bid-card-header">
         <div class="bid-status-badge ${statusClass}">${bid.status}</div>
+        <div onclick="event.stopPropagation()" style="margin-left:auto">${statusSelectHtml}</div>
       </div>
       <div class="bid-card-title">${escHtml(bid.opportunity_name)}</div>
-      <div class="bid-solicitation">${escHtml(bid.solicitation_number)}</div>
+      <div class="bid-solicitation">${solUrl ? `<a href="${solUrl}" target="_blank" style="color:var(--blue);text-decoration:underline">${escHtml(bid.solicitation_number)}</a>` : escHtml(bid.solicitation_number)}</div>
       <div class="bid-tags">
         ${bid.source_channel ? `<span class="bid-tag">${escHtml(bid.source_channel)}</span>` : ''}
         ${bid.category ? `<span class="bid-tag">${escHtml(bid.category)}</span>` : ''}
@@ -1782,16 +1815,20 @@ function renderLiveBids() {
 
       <div class="bid-details">
         <div class="bid-detail-row">
+          <span class="bid-detail-label">Status</span>
+          <span class="bid-detail-value" onclick="event.stopPropagation()">${statusSelectHtml}</span>
+        </div>
+        <div class="bid-detail-row">
           <span class="bid-detail-label">Set-Aside</span>
           <span class="bid-detail-value">${escHtml(bid.set_aside) || '&mdash;'}</span>
         </div>
         <div class="bid-detail-row">
           <span class="bid-detail-label">Portal</span>
-          <span class="bid-detail-value">${escHtml(bid.submission_portal) || '&mdash;'}</span>
+          <span class="bid-detail-value">${portalLink}</span>
         </div>
         <div class="bid-detail-row">
           <span class="bid-detail-label">Contact</span>
-          <span class="bid-detail-value">${escHtml(bid.key_contact) || '&mdash;'}</span>
+          <span class="bid-detail-value">${contactDisplay}</span>
         </div>
         ${bid.margin ? `<div class="bid-detail-row">
           <span class="bid-detail-label">Margin</span>
@@ -1827,6 +1864,18 @@ function collapseBidCard(btn) {
 function filterBids() {
   currentBidStatusFilter = document.getElementById('bidStatusFilter').value;
   renderLiveBids();
+}
+async function changeBidStatus(bidId, rowIndex, newStatus) {
+  const bid = liveBids.find(b => b.bid_id === bidId);
+  if (!bid) return;
+  try {
+    await updateCell(LIVE_BIDS_SHEET_ID, "'Live Bids'!H" + rowIndex, newStatus);
+    bid.status = newStatus;
+    renderLiveBids();
+  } catch (e) {
+    console.error(e);
+    alert('Failed to update status.');
+  }
 }
 function openAddBidModal() {
   document.getElementById('bidModalOverlay').classList.add('open');

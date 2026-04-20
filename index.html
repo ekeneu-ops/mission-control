@@ -839,6 +839,302 @@ body {
   line-height: 1.4;
 }
 .channel-detail-row strong { color: var(--text); }
+/* ---- VIOLATIONS VIEW ---- */
+.violations-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.violations-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ahr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-light);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+.ahr-badge-label {
+  font-size: 10px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+}
+.ahr-badge-value { color: var(--accent); }
+.ahr-badge-value.warn { color: var(--amber); }
+.ahr-badge-value.danger { color: var(--red); }
+.back-btn {
+  background: var(--surface-2);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+}
+.back-btn:hover { background: var(--surface-hover); color: var(--text); }
+.violation-stats {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.violation-stat {
+  flex: 1;
+  min-width: 130px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+.violation-stat-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.violation-stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+}
+.violation-stat.accent .violation-stat-value { color: var(--accent); }
+.violation-stat.warn .violation-stat-value { color: var(--amber); }
+.violation-stat.danger .violation-stat-value { color: var(--red); }
+.violation-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.violation-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.violation-card:hover { border-color: var(--border-light); background: var(--surface-hover); }
+.violation-card.expanded {
+  grid-column: 1 / -1;
+  max-width: none;
+  background: var(--surface);
+  cursor: default;
+}
+.violation-card.expanded:hover { background: var(--surface); }
+.violation-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.violation-asin {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text);
+  word-break: break-all;
+}
+.violation-date {
+  font-size: 11px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.violation-product {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.violation-card.expanded .violation-product {
+  -webkit-line-clamp: unset;
+  display: block;
+}
+.violation-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.v-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.v-type-red { background: var(--red-dim); color: var(--red); }
+.v-type-orange { background: var(--amber-dim); color: var(--amber); }
+.v-type-yellow { background: rgba(202,138,4,0.12); color: #a16207; }
+.v-status-new { background: var(--red-dim); color: var(--red); }
+.v-status-rejected { background: var(--red-dim); color: var(--red); }
+.v-status-awaiting { background: var(--amber-dim); color: var(--amber); }
+.v-status-active { background: var(--amber-dim); color: var(--amber); }
+.v-status-appeal { background: var(--blue-dim); color: var(--blue); }
+.v-status-resolved { background: var(--accent-dim); color: var(--accent); }
+.v-priority-high { background: var(--red-dim); color: var(--red); }
+.v-priority-medium { background: var(--amber-dim); color: var(--amber); }
+.v-priority-low { background: rgba(100,116,139,0.12); color: #475569; }
+.violation-next {
+  font-size: 12px;
+  color: var(--text);
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  line-height: 1.45;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.violation-card.expanded .violation-next { display: none; }
+.violation-next strong { color: var(--text-muted); font-weight: 500; }
+.violation-details { display: none; }
+.violation-card.expanded .violation-details {
+  display: block;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.v-section {
+  margin-bottom: 20px;
+}
+.v-section:last-child { margin-bottom: 0; }
+.v-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.v-field {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 13px;
+  align-items: start;
+}
+.v-field-label {
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+.v-field-value {
+  color: var(--text);
+  word-break: break-word;
+  line-height: 1.5;
+}
+.v-field-value.highlight {
+  background: var(--amber-dim);
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: var(--text);
+  font-weight: 500;
+}
+.v-field-value.notes-box {
+  background: var(--surface-2);
+  padding: 10px 12px;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.v-field-empty { color: var(--text-dim); font-style: italic; }
+.v-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.v-timeline-item {
+  font-size: 12px;
+  color: var(--text);
+  padding-left: 14px;
+  border-left: 2px solid var(--border-light);
+  line-height: 1.4;
+}
+.v-select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  cursor: pointer;
+}
+.v-select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.violation-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+.violation-close-btn {
+  background: var(--surface-2);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+}
+.violation-close-btn:hover { background: var(--surface-hover); color: var(--text); }
+.violation-sheet-btn {
+  background: var(--blue);
+  border: none;
+  color: var(--btn-text);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+.violation-sheet-btn:hover { background: #1d4ed8; }
+@media (max-width: 768px) {
+  .v-field { grid-template-columns: 1fr; gap: 2px; }
+  .violation-cards-grid { grid-template-columns: 1fr; }
+  .violation-stat { min-width: 45%; }
+}
 /* ---- LOADING ---- */
 .loading {
   display: flex;
@@ -980,6 +1276,9 @@ body {
   </div>
   <div class="nav-tab" data-view="bids" onclick="switchView('bids')">
     Federal Bids
+  </div>
+  <div class="nav-tab" data-view="violations" onclick="switchView('violations')">
+    IP Violations <span class="tab-badge" id="violationsBadge">0</span>
   </div>
 </div>
 <!-- MAIN -->
@@ -1134,6 +1433,73 @@ body {
       <div class="channel-sections" id="channelSections">
         <div class="loading"><div class="spinner"></div>Loading channels...</div>
       </div>
+    </div>
+  </div>
+  <!-- IP VIOLATIONS VIEW -->
+  <div class="view" id="view-violations">
+    <div class="violations-header">
+      <div class="violations-title-row">
+        <button class="back-btn" onclick="switchView('dashboard')" title="Back to Dashboard">&larr; Back</button>
+        <h2 style="font-size:22px;font-weight:700">Account Health Violations</h2>
+        <span class="ahr-badge" id="ahrBadge" title="Account Health Rating">
+          <span class="ahr-badge-label">AHR</span>
+          <span class="ahr-badge-value" id="ahrBadgeValue">&mdash;</span>
+        </span>
+      </div>
+    </div>
+    <div class="filter-bar">
+      <label>Status:</label>
+      <select id="violationStatusFilter" onchange="filterViolations()">
+        <option value="">All Status</option>
+        <option value="New">New</option>
+        <option value="Active">Active</option>
+        <option value="Awaiting Response">Awaiting Response</option>
+        <option value="Rejected">Rejected</option>
+        <option value="Appeal Resubmitted">Appeal Resubmitted</option>
+        <option value="Resolved">Resolved</option>
+      </select>
+      <label>Priority:</label>
+      <select id="violationPriorityFilter" onchange="filterViolations()">
+        <option value="">All Priority</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+      <label>Type:</label>
+      <select id="violationTypeFilter" onchange="filterViolations()">
+        <option value="">All Types</option>
+        <option value="Trademark on Product">Trademark on Product</option>
+        <option value="Counterfeit">Counterfeit</option>
+        <option value="Product Safety Issue">Product Safety Issue</option>
+        <option value="Restricted Product">Restricted Product</option>
+        <option value="Customer Reviews">Customer Reviews</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="violation-stats" id="violationStats">
+      <div class="violation-stat">
+        <div class="violation-stat-label">Total</div>
+        <div class="violation-stat-value" id="vStatTotal">&mdash;</div>
+      </div>
+      <div class="violation-stat warn">
+        <div class="violation-stat-label">Active</div>
+        <div class="violation-stat-value" id="vStatActive">&mdash;</div>
+      </div>
+      <div class="violation-stat danger">
+        <div class="violation-stat-label">High Priority</div>
+        <div class="violation-stat-value" id="vStatHigh">&mdash;</div>
+      </div>
+      <div class="violation-stat warn">
+        <div class="violation-stat-label">Awaiting Response</div>
+        <div class="violation-stat-value" id="vStatAwaiting">&mdash;</div>
+      </div>
+      <div class="violation-stat accent">
+        <div class="violation-stat-label">Resolved</div>
+        <div class="violation-stat-value" id="vStatResolved">&mdash;</div>
+      </div>
+    </div>
+    <div class="violation-cards-grid" id="violationCardsGrid">
+      <div class="loading"><div class="spinner"></div>Loading violations...</div>
     </div>
   </div>
 </div>
@@ -1293,6 +1659,10 @@ let channels = [];
 let currentBidStatusFilter = '';
 let currentChannelStatusFilter = '';
 let currentChannelPriorityFilter = '';
+let violations = [];
+let currentViolationStatusFilter = '';
+let currentViolationPriorityFilter = '';
+let currentViolationTypeFilter = '';
 // ========================================
 // SHEETS API HELPERS
 // ========================================
@@ -1395,7 +1765,7 @@ function switchBidsTab(subView) {
 async function loadAll() {
   document.getElementById('syncText').textContent = 'Syncing...';
   try {
-    const results = await Promise.allSettled([loadWeeklyTasks(), loadWorkstreams(), loadQuickTasks(), loadLiveBids(), loadChannels()]);
+    const results = await Promise.allSettled([loadWeeklyTasks(), loadWorkstreams(), loadQuickTasks(), loadLiveBids(), loadChannels(), loadViolations()]);
     const failed = results.filter(r => r.status === 'rejected');
     if (failed.length > 0) {
       failed.forEach(f => console.error(f.reason));
@@ -1593,6 +1963,8 @@ async function loadWorkstreams() {
     nextAction: r[4] || ''
   }));
   renderDashboard();
+  // Keep AHR badge in sync once workstreams arrive
+  if (typeof updateAhrBadge === 'function') updateAhrBadge();
 }
 function renderDashboard() {
   let html = '';
@@ -1604,7 +1976,9 @@ function renderDashboard() {
     const weekOf = getWeekOf(0); // current week
     const openTasks = weeklyTasks.filter(t => (t.week_of === weekOf || sameWeek(t.week_of, weekOf)) && t.workstream === ws.name && t.status !== 'Done').length;
 
-    const clickAction = ws.name === 'Federal Bids' ? ` onclick="switchView('bids')" style="cursor:pointer"` : '';
+    let clickAction = '';
+    if (ws.name === 'Federal Bids') clickAction = ` onclick="switchView('bids')" style="cursor:pointer"`;
+    else if (ws.name === 'IP Violations') clickAction = ` onclick="switchView('violations')" style="cursor:pointer"`;
     html += `<div class="ws-card"${clickAction}>
       <div class="ws-card-header">
         <span class="ws-name"><span class="tag ${wsTag}" style="margin-right:6px">${escHtml(ws.name)}</span></span>
@@ -2073,6 +2447,304 @@ function filterChannels() {
   currentChannelStatusFilter = document.getElementById('channelStatusFilter').value;
   currentChannelPriorityFilter = document.getElementById('channelPriorityFilter').value;
   renderChannels();
+}
+// ========================================
+// IP VIOLATIONS
+// ========================================
+async function loadViolations() {
+  const rows = await readSheet(VIOLATIONS_TRACKER_ID, "'Sheet1'!A2:V50");
+  violations = rows
+    .map((r, i) => ({
+      rowIndex: i + 2,
+      asin: r[0] || '',
+      product_name: r[1] || '',
+      complaint_id: r[2] || '',
+      violation_type: r[3] || '',
+      rights_owner_name: r[4] || '',
+      rights_owner_address: r[5] || '',
+      rights_owner_contact: r[6] || '',
+      date_received: r[7] || '',
+      ah_impact: r[8] || '',
+      complaint_summary: r[9] || '',
+      is_genuine: r[10] || '',
+      created_detail_page: r[11] || '',
+      sourced_essendant: r[12] || '',
+      essendant_invoice: r[13] || '',
+      status: r[14] || '',
+      appeal_dates: r[15] || '',
+      rejection_reasons: r[16] || '',
+      retraction_requested: r[17] || '',
+      rights_owner_response: r[18] || '',
+      next_action: r[19] || '',
+      priority: r[20] || '',
+      notes: r[21] || ''
+    }))
+    .filter(v => (v.asin && v.asin.trim()) || (v.product_name && v.product_name.trim()) || (v.violation_type && v.violation_type.trim()));
+  renderViolations();
+}
+function getViolationTypeBadgeClass(type) {
+  const t = (type || '').toLowerCase();
+  if (t.includes('trademark') || t.includes('counterfeit')) return 'v-type-red';
+  if (t.includes('safety') || t.includes('restricted')) return 'v-type-orange';
+  if (t.includes('reviews') || t.includes('other')) return 'v-type-yellow';
+  return 'v-type-yellow';
+}
+function getViolationStatusBadgeClass(status) {
+  const s = (status || '').toLowerCase();
+  if (s.includes('resolved')) return 'v-status-resolved';
+  if (s.includes('rejected')) return 'v-status-rejected';
+  if (s === 'new' || s.startsWith('new')) return 'v-status-new';
+  if (s.includes('awaiting')) return 'v-status-awaiting';
+  if (s.includes('appeal')) return 'v-status-appeal';
+  if (s.includes('active')) return 'v-status-active';
+  return 'v-status-active';
+}
+function getViolationPriorityBadgeClass(priority) {
+  const p = (priority || '').toLowerCase();
+  if (p === 'high') return 'v-priority-high';
+  if (p === 'medium' || p === 'med') return 'v-priority-medium';
+  if (p === 'low') return 'v-priority-low';
+  return 'v-priority-low';
+}
+function violationMatchesTypeFilter(violation, filter) {
+  if (!filter) return true;
+  const vt = (violation.violation_type || '').toLowerCase();
+  const f = filter.toLowerCase();
+  if (f === 'other') {
+    // "Other" = anything not matching the other categories
+    const known = ['trademark', 'counterfeit', 'safety', 'restricted', 'reviews'];
+    return !known.some(k => vt.includes(k));
+  }
+  // For the standard labels, do a substring match so variants like
+  // "Counterfeit without a Test Buy" or "Restricted Products Policy Violation" match.
+  const key = f.split(' ')[0]; // first word, e.g. "trademark", "counterfeit", "product", etc.
+  if (f.startsWith('product safety')) return vt.includes('safety');
+  if (f.startsWith('restricted')) return vt.includes('restricted');
+  if (f.startsWith('customer reviews')) return vt.includes('reviews');
+  if (f.startsWith('trademark')) return vt.includes('trademark');
+  if (f.startsWith('counterfeit')) return vt.includes('counterfeit');
+  return vt.includes(key);
+}
+function violationMatchesStatusFilter(violation, filter) {
+  if (!filter) return true;
+  const s = (violation.status || '').toLowerCase();
+  const f = filter.toLowerCase();
+  if (f === 'appeal resubmitted') return s.includes('appeal') && s.includes('resubmit');
+  if (f === 'awaiting response') return s.includes('awaiting');
+  return s === f || s.startsWith(f);
+}
+function getAhrFromWorkstream() {
+  const ipRow = workstreams.find(w => w.name === 'IP Violations');
+  if (!ipRow) return null;
+  const metric = ipRow.keyMetric || '';
+  const match = metric.match(/AHR\s+(\d+)/i);
+  return match ? parseInt(match[1], 10) : null;
+}
+function updateAhrBadge() {
+  const score = getAhrFromWorkstream();
+  const valueEl = document.getElementById('ahrBadgeValue');
+  if (!valueEl) return;
+  if (score === null) {
+    valueEl.textContent = '—';
+    valueEl.className = 'ahr-badge-value';
+    return;
+  }
+  valueEl.textContent = score;
+  // AHR scoring (Amazon): 0-99 at risk, 100-199 warn, 200+ healthy — tune as needed
+  let cls = 'ahr-badge-value';
+  if (score < 100) cls += ' danger';
+  else if (score < 200) cls += ' warn';
+  valueEl.className = cls;
+}
+function renderViolations() {
+  updateAhrBadge();
+  // Stats always on the full set (not filtered)
+  const total = violations.length;
+  const resolved = violations.filter(v => (v.status || '').toLowerCase().includes('resolved')).length;
+  const active = total - resolved;
+  const highPriority = violations.filter(v => (v.priority || '').toLowerCase() === 'high').length;
+  const awaiting = violations.filter(v => (v.status || '').toLowerCase().includes('awaiting')).length;
+  document.getElementById('vStatTotal').textContent = total;
+  document.getElementById('vStatActive').textContent = active;
+  document.getElementById('vStatHigh').textContent = highPriority;
+  document.getElementById('vStatAwaiting').textContent = awaiting;
+  document.getElementById('vStatResolved').textContent = resolved;
+  // Nav tab badge shows active (non-resolved) count
+  const badgeEl = document.getElementById('violationsBadge');
+  if (badgeEl) badgeEl.textContent = active;
+  // Filtered list
+  const filtered = violations.filter(v =>
+    violationMatchesStatusFilter(v, currentViolationStatusFilter) &&
+    (!currentViolationPriorityFilter || (v.priority || '').toLowerCase() === currentViolationPriorityFilter.toLowerCase()) &&
+    violationMatchesTypeFilter(v, currentViolationTypeFilter)
+  );
+  // Sort: unresolved first (by priority High>Med>Low), then resolved
+  const priorityRank = { 'high': 0, 'medium': 1, 'med': 1, 'low': 2 };
+  const sorted = [...filtered].sort((a, b) => {
+    const aResolved = (a.status || '').toLowerCase().includes('resolved') ? 1 : 0;
+    const bResolved = (b.status || '').toLowerCase().includes('resolved') ? 1 : 0;
+    if (aResolved !== bResolved) return aResolved - bResolved;
+    const aRank = priorityRank[(a.priority || '').toLowerCase()];
+    const bRank = priorityRank[(b.priority || '').toLowerCase()];
+    return (aRank === undefined ? 99 : aRank) - (bRank === undefined ? 99 : bRank);
+  });
+  let html = '';
+  for (const v of sorted) {
+    html += renderViolationCard(v);
+  }
+  if (sorted.length === 0) {
+    html = '<div style="padding:40px;text-align:center;color:var(--text-dim);grid-column:1/-1">No violations match these filters</div>';
+  }
+  document.getElementById('violationCardsGrid').innerHTML = html;
+}
+function renderViolationCard(v) {
+  const typeClass = getViolationTypeBadgeClass(v.violation_type);
+  const statusClass = getViolationStatusBadgeClass(v.status);
+  const priorityClass = getViolationPriorityBadgeClass(v.priority);
+  const asinDisplay = (v.asin && v.asin.trim() && !/^n\/a/i.test(v.asin)) ? v.asin : 'Account Level';
+  const productDisplay = v.product_name || '<span class="v-field-empty">No product name</span>';
+  const typeDisplay = v.violation_type || '—';
+  const statusDisplay = v.status || 'Unknown';
+  const priorityDisplay = v.priority || '—';
+  const dateDisplay = v.date_received || '';
+  const statusOptions = ['New', 'Active', 'Awaiting Response', 'Rejected', 'Appeal Resubmitted', 'Resolved'];
+  const priorityOptions = ['High', 'Medium', 'Low'];
+  // Build section content
+  const sheetUrl = `https://docs.google.com/spreadsheets/d/${VIOLATIONS_TRACKER_ID}/edit#gid=0&range=A${v.rowIndex}:V${v.rowIndex}`;
+  return `<div class="violation-card" onclick="expandViolationCard(this)">
+    <div class="violation-card-top">
+      <div class="violation-asin">${escHtml(asinDisplay)}</div>
+      ${dateDisplay ? `<div class="violation-date">${escHtml(dateDisplay)}</div>` : ''}
+    </div>
+    <div class="violation-product">${escHtml(v.product_name) || '<span class="v-field-empty">&mdash;</span>'}</div>
+    <div class="violation-badges">
+      ${v.violation_type ? `<span class="v-badge ${typeClass}">${escHtml(typeDisplay)}</span>` : ''}
+      <span class="v-badge ${statusClass}">${escHtml(statusDisplay)}</span>
+      ${v.priority ? `<span class="v-badge ${priorityClass}">${escHtml(priorityDisplay)} Priority</span>` : ''}
+    </div>
+    <div class="violation-next">
+      <strong>Next:</strong> ${v.next_action ? escHtml(v.next_action) : '<span class="v-field-empty">No action set</span>'}
+    </div>
+    <div class="violation-details">
+      <!-- Section 1: Violation Details -->
+      <div class="v-section">
+        <div class="v-section-title">Violation Details</div>
+        <div class="v-field"><div class="v-field-label">ASIN</div><div class="v-field-value">${escHtml(asinDisplay)}</div></div>
+        <div class="v-field"><div class="v-field-label">Product Name</div><div class="v-field-value">${v.product_name ? escHtml(v.product_name) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+        <div class="v-field"><div class="v-field-label">Complaint ID</div><div class="v-field-value">${v.complaint_id ? escHtml(v.complaint_id) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+        <div class="v-field"><div class="v-field-label">Violation Type</div><div class="v-field-value">${v.violation_type ? `<span class="v-badge ${typeClass}">${escHtml(v.violation_type)}</span>` : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+        <div class="v-field"><div class="v-field-label">Date Received</div><div class="v-field-value">${v.date_received ? escHtml(v.date_received) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+        <div class="v-field"><div class="v-field-label">Account Health Impact</div><div class="v-field-value">${v.ah_impact ? escHtml(v.ah_impact) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+        <div class="v-field"><div class="v-field-label">Complaint Summary</div><div class="v-field-value">${v.complaint_summary ? escHtml(v.complaint_summary) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+      </div>
+      <!-- Section 2: Rights Owner -->
+      <div class="v-section">
+        <div class="v-section-title">Rights Owner</div>
+        <div class="v-field"><div class="v-field-label">Full Legal Name</div><div class="v-field-value">${v.rights_owner_name ? escHtml(v.rights_owner_name) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+        <div class="v-field"><div class="v-field-label">Full Address</div><div class="v-field-value">${v.rights_owner_address ? escHtml(v.rights_owner_address) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+        <div class="v-field"><div class="v-field-label">Contact Info</div><div class="v-field-value">${v.rights_owner_contact ? escHtml(v.rights_owner_contact) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+      </div>
+      <!-- Section 3: Product Sourcing -->
+      <div class="v-section">
+        <div class="v-section-title">Product Sourcing</div>
+        <div class="v-field"><div class="v-field-label">Is Product Genuine</div><div class="v-field-value">${v.is_genuine ? escHtml(v.is_genuine) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+        <div class="v-field"><div class="v-field-label">Corebuy Created Detail Page</div><div class="v-field-value">${v.created_detail_page ? escHtml(v.created_detail_page) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+        <div class="v-field"><div class="v-field-label">Sourced Through Essendant</div><div class="v-field-value">${v.sourced_essendant ? escHtml(v.sourced_essendant) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+        <div class="v-field"><div class="v-field-label">Essendant Invoice Available</div><div class="v-field-value">${v.essendant_invoice ? escHtml(v.essendant_invoice) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+      </div>
+      <!-- Section 4: Appeal History -->
+      <div class="v-section">
+        <div class="v-section-title">Appeal History</div>
+        <div class="v-field" onclick="event.stopPropagation()">
+          <div class="v-field-label">Status</div>
+          <div class="v-field-value">
+            <select class="v-select" onchange="changeViolationStatus(${v.rowIndex}, this.value)">
+              ${statusOptions.map(s => `<option value="${s}"${s === v.status ? ' selected' : ''}>${s}</option>`).join('')}
+              ${statusOptions.includes(v.status) || !v.status ? '' : `<option value="${escHtml(v.status)}" selected>${escHtml(v.status)}</option>`}
+            </select>
+          </div>
+        </div>
+        <div class="v-field"><div class="v-field-label">Appeal Submission Dates</div><div class="v-field-value">${renderTimeline(v.appeal_dates)}</div></div>
+        <div class="v-field"><div class="v-field-label">Rejection Reasons</div><div class="v-field-value" style="white-space:pre-wrap">${v.rejection_reasons ? escHtml(v.rejection_reasons) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+        <div class="v-field"><div class="v-field-label">Retraction Requested</div><div class="v-field-value">${v.retraction_requested ? escHtml(v.retraction_requested) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+        <div class="v-field"><div class="v-field-label">Rights Owner Response</div><div class="v-field-value">${v.rights_owner_response ? escHtml(v.rights_owner_response) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+      </div>
+      <!-- Section 5: Action -->
+      <div class="v-section">
+        <div class="v-section-title">Action</div>
+        <div class="v-field"><div class="v-field-label">Next Action Needed</div><div class="v-field-value highlight">${v.next_action ? escHtml(v.next_action) : '<span class="v-field-empty">No action set</span>'}</div></div>
+        <div class="v-field" onclick="event.stopPropagation()">
+          <div class="v-field-label">Priority</div>
+          <div class="v-field-value">
+            <select class="v-select" onchange="changeViolationPriority(${v.rowIndex}, this.value)">
+              ${priorityOptions.map(p => `<option value="${p}"${p === v.priority ? ' selected' : ''}>${p}</option>`).join('')}
+              ${priorityOptions.includes(v.priority) || !v.priority ? '' : `<option value="${escHtml(v.priority)}" selected>${escHtml(v.priority)}</option>`}
+            </select>
+          </div>
+        </div>
+        <div class="v-field"><div class="v-field-label">Notes</div><div class="v-field-value notes-box">${v.notes ? escHtml(v.notes) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+      </div>
+      <div class="violation-actions">
+        <a class="violation-sheet-btn" href="${sheetUrl}" target="_blank" onclick="event.stopPropagation()">Open in Tracker</a>
+        <button class="violation-close-btn" onclick="event.stopPropagation();collapseViolationCard(this)">Close</button>
+      </div>
+    </div>
+  </div>`;
+}
+function renderTimeline(datesStr) {
+  if (!datesStr) return '<span class="v-field-empty">&mdash;</span>';
+  // Split on common separators - newline, semicolon, or numbered like "1) ... 2) ..."
+  let parts = [];
+  if (/\d\)\s/.test(datesStr)) {
+    parts = datesStr.split(/\s*\d\)\s*/).filter(p => p.trim());
+  } else if (datesStr.includes('\n')) {
+    parts = datesStr.split('\n').filter(p => p.trim());
+  } else if (datesStr.includes(';')) {
+    parts = datesStr.split(';').map(p => p.trim()).filter(Boolean);
+  } else {
+    return escHtml(datesStr);
+  }
+  if (parts.length <= 1) return escHtml(datesStr);
+  return '<div class="v-timeline">' + parts.map(p => `<div class="v-timeline-item">${escHtml(p.trim())}</div>`).join('') + '</div>';
+}
+function expandViolationCard(card) {
+  if (card.classList.contains('expanded')) return;
+  document.querySelectorAll('.violation-card.expanded').forEach(c => c.classList.remove('expanded'));
+  card.classList.add('expanded');
+}
+function collapseViolationCard(btn) {
+  const card = btn.closest('.violation-card');
+  card.classList.remove('expanded');
+}
+function filterViolations() {
+  currentViolationStatusFilter = document.getElementById('violationStatusFilter').value;
+  currentViolationPriorityFilter = document.getElementById('violationPriorityFilter').value;
+  currentViolationTypeFilter = document.getElementById('violationTypeFilter').value;
+  renderViolations();
+}
+async function changeViolationStatus(rowIndex, newStatus) {
+  const v = violations.find(x => x.rowIndex === rowIndex);
+  if (!v) return;
+  try {
+    await updateCell(VIOLATIONS_TRACKER_ID, "'Sheet1'!O" + rowIndex, newStatus);
+    v.status = newStatus;
+    renderViolations();
+  } catch (e) {
+    console.error(e);
+    alert('Failed to update violation status.');
+  }
+}
+async function changeViolationPriority(rowIndex, newPriority) {
+  const v = violations.find(x => x.rowIndex === rowIndex);
+  if (!v) return;
+  try {
+    await updateCell(VIOLATIONS_TRACKER_ID, "'Sheet1'!U" + rowIndex, newPriority);
+    v.priority = newPriority;
+    renderViolations();
+  } catch (e) {
+    console.error(e);
+    alert('Failed to update violation priority.');
+  }
 }
 // ========================================
 // HELPERS

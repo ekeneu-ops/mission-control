@@ -1254,9 +1254,9 @@ body {
 // ========================================
 const API_KEY = 'AIzaSyAJGq_n2C9SfY9wGzPb3OZC24sonQSuG8w';
 // Three separate Google Sheets (one per data type)
-const WEEKLY_SHEET_ID = '1uaBi_GU44F2Out8Iw2YRuQBmGxvOEGJDFoe6E5dMlnY';
-const WORKSTREAM_SHEET_ID = '1fj2iWxrJlq5X8FbYKbDSS-oVCEpvtVN1aPRfLoiu3o8';
-const QUICK_SHEET_ID = '1MpF68CuxPe_gwF1I5H2CJYu1C9kby8WvSRtfHYlzc3E';
+const WEEKLY_SHEET_ID = '1PsvtdZF-Qk5wQs6lahaAYGN4SXqGTDMlZWIh2VARHaA';
+const WORKSTREAM_SHEET_ID = '1PsvtdZF-Qk5wQs6lahaAYGN4SXqGTDMlZWIh2VARHaA';
+const QUICK_SHEET_ID = '1PsvtdZF-Qk5wQs6lahaAYGN4SXqGTDMlZWIh2VARHaA';
 // External tracker sheet IDs
 const BID_TRACKER_ID = '18ZG4TtfxpFp_a-T9cRwBBvN4M3Gdi7B4HDRVG30sLY8';
 const VIOLATIONS_TRACKER_ID = '1T3qFj2IR1qSNhTPxuQSmIZCBilHah2VPSsSk77K7bUc';
@@ -1412,7 +1412,7 @@ async function loadAll() {
 // WEEKLY TASKS
 // ========================================
 async function loadWeeklyTasks() {
-  const rows = await readSheet(WEEKLY_SHEET_ID, 'Sheet1!A2:I200');
+  const rows = await readSheet(WEEKLY_SHEET_ID, ''Weekly Tasks'!A2:I200');
   weeklyTasks = rows.map((r, i) => ({
     rowIndex: i + 2,
     task_id: r[0] || '',
@@ -1524,7 +1524,7 @@ async function toggleWeeklyTask(rowIndex) {
   if (!task) return;
   const newStatus = task.status === 'Done' ? 'Open' : 'Done';
   try {
-    await updateCell(WEEKLY_SHEET_ID, `Sheet1!F${rowIndex}`, newStatus);
+    await updateCell(WEEKLY_SHEET_ID, `'Weekly Tasks'!F${rowIndex}`, newStatus);
     task.status = newStatus;
     renderWeekly();
   } catch (e) {
@@ -1553,7 +1553,7 @@ async function addWeeklyTask() {
   const taskId = `WT-${Date.now()}`;
 
   try {
-    await appendRow(WEEKLY_SHEET_ID, 'Sheet1!A:I', [taskId, weekOf, workstream, text, priority, 'Open', 'Ekene', dueDate, '']);
+    await appendRow(WEEKLY_SHEET_ID, ''Weekly Tasks'!A:I', [taskId, weekOf, workstream, text, priority, 'Open', 'Ekene', dueDate, '']);
     input.value = '';
     await loadWeeklyTasks();
   } catch (e) {
@@ -1565,7 +1565,7 @@ async function deleteWeeklyTask(rowIndex) {
   if (!confirm('Delete this task?')) return;
   try {
     // Mark as deleted by clearing the row (can't delete rows via simple API)
-    await updateCell(WEEKLY_SHEET_ID, `Sheet1!F${rowIndex}`, 'Deleted');
+    await updateCell(WEEKLY_SHEET_ID, `'Weekly Tasks'!F${rowIndex}`, 'Deleted');
     const task = weeklyTasks.find(t => t.rowIndex === rowIndex);
     if (task) task.status = 'Deleted';
     weeklyTasks = weeklyTasks.filter(t => t.status !== 'Deleted');
@@ -1584,7 +1584,7 @@ function toggleDay(headerEl) {
 // DASHBOARD
 // ========================================
 async function loadWorkstreams() {
-  const rows = await readSheet(WORKSTREAM_SHEET_ID, 'Sheet1!A2:E20');
+  const rows = await readSheet(WORKSTREAM_SHEET_ID, ''Workstream Status'!A2:E20');
   workstreams = rows.map(r => ({
     name: r[0] || '',
     status: r[1] || 'Active',
@@ -1623,7 +1623,7 @@ function renderDashboard() {
 // QUICK TASKS
 // ========================================
 async function loadQuickTasks() {
-  const rows = await readSheet(QUICK_SHEET_ID, 'Sheet1!A2:F100');
+  const rows = await readSheet(QUICK_SHEET_ID, ''Quick Tasks'!A2:F100');
   quickTasks = rows.map((r, i) => ({
     rowIndex: i + 2,
     task_id: r[0] || '',
@@ -1681,7 +1681,7 @@ async function toggleQuickTask(rowIndex) {
   if (!task) return;
   const newStatus = task.status === 'Done' ? 'Open' : 'Done';
   try {
-    await updateCell(QUICK_SHEET_ID, `Sheet1!E${rowIndex}`, newStatus);
+    await updateCell(QUICK_SHEET_ID, `'Quick Tasks'!E${rowIndex}`, newStatus);
     task.status = newStatus;
     renderQuickTasks();
   } catch (e) { console.error(e); alert('Failed to update.'); }
@@ -1694,7 +1694,7 @@ async function quickAddTask() {
   const taskId = `QT-${Date.now()}`;
 
   try {
-    await appendRow(QUICK_SHEET_ID, 'Sheet1!A:F', [taskId, todayStr(), text, ws, 'Open', '']);
+    await appendRow(QUICK_SHEET_ID, ''Quick Tasks'!A:F', [taskId, todayStr(), text, ws, 'Open', '']);
     input.value = '';
     await loadQuickTasks();
   } catch (e) { console.error(e); alert('Failed to add task.'); }
@@ -1717,7 +1717,7 @@ async function saveQuickTask() {
   const taskId = `QT-${Date.now()}`;
 
   try {
-    await appendRow(QUICK_SHEET_ID, 'Sheet1!A:F', [taskId, todayStr(), task, ws, 'Open', notes]);
+    await appendRow(QUICK_SHEET_ID, ''Quick Tasks'!A:F', [taskId, todayStr(), task, ws, 'Open', notes]);
     closeModal();
     await loadQuickTasks();
   } catch (e) { console.error(e); alert('Failed to save.'); }

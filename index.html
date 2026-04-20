@@ -931,6 +931,8 @@ body {
   padding: 18px;
   cursor: pointer;
   transition: all 0.2s;
+  overflow: hidden;
+  min-width: 0;
 }
 .violation-card:hover { border-color: var(--border-light); background: var(--surface-hover); }
 .violation-card.expanded {
@@ -952,13 +954,38 @@ body {
   font-weight: 700;
   font-family: 'JetBrains Mono', monospace;
   color: var(--text);
-  word-break: break-all;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 60%;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.violation-card.expanded .violation-asin {
+  -webkit-line-clamp: unset;
+  display: block;
+  overflow: visible;
+  max-width: 100%;
 }
 .violation-date {
   font-size: 11px;
   color: var(--text-dim);
-  white-space: nowrap;
   flex-shrink: 0;
+  max-width: 40%;
+  text-align: right;
+  overflow-wrap: anywhere;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.violation-card.expanded .violation-date {
+  -webkit-line-clamp: unset;
+  display: block;
+  overflow: visible;
 }
 .violation-product {
   font-size: 13px;
@@ -970,6 +997,8 @@ body {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .violation-card.expanded .violation-product {
   -webkit-line-clamp: unset;
@@ -988,7 +1017,17 @@ body {
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
+  line-height: 1.5;
+}
+.violation-card.expanded .v-badge {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  overflow: visible;
+  text-overflow: clip;
 }
 .v-type-red { background: var(--red-dim); color: var(--red); }
 .v-type-orange { background: var(--amber-dim); color: var(--amber); }
@@ -1011,8 +1050,10 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .violation-card.expanded .violation-next { display: none; }
 .violation-next strong { color: var(--text-muted); font-weight: 500; }
@@ -2629,30 +2670,57 @@ function renderViolations() {
   }
   document.getElementById('violationCardsGrid').innerHTML = html;
 }
+function cleanFieldForDisplay(s) {
+  if (!s) return '';
+  // Tracker has several rows where tabs got pasted into single cells.
+  // Replace tabs and excess whitespace with a visible separator so text stays
+  // readable and doesn't create no-break runs that blow out card layout.
+  return String(s).replace(/\t+/g, ' · ').replace(/\r\n|\r|\n/g, ' · ').replace(/\s{2,}/g, ' ').trim();
+}
+function truncateForCard(s, max = 60) {
+  const clean = cleanFieldForDisplay(s);
+  if (clean.length <= max) return clean;
+  return clean.slice(0, max - 1) + '…';
+}
+function looksMalformed(v) {
+  // Malformed row marker: ASIN cell contains a tab, product name is empty
+  // but violation_type is embedded in ASIN, or the date field exceeds a sane length.
+  return (v.asin && v.asin.includes('\t')) ||
+         (v.date_received && v.date_received.length > 40) ||
+         (v.asin && v.asin.length > 40 && !v.product_name);
+}
 function renderViolationCard(v) {
   const typeClass = getViolationTypeBadgeClass(v.violation_type);
   const statusClass = getViolationStatusBadgeClass(v.status);
   const priorityClass = getViolationPriorityBadgeClass(v.priority);
-  const asinDisplay = (v.asin && v.asin.trim() && !/^n\/a/i.test(v.asin)) ? v.asin : 'Account Level';
+  const malformed = looksMalformed(v);
+  const asinRaw = v.asin && v.asin.trim();
+  const asinDisplay = asinRaw && !/^n\/a/i.test(asinRaw)
+    ? (malformed ? truncateForCard(asinRaw, 20) : cleanFieldForDisplay(asinRaw))
+    : 'Account Level';
   const productDisplay = v.product_name || '<span class="v-field-empty">No product name</span>';
-  const typeDisplay = v.violation_type || '—';
-  const statusDisplay = v.status || 'Unknown';
-  const priorityDisplay = v.priority || '—';
-  const dateDisplay = v.date_received || '';
+  const typeDisplay = cleanFieldForDisplay(v.violation_type) || '—';
+  const statusDisplay = cleanFieldForDisplay(v.status) || 'Unknown';
+  const priorityDisplay = cleanFieldForDisplay(v.priority) || '—';
+  const dateDisplay = truncateForCard(v.date_received || '', 24);
   const statusOptions = ['New', 'Active', 'Awaiting Response', 'Rejected', 'Appeal Resubmitted', 'Resolved'];
   const priorityOptions = ['High', 'Medium', 'Low'];
   // Build section content
   const sheetUrl = `https://docs.google.com/spreadsheets/d/${VIOLATIONS_TRACKER_ID}/edit#gid=0&range=A${v.rowIndex}:V${v.rowIndex}`;
+  const cardProduct = v.product_name
+    ? escHtml(truncateForCard(v.product_name, 90))
+    : (malformed ? '<span class="v-field-empty">Data malformed — open in tracker to fix</span>' : '<span class="v-field-empty">&mdash;</span>');
   return `<div class="violation-card" onclick="expandViolationCard(this)">
     <div class="violation-card-top">
       <div class="violation-asin">${escHtml(asinDisplay)}</div>
       ${dateDisplay ? `<div class="violation-date">${escHtml(dateDisplay)}</div>` : ''}
     </div>
-    <div class="violation-product">${escHtml(v.product_name) || '<span class="v-field-empty">&mdash;</span>'}</div>
+    <div class="violation-product">${cardProduct}</div>
     <div class="violation-badges">
-      ${v.violation_type ? `<span class="v-badge ${typeClass}">${escHtml(typeDisplay)}</span>` : ''}
-      <span class="v-badge ${statusClass}">${escHtml(statusDisplay)}</span>
-      ${v.priority ? `<span class="v-badge ${priorityClass}">${escHtml(priorityDisplay)} Priority</span>` : ''}
+      ${v.violation_type ? `<span class="v-badge ${typeClass}" title="${escHtml(v.violation_type)}">${escHtml(truncateForCard(typeDisplay, 40))}</span>` : ''}
+      <span class="v-badge ${statusClass}" title="${escHtml(v.status || 'Unknown')}">${escHtml(truncateForCard(statusDisplay, 40))}</span>
+      ${v.priority ? `<span class="v-badge ${priorityClass}">${escHtml(truncateForCard(priorityDisplay, 20))} Priority</span>` : ''}
+      ${malformed ? `<span class="v-badge v-type-orange" title="This row has tab/newline characters jammed into single cells. Click to expand and open in tracker to fix.">Data Issue</span>` : ''}
     </div>
     <div class="violation-next">
       <strong>Next:</strong> ${v.next_action ? escHtml(v.next_action) : '<span class="v-field-empty">No action set</span>'}

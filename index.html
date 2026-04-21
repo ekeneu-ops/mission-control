@@ -1737,6 +1737,14 @@ async function updateCell(sheetId, range, value) {
 // ========================================
 // DATE HELPERS
 // ========================================
+// Local-date-safe YYYY-MM-DD formatter. Avoids toISOString() which returns UTC
+// and causes off-by-one bugs in the evening when UTC has crossed to the next day.
+function localDateStr(d) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
 function getWeekDates(offset = 0) {
   const now = new Date();
   const monday = new Date(now);
@@ -1749,7 +1757,7 @@ function getWeekDates(offset = 0) {
   for (let i = 0; i < 6; i++) {
     const d = new Date(monday);
     d.setDate(monday.getDate() + i);
-    days.push({ name: dayNames[i], date: d, dateStr: d.toISOString().split('T')[0] });
+    days.push({ name: dayNames[i], date: d, dateStr: localDateStr(d) });
   }
   return days;
 }
@@ -1772,7 +1780,7 @@ function sameWeek(dateStr, weekMonday) {
   return d >= m && d <= sun;
 }
 function todayStr() {
-  return new Date().toISOString().split('T')[0];
+  return localDateStr(new Date());
 }
 function daysUntilDeadline(deadlineStr) {
   if (!deadlineStr) return null;

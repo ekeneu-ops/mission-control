@@ -2642,7 +2642,7 @@ async function loadViolations() {
     if (!violationsTabName) {
       violationsTabName = await getSpreadsheetFirstTabName(VIOLATIONS_TRACKER_ID);
     }
-    const range = `'${violationsTabName.replace(/'/g, "''")}'!A2:V50`;
+    const range = `'${violationsTabName.replace(/'/g, "''")}'!A2:AA50`;
     const rows = await readSheet(VIOLATIONS_TRACKER_ID, range);
     violations = rows
       .map((r, i) => ({
@@ -2668,7 +2668,12 @@ async function loadViolations() {
       rights_owner_response: r[18] || '',
       next_action: r[19] || '',
       priority: r[20] || '',
-      notes: r[21] || ''
+      notes: r[21] || '',
+      amazon_requirements: r[22] || '',
+      amazon_stated_reason: r[23] || '',
+      submission_options: r[24] || '',
+      accepted_file_types: r[25] || '',
+      detail_page_last_pulled: r[26] || ''
     }))
       .filter(v => (v.asin && v.asin.trim()) || (v.product_name && v.product_name.trim()) || (v.violation_type && v.violation_type.trim()));
     renderViolations();
@@ -2836,7 +2841,7 @@ function renderViolationCard(v) {
   const statusOptions = ['New', 'Active', 'Awaiting Response', 'Rejected', 'Appeal Resubmitted', 'Resolved'];
   const priorityOptions = ['High', 'Medium', 'Low'];
   // Build section content
-  const sheetUrl = `https://docs.google.com/spreadsheets/d/${VIOLATIONS_TRACKER_ID}/edit#gid=0&range=A${v.rowIndex}:V${v.rowIndex}`;
+  const sheetUrl = `https://docs.google.com/spreadsheets/d/${VIOLATIONS_TRACKER_ID}/edit#gid=0&range=A${v.rowIndex}:AA${v.rowIndex}`;
   const cardProduct = v.product_name
     ? escHtml(truncateForCard(v.product_name, 90))
     : (malformed ? '<span class="v-field-empty">Data malformed — open in tracker to fix</span>' : '<span class="v-field-empty">&mdash;</span>');
@@ -2898,6 +2903,20 @@ function renderViolationCard(v) {
         <div class="v-field"><div class="v-field-label">Rejection Reasons</div><div class="v-field-value" style="white-space:pre-wrap">${v.rejection_reasons ? escHtml(v.rejection_reasons) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
         <div class="v-field"><div class="v-field-label">Retraction Requested</div><div class="v-field-value">${v.retraction_requested ? escHtml(v.retraction_requested) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
         <div class="v-field"><div class="v-field-label">Rights Owner Response</div><div class="v-field-value">${v.rights_owner_response ? escHtml(v.rights_owner_response) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+      </div>
+      <!-- Section 6: Amazon Response Requirements -->
+      <div class="v-section">
+        <div class="v-section-title">Amazon Response Requirements ${v.detail_page_last_pulled ? `<span style="font-size:11px;font-weight:400;color:var(--text-dim);margin-left:6px">pulled ${escHtml(v.detail_page_last_pulled)}</span>` : '<span style="font-size:11px;font-weight:400;color:var(--amber);margin-left:6px">not yet pulled</span>'}</div>
+        <div class="v-field">
+          <div class="v-field-label">Amazon Requirements</div>
+          <div class="v-field-value notes-box" style="white-space:pre-wrap;border-left:3px solid var(--amber);background:var(--amber-dim);padding:10px 12px">${v.amazon_requirements ? escHtml(v.amazon_requirements) : '<span class="v-field-empty">Not captured yet. Open the violation in Seller Central and paste the \u201cWhat Amazon needs from you\u201d text into column W.</span>'}</div>
+        </div>
+        <div class="v-field">
+          <div class="v-field-label">Amazon Stated Reason</div>
+          <div class="v-field-value notes-box" style="white-space:pre-wrap">${v.amazon_stated_reason ? escHtml(v.amazon_stated_reason) : '<span class="v-field-empty">&mdash;</span>'}</div>
+        </div>
+        <div class="v-field"><div class="v-field-label">Submission Options Available</div><div class="v-field-value">${v.submission_options ? escHtml(v.submission_options) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
+        <div class="v-field"><div class="v-field-label">Accepted File Types</div><div class="v-field-value">${v.accepted_file_types ? escHtml(v.accepted_file_types) : '<span class="v-field-empty">&mdash;</span>'}</div></div>
       </div>
       <!-- Section 5: Action -->
       <div class="v-section">

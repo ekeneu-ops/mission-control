@@ -707,6 +707,132 @@ body {
   transition: all 0.2s;
 }
 .bid-close-btn:hover { background: var(--surface-hover); color: var(--text); }
+/* ---- BID CHECKLIST ---- */
+.bid-checklist-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.bid-checklist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.bid-checklist-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.bid-checklist-summary {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+.bid-checklist-summary.has-outstanding { color: var(--red); }
+.bid-checklist-drive-link {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--blue);
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+.bid-checklist-drive-link:hover { text-decoration: underline; }
+.bid-checklist-items { display: flex; flex-direction: column; gap: 6px; }
+.bid-checklist-item {
+  display: grid;
+  grid-template-columns: 20px 1fr auto auto 28px;
+  gap: 10px;
+  align-items: start;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  font-size: 13px;
+  border-left: 3px solid transparent;
+}
+.bid-checklist-item.outstanding { background: var(--red-dim); border-left-color: var(--red); }
+.bid-checklist-item.inprogress { background: var(--amber-dim); border-left-color: var(--amber); }
+.bid-checklist-item.na { opacity: 0.6; }
+.bid-checklist-item-checkbox {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+.bid-checklist-item-body { min-width: 0; }
+.bid-checklist-item-text {
+  color: var(--text);
+  line-height: 1.4;
+  word-break: break-word;
+}
+.bid-checklist-status-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  align-self: center;
+}
+.bid-checklist-status-badge.done { background: var(--accent-dim); color: var(--accent); }
+.bid-checklist-status-badge.outstanding { background: var(--red); color: var(--btn-text); }
+.bid-checklist-status-badge.inprogress { background: var(--amber); color: var(--btn-text); }
+.bid-checklist-status-badge.na { background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border-light); }
+.bid-checklist-responsible {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  align-self: center;
+}
+.bid-checklist-notes {
+  grid-column: 2 / -1;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 4px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+.bid-checklist-edit-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 4px 6px;
+  border-radius: 3px;
+  align-self: center;
+  justify-self: end;
+}
+.bid-checklist-edit-btn:hover { color: var(--text); background: var(--surface-hover); }
+.bid-checklist-add-btn {
+  background: var(--surface-2);
+  border: 1px dashed var(--border-light);
+  color: var(--text-muted);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 10px;
+  width: 100%;
+  transition: all 0.2s;
+}
+.bid-checklist-add-btn:hover { background: var(--surface-hover); color: var(--text); border-color: var(--accent); }
+.bid-checklist-empty {
+  padding: 14px;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 12px;
+  font-style: italic;
+}
 .channel-stats {
   font-size: 12px;
   color: var(--text-muted);
@@ -1697,6 +1823,7 @@ let weeklyTasks = [];
 let workstreams = [];
 let quickTasks = [];
 let liveBids = [];
+let bidChecklist = [];
 let channels = [];
 let currentBidStatusFilter = '';
 let currentChannelStatusFilter = '';
@@ -2172,8 +2299,11 @@ async function saveQuickTask() {
 // FEDERAL BIDS
 // ========================================
 async function loadLiveBids() {
-  const rows = await readSheet(LIVE_BIDS_SHEET_ID, "'Live Bids'!A2:Q100");
-  liveBids = rows.map((r, i) => ({
+  const [bidRows, _checklistLoaded] = await Promise.all([
+    readSheet(LIVE_BIDS_SHEET_ID, "'Live Bids'!A2:Q100"),
+    loadBidChecklist()
+  ]);
+  liveBids = bidRows.map((r, i) => ({
     rowIndex: i + 2,
     bid_id: r[0] || '',
     opportunity_name: r[1] || '',
@@ -2194,6 +2324,140 @@ async function loadLiveBids() {
     reminder_note: r[16] || ''
   }));
   renderLiveBids();
+}
+async function loadBidChecklist() {
+  try {
+    const rows = await readSheet(LIVE_BIDS_SHEET_ID, "'Bid Checklist'!A2:F500");
+    bidChecklist = rows.map((r, i) => ({
+      rowIndex: i + 2,
+      bid_id: r[0] || '',
+      item_number: r[1] || '',
+      requirement: r[2] || '',
+      status: r[3] || '',
+      responsible: r[4] || '',
+      notes: r[5] || ''
+    })).filter(item => item.bid_id);
+  } catch (e) {
+    console.error('Failed to load bid checklist:', e);
+    bidChecklist = [];
+  }
+}
+function getChecklistForBid(bidId) {
+  return bidChecklist
+    .filter(c => c.bid_id === bidId)
+    .sort((a, b) => (parseInt(a.item_number, 10) || 0) - (parseInt(b.item_number, 10) || 0));
+}
+function renderChecklistForBid(bid) {
+  const items = getChecklistForBid(bid.bid_id);
+  const folderId = bid.assets_folder_id;
+  const driveLink = folderId
+    ? `<a class="bid-checklist-drive-link" href="https://drive.google.com/drive/folders/${folderId}" target="_blank" onclick="event.stopPropagation()">View bid documents in Drive &rarr;</a>`
+    : '';
+
+  if (items.length === 0) {
+    return `<div class="bid-checklist-section">
+      <div class="bid-checklist-header">
+        <span class="bid-checklist-title">Requirements Checklist</span>
+      </div>
+      ${driveLink}
+      <div class="bid-checklist-empty">No requirements added yet.</div>
+      <button class="bid-checklist-add-btn" onclick="event.stopPropagation();addChecklistRequirement('${bid.bid_id}')">+ Add Requirement</button>
+    </div>`;
+  }
+
+  const doneCount = items.filter(i => i.status === 'Done').length;
+  const naCount = items.filter(i => i.status === 'N/A').length;
+  const effectiveTotal = items.length - naCount;
+  const completedCount = doneCount;
+  const outstandingCount = items.filter(i => i.status === 'Outstanding').length;
+  const summaryClass = outstandingCount > 0 ? ' has-outstanding' : '';
+  const summaryText = `${completedCount} of ${effectiveTotal} requirements complete${naCount ? ` (${naCount} N/A)` : ''}`;
+
+  const itemsHtml = items.map(item => {
+    const statusKey = (item.status || '').toLowerCase().replace(/[^a-z]/g, '');
+    const itemClass = statusKey === 'outstanding' ? 'outstanding'
+      : statusKey === 'inprogress' ? 'inprogress'
+      : statusKey === 'na' ? 'na' : '';
+    const checked = item.status === 'Done' ? 'checked' : '';
+    const statusBadgeClass = statusKey === 'inprogress' ? 'inprogress'
+      : statusKey === 'na' ? 'na'
+      : statusKey || 'outstanding';
+    const notesHtml = item.notes
+      ? `<div class="bid-checklist-notes">${escHtml(item.notes)}</div>`
+      : '';
+    return `<div class="bid-checklist-item ${itemClass}">
+      <input type="checkbox" class="bid-checklist-item-checkbox" ${checked}
+        onclick="event.stopPropagation();toggleChecklistItem(${item.rowIndex}, '${bid.bid_id}')">
+      <div class="bid-checklist-item-body">
+        <div class="bid-checklist-item-text">${escHtml(item.item_number)}. ${escHtml(item.requirement)}</div>
+        ${notesHtml}
+      </div>
+      <span class="bid-checklist-status-badge ${statusBadgeClass}">${escHtml(item.status || 'Outstanding')}</span>
+      <span class="bid-checklist-responsible">${escHtml(item.responsible || '')}</span>
+      <button class="bid-checklist-edit-btn" title="Edit notes"
+        onclick="event.stopPropagation();editChecklistNote(${item.rowIndex}, '${bid.bid_id}')">&#9998;</button>
+    </div>`;
+  }).join('');
+
+  return `<div class="bid-checklist-section">
+    <div class="bid-checklist-header">
+      <span class="bid-checklist-title">Requirements Checklist</span>
+      <span class="bid-checklist-summary${summaryClass}">${summaryText}</span>
+    </div>
+    ${driveLink}
+    <div class="bid-checklist-items">${itemsHtml}</div>
+    <button class="bid-checklist-add-btn" onclick="event.stopPropagation();addChecklistRequirement('${bid.bid_id}')">+ Add Requirement</button>
+  </div>`;
+}
+async function toggleChecklistItem(rowIndex, bidId) {
+  const item = bidChecklist.find(c => c.rowIndex === rowIndex);
+  if (!item) return;
+  const newStatus = item.status === 'Done' ? 'Outstanding' : 'Done';
+  item.status = newStatus;
+  renderLiveBids();
+  reExpandBidCard(bidId);
+  try {
+    await updateCell(LIVE_BIDS_SHEET_ID, `'Bid Checklist'!D${rowIndex}`, newStatus);
+  } catch (e) {
+    console.error(e);
+    alert('Failed to update checklist item.');
+  }
+}
+async function addChecklistRequirement(bidId) {
+  const text = prompt('New requirement:');
+  if (!text || !text.trim()) return;
+  const items = getChecklistForBid(bidId);
+  const nextNum = items.length ? Math.max(...items.map(i => parseInt(i.item_number, 10) || 0)) + 1 : 1;
+  const responsible = prompt('Responsible (Ekene / Cowork / Insurance Agent):', 'Ekene') || 'Ekene';
+  const values = [bidId, nextNum, text.trim(), 'Outstanding', responsible, ''];
+  try {
+    await appendRow(LIVE_BIDS_SHEET_ID, "'Bid Checklist'!A:F", values);
+    await loadBidChecklist();
+    renderLiveBids();
+    reExpandBidCard(bidId);
+  } catch (e) {
+    console.error(e);
+    alert('Failed to add requirement.');
+  }
+}
+async function editChecklistNote(rowIndex, bidId) {
+  const item = bidChecklist.find(c => c.rowIndex === rowIndex);
+  if (!item) return;
+  const newNote = prompt('Edit notes:', item.notes || '');
+  if (newNote === null) return;
+  item.notes = newNote;
+  renderLiveBids();
+  reExpandBidCard(bidId);
+  try {
+    await updateCell(LIVE_BIDS_SHEET_ID, `'Bid Checklist'!F${rowIndex}`, newNote);
+  } catch (e) {
+    console.error(e);
+    alert('Failed to update note.');
+  }
+}
+function reExpandBidCard(bidId) {
+  const card = document.querySelector(`.bid-card[data-bid-id="${bidId}"]`);
+  if (card) card.classList.add('expanded');
 }
 // Classify a reminder date: returns null if no reminder, otherwise {state, label}
 // state: 'overdue' | 'today' | 'soon' (within 7 days) | 'future'
@@ -2284,7 +2548,7 @@ function renderLiveBids() {
       ${statusOptions.map(s => `<option value="${s}"${s === bid.status ? ' selected' : ''}>${s}</option>`).join('')}
     </select>`;
 
-    html += `<div class="bid-card" onclick="expandBidCard(this)">
+    html += `<div class="bid-card" data-bid-id="${escHtml(bid.bid_id)}" onclick="expandBidCard(this)">
       <div class="bid-card-header">
         <div class="bid-status-badge ${statusClass}">${bid.status}</div>
         ${reminderBadgeHtml(bid.reminder_date)}
@@ -2342,6 +2606,7 @@ function renderLiveBids() {
           <div class="bid-notes-label">Notes</div>
           <div class="bid-notes-text">${escHtml(bid.notes)}</div>
         </div>` : ''}
+        ${renderChecklistForBid(bid)}
         <div class="bid-actions">
           ${bid.assets_folder_id ? `<a class="bid-drive-btn" href="https://drive.google.com/drive/folders/${bid.assets_folder_id}" target="_blank">Open in Drive</a>` : ''}
           <button class="bid-close-btn" onclick="event.stopPropagation();collapseBidCard(this)">Close</button>

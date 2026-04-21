@@ -1441,6 +1441,7 @@ body {
           <option value="NO-BID">No-Bid</option>
         </select>
       </div>
+      <div id="bidFilterNote" style="font-size:12px;color:var(--text-dim);margin-bottom:12px;display:none">Showing active bids. Use the status filter to view closed bids.</div>
       <div class="bid-stats" id="bidStats">
         <strong id="bidStatText">Loading...</strong>
       </div>
@@ -2226,19 +2227,30 @@ function sortBidsByStatus(bids) {
   });
 }
 function renderLiveBids() {
-  let filtered = liveBids;
+  // Skip rows with no bid_id (defensive: handles empty trailing rows in the sheet)
+  const realBids = liveBids.filter(b => b.bid_id);
+  let filtered;
   if (currentBidStatusFilter) {
-    filtered = filtered.filter(b => b.status === currentBidStatusFilter);
+    // Explicit filter (including LOST or NO-BID): show only that status
+    filtered = realBids.filter(b => b.status === currentBidStatusFilter);
+  } else {
+    // Default "All Status" view: hide closed bids (LOST, NO-BID)
+    filtered = realBids.filter(b => b.status !== 'LOST' && b.status !== 'NO-BID');
   }
+
+  // Toggle the helper note
+  const noteEl = document.getElementById('bidFilterNote');
+  if (noteEl) noteEl.style.display = currentBidStatusFilter ? 'none' : 'block';
 
   const sorted = sortBidsByStatus(filtered);
 
-  // Stats
-  const submitted = liveBids.filter(b => b.status === 'SUBMITTED').length;
-  const active = liveBids.filter(b => b.status === 'ACTIVE').length;
-  const awarded = liveBids.filter(b => b.decision === 'Won').length;
-  const lost = liveBids.filter(b => b.decision === 'Lost').length;
-  document.getElementById('bidStatText').textContent = `${awarded} awarded, ${lost} lost, ${submitted} submitted, ${active} active \u2014 ${liveBids.length} total bids`;
+  // Stats (always computed from the full set so totals stay honest)
+  const submitted = realBids.filter(b => b.status === 'SUBMITTED').length;
+  const active = realBids.filter(b => b.status === 'ACTIVE').length;
+  const awarded = realBids.filter(b => b.decision === 'Won').length;
+  const lost = realBids.filter(b => b.decision === 'Lost' || b.status === 'LOST').length;
+  const noBid = realBids.filter(b => b.status === 'NO-BID').length;
+  document.getElementById('bidStatText').textContent = `${awarded} awarded, ${lost} lost, ${noBid} no-bid, ${submitted} submitted, ${active} active \u2014 ${realBids.length} total bids`;
 
   let html = '';
   for (const bid of sorted) {

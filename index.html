@@ -2009,6 +2009,28 @@ async function loadWorkstreams() {
 }
 function renderDashboard() {
   let html = '';
+  // Bid reminder banner: count reminders due today/overdue or within next 7 days
+  const reminderBids = liveBids.filter(b => {
+    const c = classifyReminder(b.reminder_date);
+    return c && (c.state === 'overdue' || c.state === 'today' || c.state === 'soon');
+  });
+  if (reminderBids.length > 0) {
+    const hasUrgent = reminderBids.some(b => {
+      const c = classifyReminder(b.reminder_date);
+      return c && (c.state === 'overdue' || c.state === 'today');
+    });
+    const bg = hasUrgent ? 'var(--red-dim)' : 'var(--amber-dim)';
+    const fg = hasUrgent ? 'var(--red)' : 'var(--amber)';
+    const plural = reminderBids.length > 1 ? 's' : '';
+    html += `<div onclick="switchView('bids')" style="grid-column:1/-1;cursor:pointer;background:${bg};border:1px solid ${fg};border-radius:10px;padding:14px 18px;margin-bottom:4px;display:flex;align-items:center;gap:12px">
+      <span style="font-size:18px">\u23F0</span>
+      <div style="flex:1">
+        <div style="font-weight:700;color:${fg}">You have ${reminderBids.length} bid reminder${plural} this week</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px">${reminderBids.map(b => escHtml(b.bid_id) + ' \u2014 ' + escHtml(b.reminder_date)).join(' \u00B7 ')}</div>
+      </div>
+      <span style="font-size:12px;color:var(--text-muted)">View bids \u2192</span>
+    </div>`;
+  }
   for (const ws of workstreams) {
     const statusClass = ws.status.toLowerCase();
     const wsTag = getWorkstreamTag(ws.name);
@@ -2141,7 +2163,7 @@ async function saveQuickTask() {
 // FEDERAL BIDS
 // ========================================
 async function loadLiveBids() {
-  const rows = await readSheet(LIVE_BIDS_SHEET_ID, "'Live Bids'!A2:O100");
+  const rows = await readSheet(LIVE_BIDS_SHEET_ID, "'Live Bids'!A2:Q100");
   liveBids = rows.map((r, i) => ({
     rowIndex: i + 2,
     bid_id: r[0] || '',
@@ -2158,9 +2180,35 @@ async function loadLiveBids() {
     decision: r[11] || '',
     margin: r[12] || '',
     notes: r[13] || '',
-    assets_folder_id: r[14] || ''
+    assets_folder_id: r[14] || '',
+    reminder_date: r[15] || '',
+    reminder_note: r[16] || ''
   }));
   renderLiveBids();
+}
+// Classify a reminder date: returns null if no reminder, otherwise {state, label}
+// state: 'overdue' | 'today' | 'soon' (within 7 days) | 'future'
+function classifyReminder(reminderDate) {
+  if (!reminderDate) return null;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const d = new Date(reminderDate + 'T00:00:00');
+  if (isNaN(d.getTime())) return null;
+  const days = Math.floor((d - today) / 86400000);
+  if (days < 0) return { state: 'overdue', label: `OVERDUE \u2014 ${reminderDate}`, days };
+  if (days === 0) return { state: 'today', label: 'REMINDER TODAY', days };
+  if (days <= 7) return { state: 'soon', label: `Reminder: ${reminderDate}`, days };
+  return { state: 'future', label: `Reminder: ${reminderDate}`, days };
+}
+function reminderBadgeHtml(reminderDate) {
+  const c = classifyReminder(reminderDate);
+  if (!c) return '';
+  const styles = {
+    overdue: 'background:var(--red);color:#fff;font-weight:700',
+    today:   'background:var(--red);color:#fff;font-weight:700',
+    soon:    'background:var(--amber-dim);color:var(--amber);font-weight:600',
+    future:  'background:rgba(100,116,139,0.12);color:#475569;font-weight:500',
+  };
+  return `<span class="bid-reminder-badge" style="display:inline-block;font-size:10px;padding:3px 8px;border-radius:4px;margin-left:6px;letter-spacing:0.4px;text-transform:uppercase;${styles[c.state]}" title="${escHtml(c.label)}">\u23F0 ${escHtml(c.label)}</span>`;
 }
 function sortBidsByStatus(bids) {
   const statusOrder = ['SUBMITTED', 'ACTIVE', 'PREPARING', 'TRACKING', 'AWARDED', 'LOST', 'NO-BID'];
@@ -2219,6 +2267,7 @@ function renderLiveBids() {
     html += `<div class="bid-card" onclick="expandBidCard(this)">
       <div class="bid-card-header">
         <div class="bid-status-badge ${statusClass}">${bid.status}</div>
+        ${reminderBadgeHtml(bid.reminder_date)}
         <div onclick="event.stopPropagation()" style="margin-left:auto">${statusSelectHtml}</div>
       </div>
       <div class="bid-card-title">${escHtml(bid.opportunity_name)}</div>
@@ -2252,11 +2301,16 @@ function renderLiveBids() {
           <span class="bid-detail-label">Margin</span>
           <span class="bid-detail-value">${escHtml(bid.margin)}</span>
         </div>` : ''}
+        ${bid.reminder_date ? `<div class="bid-notes-section" style="border-left:3px solid var(--amber);padding-left:12px;background:var(--amber-dim);border-radius:6px;padding:10px 12px;margin-bottom:8px">
+          <div class="bid-notes-label" style="color:var(--amber)">\u23F0 Reminder \u2014 ${escHtml(bid.reminder_date)}</div>
+          <div style="font-size:13px;color:var(--text);line-height:1.5;margin-top:4px">${escHtml(bid.reminder_note) || '<span style="color:var(--text-dim)">No note set</span>'}</div>
+        </div>` : ''}
         ${bid.notes ? `<div class="bid-notes-section">
           <div class="bid-notes-label">Notes</div>
           <div class="bid-notes-text">${escHtml(bid.notes)}</div>
         </div>` : ''}
         <div class="bid-actions">
+          <button class="bid-close-btn" onclick="event.stopPropagation();openSetReminder('${bid.bid_id}', ${bid.rowIndex})" style="background:var(--amber-dim);color:var(--amber);border-color:var(--amber-dim)">\u23F0 ${bid.reminder_date ? 'Update' : 'Set'} Reminder</button>
           ${bid.assets_folder_id ? `<a class="bid-drive-btn" href="https://drive.google.com/drive/folders/${bid.assets_folder_id}" target="_blank">Open in Drive</a>` : ''}
           <button class="bid-close-btn" onclick="event.stopPropagation();collapseBidCard(this)">Close</button>
         </div>
@@ -2293,6 +2347,38 @@ async function changeBidStatus(bidId, rowIndex, newStatus) {
   } catch (e) {
     console.error(e);
     alert('Failed to update status.');
+  }
+}
+async function openSetReminder(bidId, rowIndex) {
+  const bid = liveBids.find(b => b.bid_id === bidId);
+  if (!bid) return;
+  const currentDate = bid.reminder_date || '';
+  const currentNote = bid.reminder_note || '';
+  const newDate = prompt(`Reminder date for ${bid.bid_id} (YYYY-MM-DD, blank to clear):`, currentDate);
+  if (newDate === null) return; // cancelled
+  const trimmedDate = newDate.trim();
+  if (trimmedDate && !/^\d{4}-\d{2}-\d{2}$/.test(trimmedDate)) {
+    alert('Invalid date format. Use YYYY-MM-DD.');
+    return;
+  }
+  let newNote = currentNote;
+  if (trimmedDate) {
+    const noteInput = prompt(`Reminder note for ${bid.bid_id}:`, currentNote);
+    if (noteInput === null) return; // cancelled on note
+    newNote = noteInput;
+  } else {
+    newNote = ''; // clearing date also clears note
+  }
+  try {
+    await updateCell(LIVE_BIDS_SHEET_ID, "'Live Bids'!P" + rowIndex, trimmedDate);
+    await updateCell(LIVE_BIDS_SHEET_ID, "'Live Bids'!Q" + rowIndex, newNote);
+    bid.reminder_date = trimmedDate;
+    bid.reminder_note = newNote;
+    renderLiveBids();
+    renderDashboard();
+  } catch (e) {
+    console.error(e);
+    alert('Failed to save reminder.');
   }
 }
 function openAddBidModal() {

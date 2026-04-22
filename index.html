@@ -1548,7 +1548,218 @@ body {
   .bid-cards-grid { grid-template-columns: 1fr; }
   .channel-cards { grid-template-columns: 1fr; }
   .sub-nav { margin: 0 -16px 24px -16px; padding: 0 16px; }
+  .ppc-title-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .ppc-playbook-btn-wrap { width: 100%; }
+  .ppc-playbook-btn { width: 100%; }
+  .ppc-current-actions { flex-direction: column; }
+  .ppc-current-actions button { width: 100%; }
 }
+/* ---- PPC ---- */
+.ppc-header { margin-bottom: 20px; }
+.ppc-title-row { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.ppc-playbook-btn-wrap { display:flex; flex-direction:column; align-items:flex-end; }
+.ppc-playbook-btn {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.ppc-playbook-btn:hover { background: var(--surface-hover); border-color: var(--border-light); }
+.ppc-playbook-sub { font-size:11px; color:var(--text-dim); margin-top:4px; text-align:right; }
+.ppc-current-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 22px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  margin-bottom: 8px;
+}
+.ppc-current-header {
+  display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+  margin-bottom: 14px;
+}
+.ppc-current-header .ppc-week-id { font-size:13px; font-weight:600; color:var(--text-muted); }
+.ppc-status-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.ppc-status-analyzing { background: rgba(155,155,155,0.12); color: var(--text-muted); border-color: var(--border); }
+.ppc-status-awaiting { background: var(--amber-dim); color: var(--amber); border-color: rgba(180,83,9,0.3); }
+.ppc-status-approved { background: var(--blue-dim); color: var(--blue); border-color: rgba(37,99,235,0.3); }
+.ppc-status-executing { background: var(--blue-dim); color: var(--blue); border-color: rgba(37,99,235,0.3); animation: ppcPulse 1.6s ease-in-out infinite; }
+.ppc-status-executed { background: var(--accent-dim); color: var(--accent); border-color: rgba(90,158,47,0.3); }
+.ppc-status-monitoring { background: rgba(90,158,47,0.08); color: var(--accent); border-color: rgba(90,158,47,0.25); }
+.ppc-status-complete { background: rgba(90,158,47,0.06); color: var(--text-muted); border-color: var(--border); }
+.ppc-status-skipped { background: rgba(155,155,155,0.12); color: var(--text-muted); border-color: var(--border); }
+.ppc-status-rejected { background: var(--red-dim); color: var(--red); border-color: rgba(220,38,38,0.3); }
+@keyframes ppcPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }
+.ppc-reco-type-badge {
+  display:inline-block; padding: 3px 8px; border-radius: 6px;
+  font-size: 11px; font-weight: 600;
+  background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(124,58,237,0.2);
+  margin-bottom: 10px;
+}
+.ppc-reco-summary { font-size: 17px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 10px; }
+.ppc-reco-detail { font-size: 14px; color: var(--text); line-height: 1.55; white-space: pre-wrap; margin-bottom: 14px; }
+.ppc-reco-reasoning {
+  border-left: 3px solid var(--border-light);
+  background: var(--surface-2);
+  padding: 10px 12px;
+  border-radius: 0 6px 6px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  white-space: pre-wrap;
+  margin-bottom: 14px;
+}
+.ppc-reco-reasoning .ppc-reasoning-label { display:block; font-size:11px; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px; }
+.ppc-needs-review-banner {
+  background: var(--amber-dim);
+  border: 1px solid rgba(180,83,9,0.3);
+  color: var(--amber);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.ppc-data-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 0;
+  margin-bottom: 10px;
+}
+.ppc-data-toggle:hover { color: var(--text); }
+.ppc-data-pull-body {
+  display: none;
+  background: var(--surface-2);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: pre-wrap;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+.ppc-data-pull-body.open { display: block; }
+.ppc-current-actions { display:flex; gap:10px; margin-top: 6px; }
+.ppc-btn-approve {
+  background: var(--accent);
+  color: var(--btn-text);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ppc-btn-approve:hover { background: var(--accent-hover); }
+.ppc-btn-reject {
+  background: var(--surface);
+  color: var(--red);
+  border: 1px solid var(--red);
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ppc-btn-reject:hover { background: var(--red-dim); }
+.ppc-reject-form { display:none; margin-top: 12px; padding: 12px; background: var(--surface-2); border-radius: 8px; }
+.ppc-reject-form.open { display: block; }
+.ppc-reject-form label { display:block; font-size:12px; font-weight:600; color:var(--text-muted); margin-bottom:6px; }
+.ppc-reject-form textarea {
+  width: 100%;
+  min-height: 70px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  resize: vertical;
+  background: var(--surface);
+}
+.ppc-reject-form-footer { display:flex; gap:8px; margin-top: 10px; align-items:center; }
+.ppc-reject-char-count { font-size: 11px; color: var(--text-dim); margin-left: auto; }
+.ppc-btn-submit-rejection {
+  background: var(--red);
+  color: var(--btn-text);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ppc-btn-submit-rejection:disabled { background: rgba(220,38,38,0.35); cursor: not-allowed; }
+.ppc-btn-cancel-rejection {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ppc-info-block { font-size: 13px; color: var(--text); line-height: 1.55; margin-bottom: 10px; }
+.ppc-info-label { font-size: 11px; font-weight:700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+.ppc-info-value { white-space: pre-wrap; }
+.ppc-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: var(--surface);
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  max-width: 90vw;
+}
+.ppc-toast.show { opacity: 1; }
+.ppc-previous-row {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ppc-previous-row:hover { background: var(--surface-hover); }
+.ppc-previous-summary { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.ppc-previous-meta { display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:13px; color:var(--text); }
+.ppc-previous-meta .ppc-week-id { font-weight:700; }
+.ppc-previous-post { font-size:12px; color:var(--text-dim); margin-top:4px; }
+.ppc-previous-details { display:none; padding-top: 12px; margin-top: 10px; border-top: 1px solid var(--border); }
+.ppc-previous-row.open .ppc-previous-details { display: block; }
+.ppc-previous-row.open .ppc-chevron { transform: rotate(180deg); }
+.ppc-chevron { font-size: 12px; color: var(--text-dim); transition: transform 0.15s; }
 </style>
 </head>
 <body>
@@ -1581,6 +1792,9 @@ body {
   </div>
   <div class="nav-tab" data-view="violations" onclick="switchView('violations')">
     IP Violations <span class="tab-badge" id="violationsBadge">0</span>
+  </div>
+  <div class="nav-tab" data-view="ppc" onclick="switchView('ppc')">
+    PPC <span class="tab-badge" id="ppcBadge">0</span>
   </div>
 </div>
 <!-- MAIN -->
@@ -1805,6 +2019,25 @@ body {
       <div class="loading"><div class="spinner"></div>Loading violations...</div>
     </div>
   </div>
+  <!-- PPC VIEW -->
+  <div class="view" id="view-ppc">
+    <div class="ppc-header">
+      <div class="ppc-title-row">
+        <h2 style="font-size:22px;font-weight:700">PPC Workflow</h2>
+        <div class="ppc-playbook-btn-wrap">
+          <button class="ppc-playbook-btn" onclick="openPpcPlaybook()">Open PPC Playbook &rarr;</button>
+          <div class="ppc-playbook-sub" id="ppcPlaybookSub">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+    <div id="ppcCurrentWrap">
+      <div class="loading"><div class="spinner"></div>Loading this week&rsquo;s cycle...</div>
+    </div>
+    <div class="ppc-previous-header" id="ppcPreviousHeader" style="display:none">
+      <h3 style="font-size:15px;font-weight:700;color:var(--text-muted);margin:28px 0 12px 0">Previous Weeks</h3>
+    </div>
+    <div id="ppcPreviousList"></div>
+  </div>
 </div>
 <!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay">
@@ -1932,6 +2165,10 @@ const VIOLATIONS_TRACKER_ID = '1T3qFj2IR1qSNhTPxuQSmIZCBilHah2VPSsSk77K7bUc';
 // Federal Bids sheets
 const LIVE_BIDS_SHEET_ID = '1HvQVusi-WQ5SXGsgmd6fGB25ctu7hcVsodYj2c9HgR8';
 const CHANNELS_SHEET_ID = '1uIYPMtZCM1jJBv2wHMZOVKqM6xogPfdPAs7i8nqrXno';
+// PPC Workflow
+const PPC_WORKFLOW_SHEET_ID = '1uyX0RYifF7zDMQvPy1YzkapKdCzdzGPYjoQW-BEJH-M';
+const PPC_PLAYBOOK_DOC_ID = '1oSF8jodDJDsHMVJ33cEWj6Pl2Vxw6slHmn0mce9b37o';
+const PPC_WORKFLOW_RANGE = "'Weekly Cycles'!A1:R";
 // Bid folder IDs (column O mapping)
 const BID_FOLDERS = {
   'BID-001 Goodbuy': '1fwNYKG2sKtAaMFb5sZemF_2uM-JXCkbI',
@@ -1967,6 +2204,7 @@ let violations = [];
 let currentViolationStatusFilter = '';
 let currentViolationPriorityFilter = '';
 let currentViolationTypeFilter = '';
+let ppcWeeks = [];
 // ========================================
 // SHEETS API HELPERS
 // ========================================
@@ -2060,6 +2298,8 @@ function switchView(viewName) {
   document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === `view-${viewName}`));
   if (viewName === 'bids') {
     switchBidsTab('live-bids');
+  } else if (viewName === 'ppc') {
+    renderPpc();
   }
 }
 function switchBidsTab(subView) {
@@ -2077,7 +2317,7 @@ function switchBidsTab(subView) {
 async function loadAll() {
   document.getElementById('syncText').textContent = 'Syncing...';
   try {
-    const results = await Promise.allSettled([loadWeeklyTasks(), loadWorkstreams(), loadQuickTasks(), loadLiveBids(), loadChannels(), loadViolations()]);
+    const results = await Promise.allSettled([loadWeeklyTasks(), loadWorkstreams(), loadQuickTasks(), loadLiveBids(), loadChannels(), loadViolations(), loadPpcWeeks()]);
     const failed = results.filter(r => r.status === 'rejected');
     if (failed.length > 0) {
       failed.forEach(f => console.error(f.reason));
@@ -2313,12 +2553,30 @@ function renderDashboard() {
     let clickAction = '';
     if (ws.name === 'Federal Bids') clickAction = ` onclick="switchView('bids')" style="cursor:pointer"`;
     else if (ws.name === 'IP Violations') clickAction = ` onclick="switchView('violations')" style="cursor:pointer"`;
+    else if (ws.name === 'PPC') clickAction = ` onclick="switchView('ppc')" style="cursor:pointer"`;
+    // PPC-specific inline status (latest cycle from the PPC Workflow sheet)
+    let ppcStatusHtml = '';
+    if (ws.name === 'PPC') {
+      const latest = getLatestPpcWeek();
+      if (latest) {
+        const badgeClass = getPpcStatusClass(latest.status);
+        ppcStatusHtml += `<div class="ws-metric">Current cycle: <span class="ppc-status-badge ${badgeClass}" style="margin-left:4px">${escHtml(latest.status || 'Unknown')}</span></div>`;
+        if ((latest.status || '') === 'Awaiting Approval') {
+          const hrs = hoursUntilThursday10am();
+          const urgencyColor = hrs <= 24 ? 'var(--red)' : 'var(--amber)';
+          ppcStatusHtml += `<div class="ws-metric" style="color:${urgencyColor};font-weight:600">${hrs <= 0 ? 'Past Thursday 10 AM deadline' : `Action needed \u2014 ${formatHoursRemaining(hrs)} until Thursday 10 AM`}</div>`;
+        }
+      } else {
+        ppcStatusHtml += `<div class="ws-metric" style="color:var(--text-dim)">No cycles yet</div>`;
+      }
+    }
     html += `<div class="ws-card"${clickAction}>
       <div class="ws-card-header">
         <span class="ws-name"><span class="tag ${wsTag}" style="margin-right:6px">${escHtml(ws.name)}</span></span>
         <span class="ws-status ${statusClass}">${ws.status}</span>
       </div>
       ${ws.keyMetric ? `<div class="ws-metric">${escHtml(ws.keyMetric)}</div>` : ''}
+      ${ppcStatusHtml}
       ${openTasks > 0 ? `<div class="ws-metric" style="color:var(--amber)">${openTasks} open task${openTasks>1?'s':''} this week</div>` : ''}
       <div class="ws-next">
         <strong>Next:</strong> ${ws.nextAction ? escHtml(ws.nextAction) : '<span style="color:var(--text-dim)">No action set</span>'}
@@ -3618,6 +3876,350 @@ async function changeViolationPriority(rowIndex, newPriority) {
     console.error(e);
     alert('Failed to update violation priority.');
   }
+}
+// ========================================
+// PPC WORKFLOW
+// ========================================
+async function loadPpcWeeks() {
+  try {
+    const rows = await readSheet(PPC_WORKFLOW_SHEET_ID, PPC_WORKFLOW_RANGE);
+    // First row is the header — drop it
+    const dataRows = rows.slice(1);
+    ppcWeeks = dataRows.map((r, i) => ({
+      rowIndex: i + 2, // +1 for 1-based, +1 for header
+      week_id: r[0] || '',
+      week_start_date: r[1] || '',
+      status: r[2] || '',
+      data_pull_summary: r[3] || '',
+      recommendation_type: r[4] || '',
+      recommendation_summary: r[5] || '',
+      recommendation_detail: r[6] || '',
+      recommendation_payload: r[7] || '',
+      reasoning: r[8] || '',
+      approval_status: r[9] || '',
+      approved_at: r[10] || '',
+      rejection_reason: r[11] || '',
+      executed_at: r[12] || '',
+      execution_confirmation: r[13] || '',
+      post_mortem: r[14] || '',
+      post_mortem_completed_at: r[15] || '',
+      playbook_updates_this_cycle: r[16] || '',
+      notes: r[17] || ''
+    })).filter(w => w.week_id || w.status); // drop fully empty rows
+    // Update badge: count of Awaiting Approval
+    const awaiting = ppcWeeks.filter(w => w.status === 'Awaiting Approval').length;
+    const badge = document.getElementById('ppcBadge');
+    if (badge) badge.textContent = awaiting;
+  } catch (e) {
+    console.error('loadPpcWeeks failed:', e);
+    ppcWeeks = [];
+  }
+  // Only re-render if the PPC tab is already active (don't clobber other views on initial load)
+  const ppcView = document.getElementById('view-ppc');
+  if (ppcView && ppcView.classList.contains('active')) {
+    renderPpc();
+  } else {
+    // Pre-render so when user clicks the tab, content is already there
+    renderPpc();
+  }
+}
+function getLatestPpcWeek() {
+  if (!ppcWeeks || ppcWeeks.length === 0) return null;
+  // Sort by week_start_date desc, fallback to rowIndex desc
+  const sorted = [...ppcWeeks].sort((a, b) => {
+    const da = a.week_start_date || '';
+    const db = b.week_start_date || '';
+    if (da && db && da !== db) return db.localeCompare(da);
+    return b.rowIndex - a.rowIndex;
+  });
+  return sorted[0];
+}
+function getPpcStatusClass(status) {
+  const map = {
+    'Analyzing': 'ppc-status-analyzing',
+    'Awaiting Approval': 'ppc-status-awaiting',
+    'Approved': 'ppc-status-approved',
+    'Executing': 'ppc-status-executing',
+    'Executed': 'ppc-status-executed',
+    'Monitoring': 'ppc-status-monitoring',
+    'Complete': 'ppc-status-complete',
+    'Skipped': 'ppc-status-skipped',
+    'Rejected': 'ppc-status-rejected'
+  };
+  return map[status] || 'ppc-status-analyzing';
+}
+function hoursUntilThursday10am() {
+  const now = new Date();
+  const target = new Date(now);
+  const dow = now.getDay(); // 0=Sun..6=Sat; 4=Thu
+  const daysUntilThu = (4 - dow + 7) % 7;
+  target.setDate(now.getDate() + daysUntilThu);
+  target.setHours(10, 0, 0, 0);
+  if (target <= now) target.setDate(target.getDate() + 7);
+  return Math.round((target - now) / (1000 * 60 * 60));
+}
+function formatHoursRemaining(hrs) {
+  if (hrs < 24) return `${hrs}h`;
+  const d = Math.floor(hrs / 24);
+  const h = hrs % 24;
+  return h ? `${d}d ${h}h` : `${d}d`;
+}
+function openPpcPlaybook() {
+  window.open(`https://docs.google.com/document/d/${PPC_PLAYBOOK_DOC_ID}/edit`, '_blank', 'noopener');
+}
+function renderPpc() {
+  // Playbook last-updated hint
+  const subEl = document.getElementById('ppcPlaybookSub');
+  if (subEl) {
+    // Pull from most recent non-empty playbook_updates_this_cycle
+    const withUpdates = ppcWeeks.filter(w => (w.playbook_updates_this_cycle || '').trim()).sort((a, b) => {
+      const da = a.post_mortem_completed_at || a.week_start_date || '';
+      const db = b.post_mortem_completed_at || b.week_start_date || '';
+      return db.localeCompare(da);
+    });
+    if (withUpdates.length > 0) {
+      const latest = withUpdates[0];
+      const when = latest.post_mortem_completed_at || latest.week_start_date || '';
+      subEl.textContent = when ? `Last Cowork update: ${when}` : '';
+    } else {
+      subEl.innerHTML = '&nbsp;';
+    }
+  }
+  // Current week card
+  const currentWrap = document.getElementById('ppcCurrentWrap');
+  const latest = getLatestPpcWeek();
+  if (!latest) {
+    currentWrap.innerHTML = `<div class="ppc-current-card" style="text-align:center;color:var(--text-dim)">
+      No PPC cycles yet. The first recommendation will appear here when the Tuesday 9 AM task runs.
+    </div>`;
+    document.getElementById('ppcPreviousHeader').style.display = 'none';
+    document.getElementById('ppcPreviousList').innerHTML = '';
+    return;
+  }
+  currentWrap.innerHTML = renderPpcCurrentCard(latest);
+  // Previous weeks = everything except the latest row
+  const prev = ppcWeeks.filter(w => w.rowIndex !== latest.rowIndex).sort((a, b) => {
+    const da = a.week_start_date || '';
+    const db = b.week_start_date || '';
+    if (da && db && da !== db) return db.localeCompare(da);
+    return b.rowIndex - a.rowIndex;
+  });
+  const prevHeader = document.getElementById('ppcPreviousHeader');
+  const prevList = document.getElementById('ppcPreviousList');
+  if (prev.length === 0) {
+    prevHeader.style.display = 'none';
+    prevList.innerHTML = '';
+  } else {
+    prevHeader.style.display = '';
+    prevList.innerHTML = prev.map(renderPpcPreviousRow).join('');
+  }
+}
+function renderPpcCurrentCard(w) {
+  const status = w.status || 'Analyzing';
+  const badgeClass = getPpcStatusClass(status);
+  const weekIdDisplay = w.week_id ? `Week ${escHtml(w.week_id)}` : 'Current Week';
+  const startDate = w.week_start_date ? ` &middot; ${escHtml(w.week_start_date)}` : '';
+  let body = '';
+  if (status === 'Analyzing') {
+    body = `<div style="display:flex;align-items:center;gap:12px;padding:16px 0;color:var(--text-muted)">
+      <div class="spinner"></div>
+      <div>Cowork is analyzing this week&rsquo;s data&hellip;</div>
+    </div>`;
+  } else if (status === 'Awaiting Approval') {
+    const needsReview = (w.recommendation_summary || '').startsWith('[NEEDS REVIEW]');
+    body += needsReview ? `<div class="ppc-needs-review-banner">Cowork flagged this for review. See reasoning below. You can approve as-is, or open a Claude chat to discuss.</div>` : '';
+    body += w.recommendation_type ? `<div><span class="ppc-reco-type-badge">${escHtml(w.recommendation_type)}</span></div>` : '';
+    body += w.recommendation_summary ? `<div class="ppc-reco-summary">${escHtml(w.recommendation_summary)}</div>` : '';
+    body += w.recommendation_detail ? `<div class="ppc-reco-detail">${escHtml(w.recommendation_detail)}</div>` : '';
+    body += w.reasoning ? `<div class="ppc-reco-reasoning"><span class="ppc-reasoning-label">Why:</span>${escHtml(w.reasoning)}</div>` : '';
+    if (w.data_pull_summary) {
+      body += `<button class="ppc-data-toggle" onclick="togglePpcData(this)">Show this week&rsquo;s data &darr;</button>
+      <div class="ppc-data-pull-body">${escHtml(w.data_pull_summary)}</div>`;
+    }
+    body += `<div class="ppc-current-actions">
+      <button class="ppc-btn-approve" onclick="approvePpcCycle(${w.rowIndex})">Approve</button>
+      <button class="ppc-btn-reject" onclick="showPpcRejectForm(${w.rowIndex})">Reject</button>
+    </div>
+    <div class="ppc-reject-form" id="ppcRejectForm-${w.rowIndex}">
+      <label>Reason for rejection (required &mdash; will be added to playbook Learnings)</label>
+      <textarea id="ppcRejectText-${w.rowIndex}" oninput="onPpcRejectInput(${w.rowIndex})" placeholder="Why are you rejecting this recommendation?"></textarea>
+      <div class="ppc-reject-form-footer">
+        <button class="ppc-btn-submit-rejection" id="ppcSubmitReject-${w.rowIndex}" disabled onclick="submitPpcRejection(${w.rowIndex})">Submit Rejection</button>
+        <button class="ppc-btn-cancel-rejection" onclick="hidePpcRejectForm(${w.rowIndex})">Cancel</button>
+        <span class="ppc-reject-char-count" id="ppcRejectCount-${w.rowIndex}">0 / 10 min</span>
+      </div>
+    </div>`;
+  } else if (status === 'Approved') {
+    body += `<div class="ppc-info-block">Approved \u2014 waiting for Cowork to execute by Thursday 10 AM.</div>`;
+    if (w.approved_at) body += `<div class="ppc-info-block"><div class="ppc-info-label">Approved at</div><div class="ppc-info-value">${escHtml(w.approved_at)}</div></div>`;
+    if (w.recommendation_type) body += `<div><span class="ppc-reco-type-badge">${escHtml(w.recommendation_type)}</span></div>`;
+    if (w.recommendation_summary) body += `<div class="ppc-reco-summary">${escHtml(w.recommendation_summary)}</div>`;
+    if (w.recommendation_detail) body += `<div class="ppc-reco-detail">${escHtml(w.recommendation_detail)}</div>`;
+  } else if (status === 'Executing') {
+    body += `<div class="ppc-info-block">Cowork is applying the change in Seller Central&hellip;</div>`;
+    if (w.recommendation_summary) body += `<div class="ppc-reco-summary">${escHtml(w.recommendation_summary)}</div>`;
+    if (w.recommendation_detail) body += `<div class="ppc-reco-detail">${escHtml(w.recommendation_detail)}</div>`;
+  } else if (status === 'Executed') {
+    body += `<div class="ppc-info-block">Change applied &mdash; monitoring starts.</div>`;
+    if (w.executed_at) body += `<div class="ppc-info-block"><div class="ppc-info-label">Executed at</div><div class="ppc-info-value">${escHtml(w.executed_at)}</div></div>`;
+    if (w.execution_confirmation) body += `<div class="ppc-info-block"><div class="ppc-info-label">What was done</div><div class="ppc-info-value">${escHtml(w.execution_confirmation)}</div></div>`;
+    if (w.recommendation_summary) body += `<div class="ppc-reco-summary">${escHtml(w.recommendation_summary)}</div>`;
+    if (w.recommendation_detail) body += `<div class="ppc-reco-detail">${escHtml(w.recommendation_detail)}</div>`;
+  } else if (status === 'Monitoring') {
+    const days = w.executed_at ? daysSince(w.executed_at) : null;
+    body += `<div class="ppc-info-block">5-day monitoring window &mdash; post-mortem next Monday.${days !== null ? ` ${days} day${days === 1 ? '' : 's'} since execution.` : ''}</div>`;
+    if (w.recommendation_summary) body += `<div class="ppc-reco-summary">${escHtml(w.recommendation_summary)}</div>`;
+    if (w.recommendation_detail) body += `<div class="ppc-reco-detail">${escHtml(w.recommendation_detail)}</div>`;
+  } else if (status === 'Complete') {
+    body += `<div class="ppc-info-block">Cycle complete.</div>`;
+    if (w.post_mortem) body += `<div class="ppc-info-block"><div class="ppc-info-label">Result</div><div class="ppc-info-value">${escHtml(w.post_mortem)}</div></div>`;
+    if (w.playbook_updates_this_cycle) body += `<div class="ppc-info-block"><div class="ppc-info-label">Playbook updates</div><div class="ppc-info-value">${escHtml(w.playbook_updates_this_cycle)}</div></div>`;
+    if (w.recommendation_summary) body += `<div class="ppc-reco-summary">${escHtml(w.recommendation_summary)}</div>`;
+    if (w.recommendation_detail) body += `<div class="ppc-reco-detail">${escHtml(w.recommendation_detail)}</div>`;
+  } else if (status === 'Skipped') {
+    body += `<div class="ppc-info-block">No change this week.</div>`;
+    if (w.notes) body += `<div class="ppc-info-block"><div class="ppc-info-value">${escHtml(w.notes)}</div></div>`;
+  } else if (status === 'Rejected') {
+    if (w.rejection_reason) body += `<div class="ppc-info-block"><div class="ppc-info-label">Reason</div><div class="ppc-info-value">${escHtml(w.rejection_reason)}</div></div>`;
+    if (w.recommendation_summary) body += `<div class="ppc-reco-summary" style="color:var(--text-muted)">${escHtml(w.recommendation_summary)}</div>`;
+    if (w.recommendation_detail) body += `<div class="ppc-reco-detail" style="color:var(--text-muted)">${escHtml(w.recommendation_detail)}</div>`;
+  } else {
+    body += `<div class="ppc-info-block">Status: ${escHtml(status)}</div>`;
+    if (w.recommendation_summary) body += `<div class="ppc-reco-summary">${escHtml(w.recommendation_summary)}</div>`;
+  }
+  return `<div class="ppc-current-card">
+    <div class="ppc-current-header">
+      <div class="ppc-week-id">${weekIdDisplay}${startDate}</div>
+      <span class="ppc-status-badge ${badgeClass}">${escHtml(status)}</span>
+    </div>
+    ${body}
+  </div>`;
+}
+function renderPpcPreviousRow(w) {
+  const status = w.status || '';
+  const badgeClass = getPpcStatusClass(status);
+  const postLine = status === 'Complete' && w.post_mortem ? w.post_mortem.split('\n')[0].slice(0, 120) : '';
+  return `<div class="ppc-previous-row" onclick="togglePpcPreviousRow(this)">
+    <div class="ppc-previous-summary">
+      <div class="ppc-previous-meta">
+        <span class="ppc-week-id">Week ${escHtml(w.week_id || '—')}</span>
+        ${w.recommendation_type ? `<span class="ppc-reco-type-badge" style="margin-bottom:0">${escHtml(w.recommendation_type)}</span>` : ''}
+        <span class="ppc-status-badge ${badgeClass}">${escHtml(status || '—')}</span>
+      </div>
+      <span class="ppc-chevron">&#9662;</span>
+    </div>
+    ${postLine ? `<div class="ppc-previous-post">${escHtml(postLine)}</div>` : ''}
+    <div class="ppc-previous-details">
+      ${w.recommendation_summary ? `<div class="ppc-info-block"><div class="ppc-info-label">Recommendation</div><div class="ppc-info-value">${escHtml(w.recommendation_summary)}</div></div>` : ''}
+      ${w.recommendation_detail ? `<div class="ppc-info-block"><div class="ppc-info-label">Detail</div><div class="ppc-info-value">${escHtml(w.recommendation_detail)}</div></div>` : ''}
+      ${w.reasoning ? `<div class="ppc-info-block"><div class="ppc-info-label">Reasoning</div><div class="ppc-info-value">${escHtml(w.reasoning)}</div></div>` : ''}
+      ${w.execution_confirmation ? `<div class="ppc-info-block"><div class="ppc-info-label">What was done</div><div class="ppc-info-value">${escHtml(w.execution_confirmation)}</div></div>` : ''}
+      ${w.post_mortem ? `<div class="ppc-info-block"><div class="ppc-info-label">Post-mortem</div><div class="ppc-info-value">${escHtml(w.post_mortem)}</div></div>` : ''}
+      ${w.rejection_reason ? `<div class="ppc-info-block"><div class="ppc-info-label">Rejection reason</div><div class="ppc-info-value">${escHtml(w.rejection_reason)}</div></div>` : ''}
+      ${w.notes ? `<div class="ppc-info-block"><div class="ppc-info-label">Notes</div><div class="ppc-info-value">${escHtml(w.notes)}</div></div>` : ''}
+    </div>
+  </div>`;
+}
+function togglePpcPreviousRow(el) {
+  el.classList.toggle('open');
+}
+function togglePpcData(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = body.classList.toggle('open');
+  btn.innerHTML = isOpen ? 'Hide this week\u2019s data \u2191' : 'Show this week\u2019s data \u2193';
+}
+function showPpcRejectForm(rowIndex) {
+  const form = document.getElementById(`ppcRejectForm-${rowIndex}`);
+  if (form) {
+    form.classList.add('open');
+    const ta = document.getElementById(`ppcRejectText-${rowIndex}`);
+    if (ta) ta.focus();
+  }
+}
+function hidePpcRejectForm(rowIndex) {
+  const form = document.getElementById(`ppcRejectForm-${rowIndex}`);
+  if (form) form.classList.remove('open');
+  const ta = document.getElementById(`ppcRejectText-${rowIndex}`);
+  if (ta) ta.value = '';
+  onPpcRejectInput(rowIndex);
+}
+function onPpcRejectInput(rowIndex) {
+  const ta = document.getElementById(`ppcRejectText-${rowIndex}`);
+  const btn = document.getElementById(`ppcSubmitReject-${rowIndex}`);
+  const count = document.getElementById(`ppcRejectCount-${rowIndex}`);
+  if (!ta || !btn) return;
+  const len = ta.value.trim().length;
+  btn.disabled = len < 10;
+  if (count) count.textContent = `${len} / 10 min`;
+}
+async function approvePpcCycle(rowIndex) {
+  const week = ppcWeeks.find(w => w.rowIndex === rowIndex);
+  if (!week) return;
+  const nowIso = new Date().toISOString();
+  const buttons = document.querySelectorAll(`.ppc-btn-approve, .ppc-btn-reject`);
+  buttons.forEach(b => b.disabled = true);
+  try {
+    // Write: approval_status (J), approved_at (K), status (C)
+    await updateCell(PPC_WORKFLOW_SHEET_ID, `'Weekly Cycles'!J${rowIndex}`, 'Approved');
+    await updateCell(PPC_WORKFLOW_SHEET_ID, `'Weekly Cycles'!K${rowIndex}`, nowIso);
+    await updateCell(PPC_WORKFLOW_SHEET_ID, `'Weekly Cycles'!C${rowIndex}`, 'Approved');
+    week.approval_status = 'Approved';
+    week.approved_at = nowIso;
+    week.status = 'Approved';
+    showPpcToast('Approved. Cowork will execute by Thursday 10 AM.');
+    renderPpc();
+    renderDashboard();
+  } catch (e) {
+    console.error(e);
+    showPpcToast('Failed to approve. Try again.');
+    buttons.forEach(b => b.disabled = false);
+  }
+}
+async function submitPpcRejection(rowIndex) {
+  const ta = document.getElementById(`ppcRejectText-${rowIndex}`);
+  if (!ta) return;
+  const reason = ta.value.trim();
+  if (reason.length < 10) return;
+  const week = ppcWeeks.find(w => w.rowIndex === rowIndex);
+  if (!week) return;
+  const submitBtn = document.getElementById(`ppcSubmitReject-${rowIndex}`);
+  if (submitBtn) submitBtn.disabled = true;
+  try {
+    // Write: approval_status (J), rejection_reason (L), status (C)
+    await updateCell(PPC_WORKFLOW_SHEET_ID, `'Weekly Cycles'!J${rowIndex}`, 'Rejected');
+    await updateCell(PPC_WORKFLOW_SHEET_ID, `'Weekly Cycles'!L${rowIndex}`, reason);
+    await updateCell(PPC_WORKFLOW_SHEET_ID, `'Weekly Cycles'!C${rowIndex}`, 'Rejected');
+    week.approval_status = 'Rejected';
+    week.rejection_reason = reason;
+    week.status = 'Rejected';
+    showPpcToast('Rejected. Reason logged to playbook.');
+    renderPpc();
+    renderDashboard();
+  } catch (e) {
+    console.error(e);
+    showPpcToast('Failed to submit rejection. Try again.');
+    if (submitBtn) submitBtn.disabled = false;
+  }
+}
+function showPpcToast(msg) {
+  let el = document.getElementById('ppcToast');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'ppcToast';
+    el.className = 'ppc-toast';
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(window._ppcToastTimer);
+  window._ppcToastTimer = setTimeout(() => el.classList.remove('show'), 3500);
+}
+function daysSince(isoStr) {
+  if (!isoStr) return null;
+  const d = new Date(isoStr);
+  if (isNaN(d.getTime())) return null;
+  const ms = Date.now() - d.getTime();
+  return Math.max(0, Math.floor(ms / (1000 * 60 * 60 * 24)));
 }
 // ========================================
 // HELPERS

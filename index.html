@@ -965,6 +965,102 @@ body {
   line-height: 1.4;
 }
 .channel-detail-row strong { color: var(--text); }
+/* URL editor */
+.channel-url-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0;
+  flex-wrap: wrap;
+}
+.channel-url-row .channel-url { padding: 0; }
+.inline-edit-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+  line-height: 1;
+}
+.channel-card.expanded .inline-edit-btn { display: inline-block; }
+.inline-edit-btn:hover { background: var(--surface-hover); color: var(--text); }
+.inline-url-input {
+  flex: 1;
+  min-width: 180px;
+  padding: 4px 6px;
+  font-size: 11px;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  font-family: inherit;
+}
+.inline-btn {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  background: var(--surface);
+  color: var(--text);
+}
+.inline-btn.primary { background: var(--accent); border-color: var(--accent); color: #0b1220; }
+.inline-btn.danger { color: var(--red); border-color: var(--red-dim); }
+.inline-btn:hover { filter: brightness(1.1); }
+/* Credentials section */
+.channel-creds {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.channel-creds-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+.channel-creds-empty { font-style: italic; color: var(--text-muted); margin-bottom: 8px; }
+.channel-creds-field { margin-bottom: 4px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.channel-creds-field .label { color: var(--text-muted); min-width: 72px; }
+.channel-creds-field .value { color: var(--text); word-break: break-all; }
+.channel-creds-password-wrap { display: inline-flex; align-items: center; gap: 6px; }
+.channel-creds-password { font-family: monospace; color: var(--text); }
+.eye-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0 4px;
+}
+.eye-toggle:hover { color: var(--text); }
+.channel-creds-actions { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+.channel-creds-form { display: flex; flex-direction: column; gap: 6px; }
+.channel-creds-form input {
+  padding: 5px 8px;
+  font-size: 11px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  font-family: inherit;
+}
+.channel-creds-note {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 8px;
+}
 /* ---- VIOLATIONS VIEW ---- */
 .violations-header {
   display: flex;
@@ -2758,7 +2854,7 @@ async function saveBid() {
 // PROCUREMENT CHANNELS
 // ========================================
 async function loadChannels() {
-  const rows = await readSheet(CHANNELS_SHEET_ID, "'Procurement Channels'!A2:J200");
+  const rows = await readSheet(CHANNELS_SHEET_ID, "'Procurement Channels'!A2:M200");
   channels = rows.map((r, i) => ({
     rowIndex: i + 2,
     channel_id: r[0] || '',
@@ -2770,9 +2866,22 @@ async function loadChannels() {
     registration_status: r[6] || '',
     priority: r[7] || '',
     notes: r[8] || '',
-    last_scouted: r[9] || ''
+    last_scouted: r[9] || '',
+    login_url: r[10] || '',
+    username: r[11] || '',
+    password: r[12] || ''
   }));
   renderChannels();
+}
+// Normalize a URL for use as a link href: strip inline annotations like
+// "(filter BOP)" or "(uses eVA)", and prepend https:// if a scheme is missing.
+// Returns '' if nothing usable remains.
+function normalizeUrl(url) {
+  if (!url) return '';
+  const cleaned = String(url).replace(/\s*\([^)]*\)\s*/g, '').trim();
+  if (!cleaned) return '';
+  if (/^https?:\/\//i.test(cleaned)) return cleaned;
+  return 'https://' + cleaned;
 }
 function getChannelGroupName(typeStr) {
   if (!typeStr) return 'Other';
@@ -2856,27 +2965,197 @@ function renderChannels() {
       const statusClass = ch.registration_status.toLowerCase().replace(/\s+/g, '-');
       const priorityClass = ch.priority.toLowerCase();
 
-      html += `<div class="channel-card" onclick="expandChannelCard(this)">
-        <div class="channel-card-header">
-          <div class="channel-name">${escHtml(ch.channel_name)}</div>
-          <span class="channel-status-badge ${statusClass}">${escHtml(ch.registration_status)}</span>
-        </div>
-        ${ch.priority ? `<span class="channel-priority-badge ${priorityClass}">${ch.priority}</span>` : ''}
-        ${ch.scope ? `<div class="channel-scope">${escHtml(ch.scope)}</div>` : ''}
-        ${ch.registration_url ? `<a href="${escHtml(ch.registration_url)}" target="_blank" class="channel-url">${ch.registration_url.substring(0, 40)}...</a>` : ''}
-
-        <div class="channel-details">
-          ${ch.relevant_categories ? `<div class="channel-detail-row"><strong>Categories:</strong> ${escHtml(ch.relevant_categories)}</div>` : ''}
-          ${ch.notes ? `<div class="channel-detail-row"><strong>Notes:</strong> ${escHtml(ch.notes)}</div>` : ''}
-          ${ch.last_scouted ? `<div class="channel-detail-row"><strong>Last scouted:</strong> ${escHtml(ch.last_scouted)}</div>` : ''}
-        </div>
-      </div>`;
+      html += renderChannelCard(ch, statusClass, priorityClass);
     }
 
     html += '</div></div>';
   }
 
   document.getElementById('channelSections').innerHTML = html;
+}
+function renderChannelCard(ch, statusClass, priorityClass) {
+  const urlDisplay = ch.registration_url
+    ? (ch.registration_url.length > 40 ? ch.registration_url.substring(0, 40) + '...' : ch.registration_url)
+    : '';
+  const urlHref = normalizeUrl(ch.registration_url);
+  const urlRow = `
+    <div class="channel-url-row" id="url-row-${ch.rowIndex}">
+      ${ch.registration_url
+        ? `<a href="${escHtml(urlHref)}" target="_blank" rel="noopener" class="channel-url" onclick="event.stopPropagation()">${escHtml(urlDisplay)}</a>`
+        : `<span class="channel-url" style="color:var(--text-muted);font-style:italic">No URL set</span>`}
+      <button class="inline-edit-btn" title="Edit URL" onclick="event.stopPropagation(); startEditUrl(${ch.rowIndex})">&#9998;</button>
+    </div>`;
+  return `<div class="channel-card" data-row-index="${ch.rowIndex}" onclick="expandChannelCard(this)">
+    <div class="channel-card-header">
+      <div class="channel-name">${escHtml(ch.channel_name)}</div>
+      <span class="channel-status-badge ${statusClass}">${escHtml(ch.registration_status)}</span>
+    </div>
+    ${ch.priority ? `<span class="channel-priority-badge ${priorityClass}">${ch.priority}</span>` : ''}
+    ${ch.scope ? `<div class="channel-scope">${escHtml(ch.scope)}</div>` : ''}
+    ${urlRow}
+    <div class="channel-details">
+      ${ch.relevant_categories ? `<div class="channel-detail-row"><strong>Categories:</strong> ${escHtml(ch.relevant_categories)}</div>` : ''}
+      ${ch.notes ? `<div class="channel-detail-row"><strong>Notes:</strong> ${escHtml(ch.notes)}</div>` : ''}
+      ${ch.last_scouted ? `<div class="channel-detail-row"><strong>Last scouted:</strong> ${escHtml(ch.last_scouted)}</div>` : ''}
+      <div class="channel-creds" id="creds-${ch.rowIndex}">
+        ${renderCredentials(ch)}
+      </div>
+    </div>
+  </div>`;
+}
+function renderCredentials(ch) {
+  const hasCreds = (ch.login_url || ch.username || ch.password);
+  if (!hasCreds) {
+    return `
+      <div class="channel-creds-title">Portal Credentials</div>
+      <div class="channel-creds-empty">No credentials stored</div>
+      <div class="channel-creds-actions">
+        <button class="inline-btn primary" onclick="event.stopPropagation(); startEditCreds(${ch.rowIndex})">Add Credentials</button>
+      </div>
+      <div class="channel-creds-note">Credentials stored in Google Sheets. Ensure the sheet is not shared publicly.</div>`;
+  }
+  const loginHref = normalizeUrl(ch.login_url);
+  return `
+    <div class="channel-creds-title">Portal Credentials</div>
+    ${ch.login_url ? `
+      <div class="channel-creds-field">
+        <span class="label">Login URL:</span>
+        <a class="value" href="${escHtml(loginHref)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${escHtml(ch.login_url)}</a>
+      </div>` : ''}
+    ${ch.username ? `
+      <div class="channel-creds-field">
+        <span class="label">Username:</span>
+        <span class="value">${escHtml(ch.username)}</span>
+      </div>` : ''}
+    ${ch.password ? `
+      <div class="channel-creds-field">
+        <span class="label">Password:</span>
+        <span class="channel-creds-password-wrap">
+          <span class="channel-creds-password" id="pw-${ch.rowIndex}" data-real="${escHtml(ch.password)}" data-shown="0">${'\u2022'.repeat(Math.min(12, ch.password.length))}</span>
+          <button class="eye-toggle" title="Show/hide password" onclick="event.stopPropagation(); togglePasswordVisibility(${ch.rowIndex})">&#128065;</button>
+        </span>
+      </div>` : ''}
+    <div class="channel-creds-actions">
+      <button class="inline-btn" onclick="event.stopPropagation(); startEditCreds(${ch.rowIndex})">Edit Credentials</button>
+      <button class="inline-btn danger" onclick="event.stopPropagation(); clearCredentials(${ch.rowIndex})">Clear Credentials</button>
+    </div>
+    <div class="channel-creds-note">Credentials stored in Google Sheets. Ensure the sheet is not shared publicly.</div>`;
+}
+function togglePasswordVisibility(rowIndex) {
+  const el = document.getElementById('pw-' + rowIndex);
+  if (!el) return;
+  if (el.getAttribute('data-shown') === '1') {
+    const real = el.getAttribute('data-real') || '';
+    el.textContent = '\u2022'.repeat(Math.min(12, real.length));
+    el.setAttribute('data-shown', '0');
+  } else {
+    el.textContent = el.getAttribute('data-real') || '';
+    el.setAttribute('data-shown', '1');
+  }
+}
+function startEditUrl(rowIndex) {
+  const ch = channels.find(c => c.rowIndex === rowIndex);
+  if (!ch) return;
+  const row = document.getElementById('url-row-' + rowIndex);
+  if (!row) return;
+  row.innerHTML = `
+    <input type="text" class="inline-url-input" id="url-input-${rowIndex}" value="${escHtml(ch.registration_url)}" placeholder="example.com or https://example.com" onclick="event.stopPropagation()" />
+    <button class="inline-btn primary" onclick="event.stopPropagation(); saveUrl(${rowIndex})">Save</button>
+    <button class="inline-btn" onclick="event.stopPropagation(); cancelEditUrl(${rowIndex})">Cancel</button>`;
+  const input = document.getElementById('url-input-' + rowIndex);
+  if (input) input.focus();
+}
+async function saveUrl(rowIndex) {
+  const ch = channels.find(c => c.rowIndex === rowIndex);
+  if (!ch) return;
+  const input = document.getElementById('url-input-' + rowIndex);
+  if (!input) return;
+  const newUrl = input.value.trim();
+  try {
+    await updateCell(CHANNELS_SHEET_ID, `'Procurement Channels'!F${rowIndex}`, newUrl);
+    ch.registration_url = newUrl;
+    // Re-render just this card to pick up the new URL display
+    rerenderChannelCard(rowIndex);
+  } catch (e) {
+    alert('Failed to save URL: ' + (e && e.message ? e.message : e));
+  }
+}
+function cancelEditUrl(rowIndex) {
+  rerenderChannelCard(rowIndex);
+}
+function rerenderChannelCard(rowIndex) {
+  const ch = channels.find(c => c.rowIndex === rowIndex);
+  if (!ch) return;
+  const card = document.querySelector(`.channel-card[data-row-index="${rowIndex}"]`);
+  if (!card) return;
+  const wasExpanded = card.classList.contains('expanded');
+  const statusClass = ch.registration_status.toLowerCase().replace(/\s+/g, '-');
+  const priorityClass = (ch.priority || '').toLowerCase();
+  const wrapper = document.createElement('div');
+  wrapper.innerHTML = renderChannelCard(ch, statusClass, priorityClass);
+  const fresh = wrapper.firstElementChild;
+  if (wasExpanded) fresh.classList.add('expanded');
+  card.replaceWith(fresh);
+}
+function startEditCreds(rowIndex) {
+  const ch = channels.find(c => c.rowIndex === rowIndex);
+  if (!ch) return;
+  const container = document.getElementById('creds-' + rowIndex);
+  if (!container) return;
+  container.innerHTML = `
+    <div class="channel-creds-title">Portal Credentials</div>
+    <div class="channel-creds-form">
+      <input type="text" id="cred-login-${rowIndex}" placeholder="Login URL (e.g. https://portal.example.com/login)" value="${escHtml(ch.login_url)}" onclick="event.stopPropagation()" />
+      <input type="text" id="cred-user-${rowIndex}" placeholder="Username or email" value="${escHtml(ch.username)}" onclick="event.stopPropagation()" />
+      <input type="password" id="cred-pass-${rowIndex}" placeholder="Password" value="${escHtml(ch.password)}" onclick="event.stopPropagation()" />
+      <div class="channel-creds-actions">
+        <button class="inline-btn primary" onclick="event.stopPropagation(); saveCredentials(${rowIndex})">Save</button>
+        <button class="inline-btn" onclick="event.stopPropagation(); cancelEditCreds(${rowIndex})">Cancel</button>
+      </div>
+    </div>
+    <div class="channel-creds-note">Credentials stored in Google Sheets. Ensure the sheet is not shared publicly.</div>`;
+}
+function cancelEditCreds(rowIndex) {
+  const ch = channels.find(c => c.rowIndex === rowIndex);
+  const container = document.getElementById('creds-' + rowIndex);
+  if (!ch || !container) return;
+  container.innerHTML = renderCredentials(ch);
+}
+async function saveCredentials(rowIndex) {
+  const ch = channels.find(c => c.rowIndex === rowIndex);
+  if (!ch) return;
+  const loginUrl = (document.getElementById('cred-login-' + rowIndex) || {}).value || '';
+  const username = (document.getElementById('cred-user-' + rowIndex) || {}).value || '';
+  const password = (document.getElementById('cred-pass-' + rowIndex) || {}).value || '';
+  try {
+    await updateCell(CHANNELS_SHEET_ID, `'Procurement Channels'!K${rowIndex}`, loginUrl);
+    await updateCell(CHANNELS_SHEET_ID, `'Procurement Channels'!L${rowIndex}`, username);
+    await updateCell(CHANNELS_SHEET_ID, `'Procurement Channels'!M${rowIndex}`, password);
+    ch.login_url = loginUrl;
+    ch.username = username;
+    ch.password = password;
+    const container = document.getElementById('creds-' + rowIndex);
+    if (container) container.innerHTML = renderCredentials(ch);
+  } catch (e) {
+    alert('Failed to save credentials: ' + (e && e.message ? e.message : e));
+  }
+}
+async function clearCredentials(rowIndex) {
+  const ch = channels.find(c => c.rowIndex === rowIndex);
+  if (!ch) return;
+  if (!confirm('Clear stored credentials for ' + ch.channel_name + '?')) return;
+  try {
+    await updateCell(CHANNELS_SHEET_ID, `'Procurement Channels'!K${rowIndex}`, '');
+    await updateCell(CHANNELS_SHEET_ID, `'Procurement Channels'!L${rowIndex}`, '');
+    await updateCell(CHANNELS_SHEET_ID, `'Procurement Channels'!M${rowIndex}`, '');
+    ch.login_url = '';
+    ch.username = '';
+    ch.password = '';
+    const container = document.getElementById('creds-' + rowIndex);
+    if (container) container.innerHTML = renderCredentials(ch);
+  } catch (e) {
+    alert('Failed to clear credentials: ' + (e && e.message ? e.message : e));
+  }
 }
 function toggleChannelSection(header) {
   const section = header.closest('.channel-section');

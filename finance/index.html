@@ -73,8 +73,31 @@
   .reset-btn { background: none; border: none; color: var(--text-secondary); font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; font-family: 'DM Sans', sans-serif; }
   .reset-btn:hover { color: var(--accent); }
 
-  .order-count { padding: 10px 24px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-tertiary); border-bottom: 1px solid var(--border); background: var(--bg); display: flex; justify-content: space-between; }
-  .order-list { background: var(--bg); max-height: 600px; overflow-y: auto; }
+  .sort-control { display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+  .sort-control label { color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; }
+  .sort-control select { background: var(--bg-panel); border: 1px solid var(--border-strong); border-radius: 3px; padding: 6px 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-primary); cursor: pointer; outline: none; }
+  .sort-control select:focus { border-color: var(--accent); }
+
+  .legend-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--bg-panel); border: 1px solid var(--border-strong); color: var(--text-secondary); font-family: 'DM Sans', sans-serif; font-size: 12px; padding: 6px 10px; border-radius: 3px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; transition: all 0.15s; }
+  .legend-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Popover (modal) */
+  .popover { position: fixed; inset: 0; background: rgba(28,25,23,0.4); z-index: 100; display: flex; align-items: flex-start; justify-content: center; padding: 80px 20px 20px; overflow-y: auto; }
+  .popover-inner { background: var(--bg-panel); border: 1px solid var(--border-strong); border-radius: 6px; max-width: 640px; width: 100%; box-shadow: 0 12px 48px rgba(28,25,23,0.18); }
+  .popover-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px 14px; border-bottom: 1px solid var(--border); }
+  .popover-title { font-family: 'Newsreader', serif; font-size: 1.375rem; font-weight: 500; color: var(--text-primary); }
+  .popover-close { background: none; border: none; font-size: 28px; line-height: 1; color: var(--text-tertiary); cursor: pointer; padding: 0 4px; transition: color 0.15s; }
+  .popover-close:hover { color: var(--text-primary); }
+  .popover-body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 14px; }
+  .legend-entry { display: grid; grid-template-columns: 40px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+  .legend-entry:last-child { border-bottom: none; padding-bottom: 0; }
+  .legend-entry .code-badge { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 4px; border: 1.5px solid; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 18px; }
+  .legend-entry .right .name { font-size: 14px; color: var(--text-primary); font-weight: 600; margin-bottom: 3px; }
+  .legend-entry .right .desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+  .legend-entry .right .action { font-size: 12px; color: var(--text-tertiary); margin-top: 6px; font-style: italic; }
+
+  .order-count { padding: 10px 24px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-tertiary); border-bottom: 1px solid var(--border); background: var(--bg); display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+  .order-list { background: var(--bg); }
   .order-row { width: 100%; text-align: left; padding: 16px 24px; border: none; background: var(--bg-panel); border-bottom: 1px solid var(--border); border-left: 3px solid transparent; cursor: pointer; transition: all 0.15s; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; }
   .order-row:hover { background: var(--bg-elevated); border-left-color: var(--accent); }
   .order-row .left { display: flex; flex-direction: column; gap: 6px; }
@@ -236,8 +259,32 @@
       <input type="text" id="search-input" placeholder="Search order ID, entity, vendor…" />
     </div>
     <div class="chips" id="filter-chips"></div>
+    <div class="sort-control">
+      <label for="sort-select">Sort</label>
+      <select id="sort-select">
+        <option value="date_desc">Date · newest first</option>
+        <option value="date_asc">Date · oldest first</option>
+        <option value="class">Class priority (C→E→A→F→B→D)</option>
+        <option value="recovery_desc">Recovery target · high→low</option>
+      </select>
+    </div>
+    <button class="legend-btn" id="legend-btn" type="button" title="What do the classes mean?">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      Classes
+    </button>
     <button class="reset-btn" id="reset-btn">Reset</button>
   </section>
+
+  <!-- Class legend popover (hidden by default) -->
+  <div id="legend-popover" class="popover hidden">
+    <div class="popover-inner">
+      <div class="popover-header">
+        <div class="popover-title">Class Definitions</div>
+        <button class="popover-close" id="legend-close" type="button" aria-label="Close">×</button>
+      </div>
+      <div class="popover-body" id="legend-body"></div>
+    </div>
+  </div>
   <div class="order-count hidden" id="order-count"></div>
   <div class="order-list" id="order-list"></div>
 </div>
@@ -293,7 +340,8 @@ const STATE = {
   detailCache: {},
   detailLoading: false,
   filterClass: 'ALL',
-  searchQuery: ''
+  searchQuery: '',
+  sortMode: 'date_desc'
 };
 
 // ============================================================================
@@ -379,15 +427,31 @@ async function init() {
       STATE.searchQuery = e.target.value;
       renderOrderList();
     });
+    document.getElementById('sort-select').addEventListener('change', (e) => {
+      STATE.sortMode = e.target.value;
+      renderOrderList();
+    });
     document.getElementById('reset-btn').addEventListener('click', () => {
       STATE.filterClass = 'ALL';
       STATE.searchQuery = '';
+      STATE.sortMode = 'date_desc';
       document.getElementById('search-input').value = '';
+      document.getElementById('sort-select').value = 'date_desc';
       renderClassDist();
       renderFilterChips();
       renderOrderList();
     });
     document.getElementById('back-btn').addEventListener('click', showList);
+
+    // Legend popover wiring
+    document.getElementById('legend-btn').addEventListener('click', openLegend);
+    document.getElementById('legend-close').addEventListener('click', closeLegend);
+    document.getElementById('legend-popover').addEventListener('click', (e) => {
+      if (e.target.id === 'legend-popover') closeLegend();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLegend();
+    });
   } catch (err) {
     showInitError(err.message);
   }
@@ -494,23 +558,16 @@ function renderOrderList() {
   const orders = filteredOrders();
   document.getElementById('order-count').innerHTML = `
     <span>${fmtInt(orders.length)} order${orders.length !== 1 ? 's' : ''} match${orders.length === 1 ? 'es' : ''}</span>
-    <span>${fmtInt(STATE.orders.length)} total · sorted by class · click any row to drill in</span>
+    <span>${fmtInt(STATE.orders.length)} total · sorted by ${sortLabel(STATE.sortMode)} · click any row to drill in</span>
   `;
   const list = document.getElementById('order-list');
   if (orders.length === 0) {
     list.innerHTML = '<div style="padding:32px; text-align:center; color:var(--text-tertiary); font-size:14px;">No orders match the filter.</div>';
     return;
   }
-  // Sort: CLASS_C first, then E, A, F, B, D
-  const order = ['CLASS_C', 'CLASS_E', 'CLASS_A', 'CLASS_F', 'CLASS_B', 'CLASS_D'];
-  const sorted = [...orders].sort((a, b) => {
-    const oa = order.indexOf(a.class), ob = order.indexOf(b.class);
-    if (oa !== ob) return oa - ob;
-    return (b.recovery_target || 0) - (a.recovery_target || 0);
-  });
-  // Limit display to 200 to keep DOM light; rest accessible via search/filter
-  const slice = sorted.slice(0, 200);
-  list.innerHTML = slice.map(o => {
+  const sorted = sortOrders(orders, STATE.sortMode);
+  // Render all matches. The .order-list container itself is scrollable (max-height:600px).
+  list.innerHTML = sorted.map(o => {
     const recoveryHtml = o.recovery_target > 0
       ? `<div class="recovery"><span class="lbl">recovery</span>${fmtMoney(o.recovery_target)}</div>`
       : '<div></div>';
@@ -529,11 +586,65 @@ function renderOrderList() {
         ${recoveryHtml}
       </button>
     `;
-  }).join('') + (sorted.length > 200 ? `<div style="padding:24px; text-align:center; color:var(--text-tertiary); font-size:13px;">Showing first 200 of ${fmtInt(sorted.length)}. Use search or class filter to narrow.</div>` : '');
+  }).join('');
 
   document.querySelectorAll('.order-row').forEach(row => {
     row.addEventListener('click', () => selectOrder(row.dataset.id));
   });
+}
+
+function sortOrders(orders, mode) {
+  const classPriority = ['CLASS_C', 'CLASS_E', 'CLASS_A', 'CLASS_F', 'CLASS_B', 'CLASS_D'];
+  const copy = [...orders];
+  if (mode === 'date_desc') {
+    return copy.sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
+  }
+  if (mode === 'date_asc') {
+    return copy.sort((a, b) => String(a.created_at || '').localeCompare(String(b.created_at || '')));
+  }
+  if (mode === 'recovery_desc') {
+    return copy.sort((a, b) => (b.recovery_target || 0) - (a.recovery_target || 0)
+      || String(b.created_at || '').localeCompare(String(a.created_at || '')));
+  }
+  // 'class' priority — original default
+  return copy.sort((a, b) => {
+    const oa = classPriority.indexOf(a.class), ob = classPriority.indexOf(b.class);
+    if (oa !== ob) return oa - ob;
+    return (b.recovery_target || 0) - (a.recovery_target || 0);
+  });
+}
+
+function sortLabel(mode) {
+  return {
+    'date_desc': 'date (newest first)',
+    'date_asc': 'date (oldest first)',
+    'class': 'class priority',
+    'recovery_desc': 'recovery target (high→low)'
+  }[mode] || mode;
+}
+
+// ============================================================================
+// LEGEND POPOVER
+// ============================================================================
+function openLegend() {
+  const body = document.getElementById('legend-body');
+  body.innerHTML = Object.entries(CLASS_META).map(([code, meta]) => `
+    <div class="legend-entry">
+      <span class="code-badge" style="color:${meta.color}; border-color:${meta.color}; background:${meta.color}1a;">${meta.short}</span>
+      <div class="right">
+        <div class="name">${code}</div>
+        <div class="desc">${escape(meta.label)}</div>
+        <div class="action">${escape(meta.meaning)}</div>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('legend-popover').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLegend() {
+  document.getElementById('legend-popover').classList.add('hidden');
+  document.body.style.overflow = '';
 }
 
 // ============================================================================

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-05-14T16:23:19+00:00",
+    "generated_at": "2026-05-14T17:22:05+00:00",
     "methodology_version": "v1.2",
     "data_window": {
       "start": "2025-12-01",
@@ -52665,7 +52665,7 @@
       "magento_state": "processing",
       "magento_status": "exported",
       "created_at": "2026-05-11 18:03:33",
-      "updated_at": "2026-05-13 17:20:31",
+      "updated_at": "2026-05-14 17:11:20",
       "grand_total": 1382.42,
       "qty_shipped": 0,
       "qty_refunded": 0,
@@ -52718,7 +52718,7 @@
         "credited_total": 0.0,
         "invoiced_minus_credited_net": 0.0
       },
-      "manual_comment_count": 6,
+      "manual_comment_count": 8,
       "refund_truth": {
         "amazon_refunded_actual": 0.0,
         "magento_creditmemo_total": 0.0,
@@ -52831,7 +52831,7 @@
       "store_id": 10,
       "magento_entity_id": 391683,
       "magento_state": "complete",
-      "magento_status": "in_transit",
+      "magento_status": "complete",
       "created_at": "2026-05-11 19:31:51",
       "updated_at": "2026-05-13 17:22:49",
       "grand_total": 100.0,
@@ -52915,9 +52915,9 @@
       "store_id": 10,
       "magento_entity_id": 391731,
       "magento_state": "processing",
-      "magento_status": "backorder",
+      "magento_status": "in_transit",
       "created_at": "2026-05-12 14:50:40",
-      "updated_at": "2026-05-13 18:07:53",
+      "updated_at": "2026-05-14 17:21:50",
       "grand_total": 110.6,
       "qty_shipped": 0,
       "qty_refunded": 0,
@@ -52952,8 +52952,8 @@
             "qty_refunded": 0.0,
             "qty_canceled": 0.0,
             "qty_invoiced": 0.0,
-            "base_cost": 2.97,
-            "shipping_cost": 0.29,
+            "base_cost": 2.06,
+            "shipping_cost": 0.79,
             "price": 3.16,
             "base_row_total": 110.6
           }
@@ -52970,7 +52970,7 @@
         "credited_total": 0.0,
         "invoiced_minus_credited_net": 0.0
       },
-      "manual_comment_count": 9,
+      "manual_comment_count": 10,
       "refund_truth": {
         "amazon_refunded_actual": 0.0,
         "magento_creditmemo_total": 0.0,

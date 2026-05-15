@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "generated_at": "2026-05-14T17:22:05+00:00",
-    "methodology_version": "v1.2",
+    "generated_at": "2026-05-15T17:51:47+00:00",
+    "methodology_version": "v1.3",
     "data_window": {
       "start": "2025-12-01",
-      "end": "2026-05-14"
+      "end": "2026-05-15"
     },
     "class": "CLASS_C",
     "count": 3,
@@ -19,6 +19,9 @@
       "recovery_target": 98.76,
       "vendor_name": "Essendant 029338",
       "primary_vendor_code": "029338",
+      "all_vendor_codes": [
+        "029338"
+      ],
       "channel": "Amazon US",
       "store_id": 1,
       "magento_entity_id": 383006,
@@ -30,6 +33,13 @@
       "qty_shipped": 2,
       "qty_refunded": 2,
       "qty_canceled": 0,
+      "exp_item_cost": 108.52,
+      "exp_ship_cost": 34.39,
+      "act_item_cost": 111.02,
+      "act_ship_cost": 34.39,
+      "disc_amt": -2.5,
+      "amazon_net": -28.42,
+      "net_cash_profit": -173.83,
       "amazon": {
         "amazon_order_id": "111-9886013-4875423",
         "is_afn_channel": false,
@@ -262,7 +272,9 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ]
+            ],
+            "paid_amount": 0.0,
+            "paid_batch_tab": null
           }
         ],
         "credits": [],
@@ -430,7 +442,15 @@
           "discrepancy": 20.62
         },
         "benchmark_match": false
-      }
+      },
+      "t_paid": 0.0,
+      "t_outstanding": 145.41,
+      "paid_batch_tabs": [],
+      "credit_memo_applied": 0.0,
+      "workflow_state": "OPEN",
+      "last_updated_by": null,
+      "last_updated_at": null,
+      "notes": null
     },
     {
       "channel_order_id": "114-0419020-7929805",
@@ -439,6 +459,9 @@
       "recovery_target": 119.37,
       "vendor_name": "Essendant — PNK",
       "primary_vendor_code": "951739",
+      "all_vendor_codes": [
+        "951739"
+      ],
       "channel": "Amazon US",
       "store_id": 1,
       "magento_entity_id": 386881,
@@ -450,6 +473,13 @@
       "qty_shipped": 2,
       "qty_refunded": 2,
       "qty_canceled": 0,
+      "exp_item_cost": 1023.78,
+      "exp_ship_cost": 0.0,
+      "act_item_cost": 1023.78,
+      "act_ship_cost": 0.0,
+      "disc_amt": 0.0,
+      "amazon_net": -201.29,
+      "net_cash_profit": -201.29,
       "amazon": {
         "amazon_order_id": "114-0419020-7929805",
         "is_afn_channel": false,
@@ -668,7 +698,9 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ]
+            ],
+            "paid_amount": 0.0,
+            "paid_batch_tab": null
           }
         ],
         "credits": [
@@ -926,7 +958,15 @@
           "discrepancy": -827.79
         },
         "benchmark_match": false
-      }
+      },
+      "t_paid": 0.0,
+      "t_outstanding": 1023.78,
+      "paid_batch_tabs": [],
+      "credit_memo_applied": 0.0,
+      "workflow_state": "OPEN",
+      "last_updated_by": null,
+      "last_updated_at": null,
+      "notes": null
     },
     {
       "channel_order_id": "111-4829998-8469841",
@@ -935,6 +975,9 @@
       "recovery_target": 6.86,
       "vendor_name": "Essendant 959282",
       "primary_vendor_code": "959282",
+      "all_vendor_codes": [
+        "959282"
+      ],
       "channel": "Amazon US",
       "store_id": 1,
       "magento_entity_id": 387741,
@@ -946,6 +989,13 @@
       "qty_shipped": 1,
       "qty_refunded": 1,
       "qty_canceled": 0,
+      "exp_item_cost": 54.55,
+      "exp_ship_cost": 11.86,
+      "act_item_cost": 54.55,
+      "act_ship_cost": 11.86,
+      "disc_amt": 0.0,
+      "amazon_net": -13.81,
+      "net_cash_profit": -80.22,
       "amazon": {
         "amazon_order_id": "111-4829998-8469841",
         "is_afn_channel": false,
@@ -1178,7 +1228,9 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ]
+            ],
+            "paid_amount": 0.0,
+            "paid_batch_tab": null
           }
         ],
         "credits": [],
@@ -1362,7 +1414,15 @@
           "discrepancy": 2.91
         },
         "benchmark_match": false
-      }
+      },
+      "t_paid": 0.0,
+      "t_outstanding": 66.41,
+      "paid_batch_tabs": [],
+      "credit_memo_applied": 0.0,
+      "workflow_state": "OPEN",
+      "last_updated_by": null,
+      "last_updated_at": null,
+      "notes": null
     }
   ]
 }

@@ -35,9 +35,9 @@
   .dot-error { background: var(--class-c); }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-  .kpi-strip { border-bottom: 1px solid var(--border); background: var(--bg-panel-soft); padding: 24px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; }
-  @media (max-width: 900px) { .kpi-strip { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 600px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+  .kpi-strip { border-bottom: 1px solid var(--border); background: var(--bg-panel-soft); padding: 24px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
+  @media (max-width: 1200px) { .kpi-strip { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 700px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
   .stat .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-secondary); font-weight: 500; }
   .stat .value { font-family: 'JetBrains Mono', monospace; font-size: 2rem; font-weight: 500; letter-spacing: -0.02em; margin-top: 4px; line-height: 1; }
   .stat .value.serif { font-family: 'Newsreader', serif; font-weight: 400; }
@@ -80,6 +80,16 @@
 
   .legend-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--bg-panel); border: 1px solid var(--border-strong); color: var(--text-secondary); font-family: 'DM Sans', sans-serif; font-size: 12px; padding: 6px 10px; border-radius: 3px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; transition: all 0.15s; }
   .legend-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .legend-btn.active { background: var(--text-primary); color: var(--bg); border-color: var(--text-primary); }
+
+  /* Filter drawer */
+  .filter-drawer { padding: 18px 24px; border-bottom: 1px solid var(--border); background: var(--bg-panel); }
+  .filter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin-bottom: 14px; }
+  .filter-field { display: flex; flex-direction: column; gap: 4px; }
+  .filter-field label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); font-weight: 600; }
+  .filter-field input, .filter-field select { background: var(--bg-panel-soft); border: 1px solid var(--border-strong); border-radius: 3px; padding: 7px 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-primary); outline: none; }
+  .filter-field input:focus, .filter-field select:focus { border-color: var(--accent); }
+  .filter-drawer-actions { display: flex; gap: 10px; }
 
   /* Popover (modal) */
   .popover { position: fixed; inset: 0; background: rgba(28,25,23,0.4); z-index: 100; display: flex; align-items: flex-start; justify-content: center; padding: 80px 20px 20px; overflow-y: auto; }
@@ -96,16 +106,61 @@
   .legend-entry .right .desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
   .legend-entry .right .action { font-size: 12px; color: var(--text-tertiary); margin-top: 6px; font-style: italic; }
 
-  .order-count { padding: 10px 24px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-tertiary); border-bottom: 1px solid var(--border); background: var(--bg); display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+  .order-count { padding: 10px 24px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-tertiary); border-bottom: 1px solid var(--border); background: var(--bg); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; gap: 12px; flex-wrap: wrap; }
+  .order-count .actions { display: flex; gap: 8px; align-items: center; }
+  .action-select { background: var(--bg-panel); border: 1px solid var(--border-strong); border-radius: 3px; padding: 6px 10px; font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--text-primary); cursor: pointer; outline: none; text-transform: none; letter-spacing: normal; }
+  .action-select:focus { border-color: var(--accent); }
+  .action-select:disabled { opacity: 0.4; cursor: not-allowed; }
+  .action-btn { background: var(--text-primary); color: var(--bg); border: none; padding: 6px 12px; font-family: 'DM Sans', sans-serif; font-size: 12px; border-radius: 3px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; }
+  .action-btn:hover { background: var(--accent); }
+  .action-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .export-btn { background: none; border: 1px solid var(--border-strong); color: var(--text-secondary); padding: 6px 12px; font-family: 'DM Sans', sans-serif; font-size: 12px; border-radius: 3px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; }
+  .export-btn:hover { border-color: var(--accent); color: var(--accent); }
+
   .order-list { background: var(--bg); }
-  .order-row { width: 100%; text-align: left; padding: 16px 24px; border: none; background: var(--bg-panel); border-bottom: 1px solid var(--border); border-left: 3px solid transparent; cursor: pointer; transition: all 0.15s; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; }
-  .order-row:hover { background: var(--bg-elevated); border-left-color: var(--accent); }
-  .order-row .left { display: flex; flex-direction: column; gap: 6px; }
-  .order-row .id { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--text-primary); font-weight: 500; }
-  .order-row .meta { font-size: 13px; color: var(--text-secondary); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-  .order-row .meta .sep { color: var(--text-tertiary); }
-  .order-row .recovery { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--class-c); font-weight: 500; text-align: right; }
-  .order-row .recovery .lbl { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-tertiary); margin-bottom: 2px; font-family: 'DM Sans', sans-serif; font-weight: 500; }
+  .order-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .order-table thead th { position: sticky; top: 41px; background: var(--bg-panel-soft); padding: 10px 8px; text-align: left; font-family: 'DM Sans', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); border-bottom: 1px solid var(--border-strong); font-weight: 600; white-space: nowrap; }
+  .order-table thead th.r { text-align: right; }
+  .order-table thead th.c { text-align: center; }
+  .order-table thead th.sortable { cursor: pointer; user-select: none; }
+  .order-table thead th.sortable:hover { color: var(--accent); }
+  .order-table thead th .sort-ind { color: var(--accent); font-size: 10px; margin-left: 4px; }
+  .order-table tbody tr { border-bottom: 1px solid var(--border); background: var(--bg-panel); border-left: 3px solid transparent; cursor: pointer; transition: background 0.1s; }
+  .order-table tbody tr:hover { background: var(--bg-elevated); border-left-color: var(--accent); }
+  .order-table tbody tr.selected { background: var(--accent-soft); }
+  .order-table tbody td { padding: 10px 8px; font-family: 'JetBrains Mono', monospace; color: var(--text-primary); white-space: nowrap; }
+  .order-table tbody td.r { text-align: right; }
+  .order-table tbody td.c { text-align: center; }
+  .order-table tbody td.text { font-family: 'DM Sans', sans-serif; }
+  .order-table tbody td.muted { color: var(--text-tertiary); }
+  .order-table .checkbox-cell { padding-left: 12px; padding-right: 0; width: 28px; }
+  .order-table input[type="checkbox"] { cursor: pointer; }
+  .order-table .order-id { font-weight: 500; }
+  .order-table .recovery-cell { color: var(--class-c); font-weight: 600; }
+  .order-table .disc-pos { color: var(--class-a); }
+  .order-table .disc-neg { color: var(--class-c); }
+  .badge-sm { display: inline-flex; align-items: center; gap: 4px; padding: 2px 6px; border-radius: 2px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; border: 1px solid; }
+  .badge-sm .dot-class { width: 5px; height: 5px; border-radius: 50%; }
+  .badge-sm.class-A { color: var(--class-a); border-color: var(--class-a); background: rgba(4,120,87,0.08); }
+  .badge-sm.class-A .dot-class { background: var(--class-a); }
+  .badge-sm.class-B { color: var(--class-b); border-color: var(--class-b); background: rgba(202,138,4,0.08); }
+  .badge-sm.class-B .dot-class { background: var(--class-b); }
+  .badge-sm.class-C { color: var(--class-c); border-color: var(--class-c); background: rgba(185,28,28,0.08); }
+  .badge-sm.class-C .dot-class { background: var(--class-c); }
+  .badge-sm.class-D { color: var(--class-d); border-color: var(--class-d); background: rgba(87,83,78,0.08); }
+  .badge-sm.class-D .dot-class { background: var(--class-d); }
+  .badge-sm.class-E { color: var(--class-e); border-color: var(--class-e); background: rgba(180,83,9,0.08); }
+  .badge-sm.class-E .dot-class { background: var(--class-e); }
+  .badge-sm.class-F { color: var(--class-f); border-color: var(--class-f); background: rgba(126,34,206,0.08); }
+  .badge-sm.class-F .dot-class { background: var(--class-f); }
+
+  /* Workflow state badges */
+  .state-badge { display: inline-block; padding: 2px 6px; border-radius: 2px; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid; }
+  .state-OPEN { color: var(--text-secondary); border-color: var(--border-strong); background: var(--bg-panel-soft); }
+  .state-UNDER_REVIEW { color: var(--class-e); border-color: var(--class-e); background: rgba(180,83,9,0.08); }
+  .state-READY_TO_PAY { color: var(--class-a); border-color: var(--class-a); background: rgba(4,120,87,0.08); }
+  .state-PAID { color: var(--text-tertiary); border-color: var(--text-tertiary); background: var(--bg-panel-soft); opacity: 0.7; }
+  /* Old card-row CSS removed in v3 — replaced by .order-table */
 
   .badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px; border-radius: 2px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; border: 1px solid; }
   .badge.large { padding: 6px 12px; font-size: 14px; }
@@ -259,6 +314,7 @@
       <input type="text" id="search-input" placeholder="Search order ID, entity, vendor…" />
     </div>
     <div class="chips" id="filter-chips"></div>
+    <div class="chips" id="state-chips" style="margin-left:auto;"></div>
     <div class="sort-control">
       <label for="sort-select">Sort</label>
       <select id="sort-select">
@@ -266,13 +322,60 @@
         <option value="date_asc">Date · oldest first</option>
         <option value="class">Class priority (C→E→A→F→B→D)</option>
         <option value="recovery_desc">Recovery target · high→low</option>
+        <option value="disc_desc">Discrepancy · |amt| high→low</option>
       </select>
     </div>
+    <button class="legend-btn" id="filters-toggle-btn" type="button" title="Advanced filters">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+      Filters
+    </button>
     <button class="legend-btn" id="legend-btn" type="button" title="What do the classes mean?">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
       Classes
     </button>
     <button class="reset-btn" id="reset-btn">Reset</button>
+  </section>
+
+  <!-- Advanced filter drawer -->
+  <section class="filter-drawer hidden" id="filter-drawer">
+    <div class="filter-grid">
+      <div class="filter-field">
+        <label>Date from</label>
+        <input type="date" id="filter-date-from" />
+      </div>
+      <div class="filter-field">
+        <label>Date to</label>
+        <input type="date" id="filter-date-to" />
+      </div>
+      <div class="filter-field">
+        <label>Days old (≥)</label>
+        <input type="number" id="filter-days-old" placeholder="e.g. 30" min="0" />
+      </div>
+      <div class="filter-field">
+        <label>Vendor</label>
+        <select id="filter-vendor">
+          <option value="ALL">All vendors</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label>Store</label>
+        <select id="filter-store">
+          <option value="ALL">All stores</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label>Discrepancy min ($)</label>
+        <input type="number" id="filter-disc-min" placeholder="e.g. 5" step="0.01" />
+      </div>
+      <div class="filter-field">
+        <label>Discrepancy max ($)</label>
+        <input type="number" id="filter-disc-max" placeholder="e.g. 100" step="0.01" />
+      </div>
+    </div>
+    <div class="filter-drawer-actions">
+      <button class="action-btn" id="apply-filters-btn">Apply filters</button>
+      <button class="export-btn" id="clear-filters-btn">Clear all</button>
+    </div>
   </section>
 
   <!-- Class legend popover (hidden by default) -->
@@ -340,13 +443,61 @@ const STATE = {
   detailCache: {},
   detailLoading: false,
   filterClass: 'ALL',
+  filterState: 'ALL',
+  filterVendor: 'ALL',
+  filterStore: 'ALL',
+  filterDateFrom: null,
+  filterDateTo: null,
+  filterDiscMin: null,
+  filterDiscMax: null,
+  filterDaysOld: null,
   searchQuery: '',
-  sortMode: 'date_desc'
+  sortMode: 'date_desc',
+  filterPanelOpen: false,
+  selectedRowIds: new Set(),
+  workflowStates: {} // channel_order_id -> 'OPEN'|'UNDER_REVIEW'|'READY_TO_PAY'|'PAID'
 };
 
-// ============================================================================
-// HELPERS
-// ============================================================================
+// Workflow state persistence — kept in localStorage for now. Survives page reloads.
+// Once pipeline backend persists state, swap to fetch/POST. Until then it's per-browser-per-user.
+function loadWorkflowStates() {
+  try {
+    const raw = localStorage.getItem('axiscore_finance_workflow_states');
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) { return {}; }
+}
+function saveWorkflowStates() {
+  try {
+    localStorage.setItem('axiscore_finance_workflow_states', JSON.stringify(STATE.workflowStates));
+  } catch (e) { /* quota or disabled */ }
+}
+function getWorkflowState(orderId) {
+  return STATE.workflowStates[orderId] || 'OPEN';
+}
+function setWorkflowState(orderId, state) {
+  if (state === 'OPEN') delete STATE.workflowStates[orderId];
+  else STATE.workflowStates[orderId] = state;
+  saveWorkflowStates();
+}
+
+// Given an order from Tier 1, compute the financial columns. Pipeline may add these directly later;
+// for now, derive from whatever is present in Tier 1. Returns same object with derived fields attached.
+function computeOrderFinancials(o) {
+  // Pipeline may already provide these; if not, compute conservative defaults.
+  if (o.exp_item_cost == null) o.exp_item_cost = o.magento_exp_item_cost ?? 0;
+  if (o.exp_ship_cost == null) o.exp_ship_cost = o.magento_exp_ship_cost ?? 0;
+  if (o.act_item_cost == null) o.act_item_cost = o.vendor_invoice_subtotal_sum ?? 0;
+  if (o.act_ship_cost == null) o.act_ship_cost = o.vendor_invoice_ship_sum ?? 0;
+  if (o.disc_amt == null) {
+    const exp = (o.exp_item_cost || 0) + (o.exp_ship_cost || 0);
+    const act = (o.act_item_cost || 0) + (o.act_ship_cost || 0);
+    o.disc_amt = exp - act;
+  }
+  if (o.t_outstanding == null) o.t_outstanding = o.vendor_outstanding ?? 0;
+  if (o.t_paid == null) o.t_paid = o.vendor_paid ?? 0;
+  if (o.amazon_refunded_actual == null) o.amazon_refunded_actual = o.refund_amount ?? 0;
+  return o;
+}
 const fmt = (n, opts = {}) => {
   if (n === null || n === undefined) return '—';
   const { decimals = 2, dollar = false } = opts;
@@ -408,7 +559,8 @@ async function init() {
     STATE.summary = tier1.summary;
     STATE.transition = tier1.class_transition_vs_stage2 || [];
     STATE.vendorDist = tier1.vendor_distribution_in_scope || [];
-    STATE.orders = tier1.orders || [];
+    STATE.orders = (tier1.orders || []).map(computeOrderFinancials);
+    STATE.workflowStates = loadWorkflowStates();
 
     document.getElementById('version-tag').textContent = STATE.metadata.methodology_version || 'v1.2';
     document.getElementById('refresh-magento').textContent = 'Magento ' + (STATE.metadata.refresh_status?.magento_last_update || '—');
@@ -418,6 +570,8 @@ async function init() {
     renderKpis();
     renderClassDist();
     renderFilterChips();
+    renderStateChips();
+    populateFilterDrawer();
     document.getElementById('filters-bar').classList.remove('hidden');
     document.getElementById('class-dist').classList.remove('hidden');
     document.getElementById('order-count').classList.remove('hidden');
@@ -431,16 +585,7 @@ async function init() {
       STATE.sortMode = e.target.value;
       renderOrderList();
     });
-    document.getElementById('reset-btn').addEventListener('click', () => {
-      STATE.filterClass = 'ALL';
-      STATE.searchQuery = '';
-      STATE.sortMode = 'date_desc';
-      document.getElementById('search-input').value = '';
-      document.getElementById('sort-select').value = 'date_desc';
-      renderClassDist();
-      renderFilterChips();
-      renderOrderList();
-    });
+    document.getElementById('reset-btn').addEventListener('click', resetAllFilters);
     document.getElementById('back-btn').addEventListener('click', showList);
 
     // Legend popover wiring
@@ -452,6 +597,17 @@ async function init() {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeLegend();
     });
+
+    // Filter drawer wiring
+    document.getElementById('filters-toggle-btn').addEventListener('click', () => {
+      STATE.filterPanelOpen = !STATE.filterPanelOpen;
+      const drawer = document.getElementById('filter-drawer');
+      const btn = document.getElementById('filters-toggle-btn');
+      drawer.classList.toggle('hidden', !STATE.filterPanelOpen);
+      btn.classList.toggle('active', STATE.filterPanelOpen);
+    });
+    document.getElementById('apply-filters-btn').addEventListener('click', applyDrawerFilters);
+    document.getElementById('clear-filters-btn').addEventListener('click', clearDrawerFilters);
   } catch (err) {
     showInitError(err.message);
   }
@@ -473,11 +629,20 @@ function renderKpis() {
   const s = STATE.summary;
   const cC = s.classes.find(c => c.code === 'CLASS_C')?.count ?? 0;
   const cE = s.classes.find(c => c.code === 'CLASS_E')?.count ?? 0;
+  // Compute financial totals across all in-scope orders (using vendor.invoiced_gross which is on the Tier 1 list)
+  let totInvoicedValue = 0, totRefunded = 0, totDiscrepancy = 0, totOutstanding = 0;
+  for (const o of STATE.orders) {
+    totInvoicedValue += (o.act_item_cost || 0) + (o.act_ship_cost || 0);
+    totRefunded += (o.amazon_refunded_actual || 0);
+    totDiscrepancy += (o.disc_amt || 0);
+    totOutstanding += (o.t_outstanding || 0);
+  }
   document.getElementById('kpi-strip').innerHTML = `
     <div class="stat"><div class="label">Orders in scope</div><div class="value">${fmtInt(STATE.metadata.universe_count)}</div><div class="sublabel">${STATE.metadata.data_window.start} → ${STATE.metadata.data_window.end}</div></div>
+    <div class="stat"><div class="label">Total invoiced value</div><div class="value">${fmtMoney(totInvoicedValue)}</div><div class="sublabel">vendor invoice gross sum</div></div>
+    <div class="stat"><div class="label">Total outstanding</div><div class="value">${fmtMoney(totOutstanding)}</div><div class="sublabel">unpaid vendor invoices</div></div>
     <div class="stat"><div class="label">Recovery target</div><div class="value serif accent">${fmtMoney(s.recovery_target)}</div><div class="sublabel">${cC} CLASS_C orders</div></div>
-    <div class="stat"><div class="label">Refund detection</div><div class="value">${s.refund_detection_rate_percent.toFixed(2)}%</div><div class="sublabel">${fmtInt(s.refund_detection_count)} of ${fmtInt(STATE.metadata.universe_count)}</div></div>
-    <div class="stat"><div class="label">Recovery eligible</div><div class="value">${cC}</div><div class="sublabel">CLASS_C</div></div>
+    <div class="stat"><div class="label">Total discrepancy</div><div class="value">${fmtMoney(totDiscrepancy)}</div><div class="sublabel">exp vs act variance · ${s.refund_detection_rate_percent.toFixed(2)}% refund rate</div></div>
     <div class="stat"><div class="label">Review queue</div><div class="value">${fmtInt(cE)}</div><div class="sublabel">CLASS_E (data conflict)</div></div>
   `;
 }
@@ -540,6 +705,17 @@ function renderFilterChips() {
 function filteredOrders() {
   return STATE.orders.filter(o => {
     if (STATE.filterClass !== 'ALL' && o.class !== STATE.filterClass) return false;
+    if (STATE.filterState !== 'ALL' && getWorkflowState(o.channel_order_id) !== STATE.filterState) return false;
+    if (STATE.filterVendor !== 'ALL' && String(o.primary_vendor_code || '') !== STATE.filterVendor) return false;
+    if (STATE.filterStore !== 'ALL' && String(o.store_id || '') !== STATE.filterStore) return false;
+    if (STATE.filterDateFrom && String(o.created_at || '').substring(0, 10) < STATE.filterDateFrom) return false;
+    if (STATE.filterDateTo && String(o.created_at || '').substring(0, 10) > STATE.filterDateTo) return false;
+    if (STATE.filterDaysOld != null && o.created_at) {
+      const days = (Date.now() - new Date(o.created_at).getTime()) / (1000 * 60 * 60 * 24);
+      if (days < STATE.filterDaysOld) return false;
+    }
+    if (STATE.filterDiscMin != null && Math.abs(o.disc_amt || 0) < STATE.filterDiscMin) return false;
+    if (STATE.filterDiscMax != null && Math.abs(o.disc_amt || 0) > STATE.filterDiscMax) return false;
     if (STATE.searchQuery) {
       const q = STATE.searchQuery.toLowerCase();
       return o.channel_order_id.toLowerCase().includes(q)
@@ -551,46 +727,267 @@ function filteredOrders() {
   });
 }
 
+function renderStateChips() {
+  const states = ['ALL', 'OPEN', 'UNDER_REVIEW', 'READY_TO_PAY', 'PAID'];
+  const counts = {};
+  for (const s of states) counts[s] = 0;
+  for (const o of STATE.orders) {
+    const s = getWorkflowState(o.channel_order_id);
+    counts[s] = (counts[s] || 0) + 1;
+    counts.ALL++;
+  }
+  const html = states.map(s => {
+    const active = STATE.filterState === s;
+    const label = s === 'ALL' ? 'All states' : s.replace('_', ' ');
+    return `<button class="chip ${active ? 'active' : ''}" data-state="${s}">${label} · ${fmtInt(counts[s])}</button>`;
+  }).join('');
+  document.getElementById('state-chips').innerHTML = html;
+  document.querySelectorAll('#state-chips .chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      STATE.filterState = btn.dataset.state;
+      renderStateChips();
+      renderOrderList();
+    });
+  });
+}
+
+function populateFilterDrawer() {
+  // Vendor dropdown — unique values from orders
+  const vendors = {};
+  const stores = {};
+  for (const o of STATE.orders) {
+    if (o.primary_vendor_code) {
+      vendors[o.primary_vendor_code] = o.vendor_name || o.primary_vendor_code;
+    }
+    if (o.store_id != null) {
+      stores[o.store_id] = `Store ${o.store_id}` + (o.channel ? ` (${o.channel})` : '');
+    }
+  }
+  const vendorSel = document.getElementById('filter-vendor');
+  for (const [code, name] of Object.entries(vendors).sort((a, b) => a[1].localeCompare(b[1]))) {
+    const opt = document.createElement('option');
+    opt.value = code; opt.textContent = name;
+    vendorSel.appendChild(opt);
+  }
+  const storeSel = document.getElementById('filter-store');
+  for (const [id, label] of Object.entries(stores).sort((a, b) => Number(a[0]) - Number(b[0]))) {
+    const opt = document.createElement('option');
+    opt.value = id; opt.textContent = label;
+    storeSel.appendChild(opt);
+  }
+}
+
+function applyDrawerFilters() {
+  STATE.filterDateFrom = document.getElementById('filter-date-from').value || null;
+  STATE.filterDateTo = document.getElementById('filter-date-to').value || null;
+  STATE.filterDaysOld = parseInt(document.getElementById('filter-days-old').value, 10);
+  if (isNaN(STATE.filterDaysOld)) STATE.filterDaysOld = null;
+  STATE.filterVendor = document.getElementById('filter-vendor').value;
+  STATE.filterStore = document.getElementById('filter-store').value;
+  const discMin = parseFloat(document.getElementById('filter-disc-min').value);
+  const discMax = parseFloat(document.getElementById('filter-disc-max').value);
+  STATE.filterDiscMin = isNaN(discMin) ? null : discMin;
+  STATE.filterDiscMax = isNaN(discMax) ? null : discMax;
+  renderOrderList();
+}
+
+function clearDrawerFilters() {
+  STATE.filterDateFrom = null;
+  STATE.filterDateTo = null;
+  STATE.filterDaysOld = null;
+  STATE.filterVendor = 'ALL';
+  STATE.filterStore = 'ALL';
+  STATE.filterDiscMin = null;
+  STATE.filterDiscMax = null;
+  document.getElementById('filter-date-from').value = '';
+  document.getElementById('filter-date-to').value = '';
+  document.getElementById('filter-days-old').value = '';
+  document.getElementById('filter-vendor').value = 'ALL';
+  document.getElementById('filter-store').value = 'ALL';
+  document.getElementById('filter-disc-min').value = '';
+  document.getElementById('filter-disc-max').value = '';
+  renderOrderList();
+}
+
+function resetAllFilters() {
+  STATE.filterClass = 'ALL';
+  STATE.filterState = 'ALL';
+  STATE.searchQuery = '';
+  STATE.sortMode = 'date_desc';
+  STATE.selectedRowIds.clear();
+  clearDrawerFilters();
+  document.getElementById('search-input').value = '';
+  document.getElementById('sort-select').value = 'date_desc';
+  renderClassDist();
+  renderFilterChips();
+  renderStateChips();
+  renderOrderList();
+}
+
 // ============================================================================
-// ORDER LIST
+// ORDER LIST (table view)
 // ============================================================================
 function renderOrderList() {
   const orders = filteredOrders();
+  const selCount = STATE.selectedRowIds.size;
+  // Action toolbar (top bar)
   document.getElementById('order-count').innerHTML = `
-    <span>${fmtInt(orders.length)} order${orders.length !== 1 ? 's' : ''} match${orders.length === 1 ? 'es' : ''}</span>
-    <span>${fmtInt(STATE.orders.length)} total · sorted by ${sortLabel(STATE.sortMode)} · click any row to drill in</span>
+    <span>${fmtInt(orders.length)} order${orders.length !== 1 ? 's' : ''} match${orders.length === 1 ? 'es' : ''}${selCount > 0 ? ` · ${fmtInt(selCount)} selected` : ''}</span>
+    <div class="actions">
+      <select class="action-select" id="bulk-action-select" ${selCount === 0 ? 'disabled' : ''}>
+        <option value="">Bulk action…</option>
+        <option value="send_review">Send to Review</option>
+        <option value="send_ready">Send to Ready to Pay</option>
+        <option value="mark_paid">Mark as Paid</option>
+        <option value="reopen">Reopen (back to OPEN)</option>
+      </select>
+      <button class="action-btn" id="bulk-action-apply" ${selCount === 0 ? 'disabled' : ''}>Apply</button>
+      <button class="export-btn" id="export-csv-btn">Export CSV</button>
+      <span style="color:var(--text-tertiary); font-size:11px;">${fmtInt(STATE.orders.length)} total · sorted by ${sortLabel(STATE.sortMode)}</span>
+    </div>
   `;
+  document.getElementById('bulk-action-apply').addEventListener('click', applyBulkAction);
+  document.getElementById('export-csv-btn').addEventListener('click', () => exportCsv(orders));
+
   const list = document.getElementById('order-list');
   if (orders.length === 0) {
     list.innerHTML = '<div style="padding:32px; text-align:center; color:var(--text-tertiary); font-size:14px;">No orders match the filter.</div>';
     return;
   }
   const sorted = sortOrders(orders, STATE.sortMode);
-  // Render all matches. The .order-list container itself is scrollable (max-height:600px).
-  list.innerHTML = sorted.map(o => {
-    const recoveryHtml = o.recovery_target > 0
-      ? `<div class="recovery"><span class="lbl">recovery</span>${fmtMoney(o.recovery_target)}</div>`
-      : '<div></div>';
+  const allVisibleSelected = sorted.length > 0 && sorted.every(o => STATE.selectedRowIds.has(o.channel_order_id));
+
+  const headerHtml = `
+    <thead>
+      <tr>
+        <th class="checkbox-cell"><input type="checkbox" id="select-all-visible" ${allVisibleSelected ? 'checked' : ''} title="Select all visible" /></th>
+        <th class="c">Class</th>
+        <th class="c">State</th>
+        <th class="sortable" data-sort="date_desc">Order Date</th>
+        <th>Order ID</th>
+        <th>Vendor</th>
+        <th class="r">Exp. Item</th>
+        <th class="r">Exp. Ship</th>
+        <th class="r">Act. Item</th>
+        <th class="r">Act. Ship</th>
+        <th class="r">Disc. Amt</th>
+        <th class="r">T. Out</th>
+        <th class="r">T. Paid</th>
+        <th class="r">Recovery</th>
+      </tr>
+    </thead>`;
+
+  const bodyHtml = sorted.map(o => {
+    const sel = STATE.selectedRowIds.has(o.channel_order_id);
+    const ws = getWorkflowState(o.channel_order_id);
+    const disc = o.disc_amt || 0;
+    const discClass = disc > 0.01 ? 'disc-pos' : (disc < -0.01 ? 'disc-neg' : 'muted');
     return `
-      <button class="order-row" data-id="${escape(o.channel_order_id)}">
-        <div><span class="badge ${classCss(o.class)}"><span class="dot-class"></span>${o.class}</span></div>
-        <div class="left">
-          <div class="id">${escape(o.channel_order_id)}</div>
-          <div class="meta">
-            <span>${escape(o.vendor_name || '—')}</span>
-            ${o.created_at ? `<span class="sep">·</span><span>${fmtDate(o.created_at)}</span>` : ''}
-            ${o.magento_entity_id != null ? `<span class="sep">·</span><span>entity ${o.magento_entity_id}</span>` : ''}
-            ${o.grand_total != null ? `<span class="sep">·</span><span>${fmtMoney(o.grand_total)}</span>` : ''}
-          </div>
-        </div>
-        ${recoveryHtml}
-      </button>
-    `;
+      <tr class="${sel ? 'selected' : ''}" data-id="${escape(o.channel_order_id)}">
+        <td class="checkbox-cell" data-noclick="1"><input type="checkbox" class="row-check" data-id="${escape(o.channel_order_id)}" ${sel ? 'checked' : ''} /></td>
+        <td class="c"><span class="badge-sm class-${o.class.replace('CLASS_', '')}"><span class="dot-class"></span>${o.class.replace('CLASS_', '')}</span></td>
+        <td class="c"><span class="state-badge state-${ws}">${ws.replace('_', ' ')}</span></td>
+        <td>${fmtDate(o.created_at)}</td>
+        <td class="order-id">${escape(o.channel_order_id)}</td>
+        <td class="text muted">${escape((o.vendor_name || o.primary_vendor_code || '—'))}</td>
+        <td class="r ${(o.exp_item_cost || 0) === 0 ? 'muted' : ''}">${fmtMoney(o.exp_item_cost)}</td>
+        <td class="r ${(o.exp_ship_cost || 0) === 0 ? 'muted' : ''}">${fmtMoney(o.exp_ship_cost)}</td>
+        <td class="r ${(o.act_item_cost || 0) === 0 ? 'muted' : ''}">${fmtMoney(o.act_item_cost)}</td>
+        <td class="r ${(o.act_ship_cost || 0) === 0 ? 'muted' : ''}">${fmtMoney(o.act_ship_cost)}</td>
+        <td class="r ${discClass}">${fmtMoney(disc)}</td>
+        <td class="r ${(o.t_outstanding || 0) === 0 ? 'muted' : ''}">${fmtMoney(o.t_outstanding)}</td>
+        <td class="r ${(o.t_paid || 0) === 0 ? 'muted' : ''}">${fmtMoney(o.t_paid)}</td>
+        <td class="r ${o.recovery_target > 0 ? 'recovery-cell' : 'muted'}">${o.recovery_target > 0 ? fmtMoney(o.recovery_target) : '—'}</td>
+      </tr>`;
   }).join('');
 
-  document.querySelectorAll('.order-row').forEach(row => {
-    row.addEventListener('click', () => selectOrder(row.dataset.id));
+  list.innerHTML = `<table class="order-table">${headerHtml}<tbody>${bodyHtml}</tbody></table>`;
+
+  // Row click → drill-down (but ignore clicks on checkbox cells)
+  list.querySelectorAll('tbody tr').forEach(tr => {
+    tr.addEventListener('click', (e) => {
+      if (e.target.closest('[data-noclick]') || e.target.tagName === 'INPUT') return;
+      selectOrder(tr.dataset.id);
+    });
   });
+  list.querySelectorAll('.row-check').forEach(cb => {
+    cb.addEventListener('change', (e) => {
+      const id = e.target.dataset.id;
+      if (e.target.checked) STATE.selectedRowIds.add(id);
+      else STATE.selectedRowIds.delete(id);
+      renderOrderList();
+    });
+  });
+  const selectAll = document.getElementById('select-all-visible');
+  if (selectAll) {
+    selectAll.addEventListener('change', (e) => {
+      if (e.target.checked) sorted.forEach(o => STATE.selectedRowIds.add(o.channel_order_id));
+      else sorted.forEach(o => STATE.selectedRowIds.delete(o.channel_order_id));
+      renderOrderList();
+    });
+  }
+}
+
+function applyBulkAction() {
+  const sel = document.getElementById('bulk-action-select');
+  const action = sel.value;
+  if (!action || STATE.selectedRowIds.size === 0) return;
+  const map = {
+    send_review: 'UNDER_REVIEW',
+    send_ready: 'READY_TO_PAY',
+    mark_paid: 'PAID',
+    reopen: 'OPEN'
+  };
+  const newState = map[action];
+  if (!newState) return;
+  if (action === 'mark_paid' && !confirm(`Mark ${STATE.selectedRowIds.size} order(s) as PAID? An Essendant remittance CSV will be generated.`)) return;
+
+  for (const id of STATE.selectedRowIds) setWorkflowState(id, newState);
+
+  if (action === 'mark_paid') {
+    const paidOrders = STATE.orders.filter(o => STATE.selectedRowIds.has(o.channel_order_id));
+    exportCsv(paidOrders, `essendant_remittance_${new Date().toISOString().substring(0,10)}.csv`, true);
+  }
+  STATE.selectedRowIds.clear();
+  sel.value = '';
+  renderOrderList();
+}
+
+function exportCsv(orders, filename, vendorRemit) {
+  filename = filename || `axiscore_finance_export_${new Date().toISOString().substring(0,10)}.csv`;
+  // Header — vendor remittance view (for Tom at Essendant) excludes ASIN, includes vendor SKU
+  // General export: all financial columns + entity_id, vendor invoice numbers, vendor credit numbers, refund flags
+  const headers = [
+    'order_date', 'channel_order_id', 'magento_entity_id', 'vendor_code', 'vendor_name', 'class', 'workflow_state',
+    'exp_item_cost', 'exp_ship_cost', 'act_item_cost', 'act_ship_cost', 'disc_amt', 't_outstanding', 't_paid',
+    'recovery_target', 'vendor_invoice_numbers', 'vendor_credit_numbers', 'vendor_sku', 'qty_shipped',
+    'magento_state', 'magento_status', 'grand_total', 'refund_occurred', 'class_reason'
+  ];
+  const rows = orders.map(o => {
+    return headers.map(h => {
+      let v;
+      switch (h) {
+        case 'order_date': v = fmtDate(o.created_at); break;
+        case 'workflow_state': v = getWorkflowState(o.channel_order_id); break;
+        case 'vendor_invoice_numbers': v = (o.vendor_invoice_numbers || []).join(';'); break;
+        case 'vendor_credit_numbers': v = (o.vendor_credit_numbers || []).join(';'); break;
+        case 'vendor_sku': v = (o.vendor_sku_list || []).join(';'); break;
+        case 'refund_occurred': v = o.refund_occurred ? 'TRUE' : 'FALSE'; break;
+        default: v = o[h];
+      }
+      if (v === null || v === undefined) return '';
+      const s = String(v);
+      // Quote if contains comma, quote, or newline
+      if (s.includes(',') || s.includes('"') || s.includes('\n')) return '"' + s.replace(/"/g, '""') + '"';
+      return s;
+    }).join(',');
+  });
+  const csv = [headers.join(','), ...rows].join('\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename; a.click();
+  URL.revokeObjectURL(url);
 }
 
 function sortOrders(orders, mode) {
@@ -606,7 +1003,11 @@ function sortOrders(orders, mode) {
     return copy.sort((a, b) => (b.recovery_target || 0) - (a.recovery_target || 0)
       || String(b.created_at || '').localeCompare(String(a.created_at || '')));
   }
-  // 'class' priority — original default
+  if (mode === 'disc_desc') {
+    return copy.sort((a, b) => Math.abs(b.disc_amt || 0) - Math.abs(a.disc_amt || 0)
+      || String(b.created_at || '').localeCompare(String(a.created_at || '')));
+  }
+  // 'class' priority
   return copy.sort((a, b) => {
     const oa = classPriority.indexOf(a.class), ob = classPriority.indexOf(b.class);
     if (oa !== ob) return oa - ob;
@@ -619,7 +1020,8 @@ function sortLabel(mode) {
     'date_desc': 'date (newest first)',
     'date_asc': 'date (oldest first)',
     'class': 'class priority',
-    'recovery_desc': 'recovery target (high→low)'
+    'recovery_desc': 'recovery target (high→low)',
+    'disc_desc': 'discrepancy magnitude'
   }[mode] || mode;
 }
 

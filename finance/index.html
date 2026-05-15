@@ -333,6 +333,10 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
       Classes
     </button>
+    <button class="legend-btn" id="states-btn" type="button" title="What do the workflow states mean?">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+      States
+    </button>
     <button class="reset-btn" id="reset-btn">Reset</button>
   </section>
 
@@ -388,6 +392,17 @@
       <div class="popover-body" id="legend-body"></div>
     </div>
   </div>
+
+  <!-- Workflow states popover (hidden by default) -->
+  <div id="states-popover" class="popover hidden">
+    <div class="popover-inner">
+      <div class="popover-header">
+        <div class="popover-title">Workflow States</div>
+        <button class="popover-close" id="states-close" type="button" aria-label="Close">×</button>
+      </div>
+      <div class="popover-body" id="states-body"></div>
+    </div>
+  </div>
   <div class="order-count hidden" id="order-count"></div>
   <div class="order-list" id="order-list"></div>
 </div>
@@ -403,7 +418,7 @@
 </div>
 
 <footer class="bottom">
-  <span id="footer-left">Axiscore LLC · Finance System v2 · Vendor Cash Recon</span>
+  <span id="footer-left">Axiscore LLC · Finance System v3 · Vendor Cash Recon</span>
   <span id="footer-meta">—</span>
 </footer>
 
@@ -427,6 +442,13 @@ const CLASS_META = {
   'CLASS_D': { short: 'D', label: 'Clean / no refund occurred / no anomaly', color: '#57534e', meaning: 'No action. Legitimately paid and shipped.' },
   'CLASS_E': { short: 'E', label: 'Data conflict — review required', color: '#b45309', meaning: 'Held back. Most resolve in next settlement batch.' },
   'CLASS_F': { short: 'F', label: 'Amazon revenue, no vendor invoice — investigate', color: '#7e22ce', meaning: 'Unattributed. Park; dedicated investigation later.' }
+};
+
+const STATES_META = {
+  'OPEN': { short: 'O', label: 'Open — awaiting review', color: '#57534e', meaning: 'Default state. Order has not been triaged yet.' },
+  'UNDER_REVIEW': { short: 'R', label: 'Under Review — analyst working it', color: '#b45309', meaning: 'Currently being analyzed. May need vendor follow-up, evidence gathering, or escalation.' },
+  'READY_TO_PAY': { short: 'P', label: 'Ready to Pay — cleared for weekly payment cycle', color: '#047857', meaning: 'Analysis complete, invoice verified. Will be included in the next weekly Essendant remittance batch.' },
+  'PAID': { short: '✓', label: 'Paid — remittance sent', color: '#a8a29e', meaning: 'Payment issued. Remittance CSV generated. Final state unless reopened.' }
 };
 
 // ============================================================================
@@ -594,8 +616,13 @@ async function init() {
     document.getElementById('legend-popover').addEventListener('click', (e) => {
       if (e.target.id === 'legend-popover') closeLegend();
     });
+    document.getElementById('states-btn').addEventListener('click', openStates);
+    document.getElementById('states-close').addEventListener('click', closeStates);
+    document.getElementById('states-popover').addEventListener('click', (e) => {
+      if (e.target.id === 'states-popover') closeStates();
+    });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLegend();
+      if (e.key === 'Escape') { closeLegend(); closeStates(); }
     });
 
     // Filter drawer wiring
@@ -832,7 +859,7 @@ function renderOrderList() {
   const selCount = STATE.selectedRowIds.size;
   // Action toolbar (top bar)
   document.getElementById('order-count').innerHTML = `
-    <span>${fmtInt(orders.length)} order${orders.length !== 1 ? 's' : ''} match${orders.length === 1 ? 'es' : ''}${selCount > 0 ? ` · ${fmtInt(selCount)} selected` : ''}</span>
+    <span id="visible-count-label">${fmtInt(orders.length)} order${orders.length !== 1 ? 's' : ''} match${orders.length === 1 ? 'es' : ''}${selCount > 0 ? ` · ${fmtInt(selCount)} selected` : ''}</span>
     <div class="actions">
       <select class="action-select" id="bulk-action-select" ${selCount === 0 ? 'disabled' : ''}>
         <option value="">Bulk action…</option>
@@ -840,6 +867,7 @@ function renderOrderList() {
         <option value="send_ready">Send to Ready to Pay</option>
         <option value="mark_paid">Mark as Paid</option>
         <option value="reopen">Reopen (back to OPEN)</option>
+        <option value="export_selected">Export Selected to CSV</option>
       </select>
       <button class="action-btn" id="bulk-action-apply" ${selCount === 0 ? 'disabled' : ''}>Apply</button>
       <button class="export-btn" id="export-csv-btn">Export CSV</button>
@@ -912,26 +940,64 @@ function renderOrderList() {
   });
   list.querySelectorAll('.row-check').forEach(cb => {
     cb.addEventListener('change', (e) => {
+      e.stopPropagation();
       const id = e.target.dataset.id;
-      if (e.target.checked) STATE.selectedRowIds.add(id);
-      else STATE.selectedRowIds.delete(id);
-      renderOrderList();
+      const tr = e.target.closest('tr');
+      if (e.target.checked) {
+        STATE.selectedRowIds.add(id);
+        if (tr) tr.classList.add('selected');
+      } else {
+        STATE.selectedRowIds.delete(id);
+        if (tr) tr.classList.remove('selected');
+      }
+      updateSelectionToolbar(orders.length);
     });
   });
   const selectAll = document.getElementById('select-all-visible');
   if (selectAll) {
     selectAll.addEventListener('change', (e) => {
-      if (e.target.checked) sorted.forEach(o => STATE.selectedRowIds.add(o.channel_order_id));
-      else sorted.forEach(o => STATE.selectedRowIds.delete(o.channel_order_id));
-      renderOrderList();
+      e.stopPropagation();
+      const checked = e.target.checked;
+      sorted.forEach(o => {
+        if (checked) STATE.selectedRowIds.add(o.channel_order_id);
+        else STATE.selectedRowIds.delete(o.channel_order_id);
+      });
+      // Touch only the visible DOM rows instead of full re-render
+      list.querySelectorAll('tbody tr').forEach(tr => {
+        const cb = tr.querySelector('.row-check');
+        if (cb) cb.checked = checked;
+        tr.classList.toggle('selected', checked);
+      });
+      updateSelectionToolbar(orders.length);
     });
   }
+}
+
+function updateSelectionToolbar(visibleCount) {
+  // Touch-only update for the order-count bar — no row HTML rebuild.
+  const selCount = STATE.selectedRowIds.size;
+  const label = document.getElementById('visible-count-label');
+  if (label) {
+    const n = visibleCount;
+    label.textContent = `${fmtInt(n)} order${n !== 1 ? 's' : ''} match${n === 1 ? 'es' : ''}${selCount > 0 ? ` · ${fmtInt(selCount)} selected` : ''}`;
+  }
+  const selEl = document.getElementById('bulk-action-select');
+  const btnEl = document.getElementById('bulk-action-apply');
+  if (selEl) selEl.disabled = (selCount === 0);
+  if (btnEl) btnEl.disabled = (selCount === 0);
 }
 
 function applyBulkAction() {
   const sel = document.getElementById('bulk-action-select');
   const action = sel.value;
   if (!action || STATE.selectedRowIds.size === 0) return;
+  // Handle export_selected separately (no state change)
+  if (action === 'export_selected') {
+    const selectedOrders = STATE.orders.filter(o => STATE.selectedRowIds.has(o.channel_order_id));
+    exportCsv(selectedOrders, `axiscore_finance_selected_${new Date().toISOString().substring(0,10)}.csv`, false);
+    sel.value = '';
+    return;
+  }
   const map = {
     send_review: 'UNDER_REVIEW',
     send_ready: 'READY_TO_PAY',
@@ -1046,6 +1112,30 @@ function openLegend() {
 
 function closeLegend() {
   document.getElementById('legend-popover').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function openStates() {
+  const body = document.getElementById('states-body');
+  body.innerHTML = Object.entries(STATES_META).map(([code, meta]) => `
+    <div class="legend-entry">
+      <span class="code-badge" style="color:${meta.color}; border-color:${meta.color}; background:${meta.color}1a;">${meta.short}</span>
+      <div class="right">
+        <div class="name">${code.replace('_', ' ')}</div>
+        <div class="desc">${escape(meta.label)}</div>
+        <div class="action">${escape(meta.meaning)}</div>
+      </div>
+    </div>
+  `).join('') + `
+    <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--border); font-size:12px; color:var(--text-tertiary); line-height:1.55;">
+      <strong style="color:var(--text-secondary);">Transitions:</strong> Any state can return to OPEN via the Reopen action. OPEN → UNDER_REVIEW → READY_TO_PAY → PAID is the standard forward flow. State is independent of analytical class (e.g. a CLASS_D order can move OPEN → READY_TO_PAY once verified clean).
+    </div>`;
+  document.getElementById('states-popover').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeStates() {
+  document.getElementById('states-popover').classList.add('hidden');
   document.body.style.overflow = '';
 }
 
@@ -1225,6 +1315,11 @@ function renderDetail(o) {
     </div>
 
     <div class="panel">
+      <div class="panel-header">${ICONS.receipt}<div><div class="title">Per-Order Net (P&amp;L preview)</div><div class="subtitle">Amazon net (rev − fees − refunds) − vendor cost + vendor credits. Pending settlement for recent orders (F5 — settlement lags ~5 days).</div></div></div>
+      ${renderNetPanel(o, az, vd, rt)}
+    </div>
+
+    <div class="panel">
       <div class="panel-header">${ICONS.info}<div><div class="title">Classification Reasoning</div><div class="subtitle">Predicate: ${escape(o.class_reason || '')}</div></div></div>
       <div class="class-stats">
         <div class="stat"><div class="label">Freight retention threshold</div><div class="value">${fmtMoney(cl.freight_retention_threshold)}</div><div class="sublabel">${escape(cl.freight_retention_basis || 'max(12% of vendor cost, $80 floor)')}</div></div>
@@ -1243,6 +1338,39 @@ function renderDetail(o) {
 
 function fieldRow(label, value, isText, isAccent) {
   return `<div class="field-row"><span class="field-label">${label}</span><span class="field-value ${isText ? 'text' : ''} ${isAccent ? 'accent' : ''}">${value}</span></div>`;
+}
+
+function renderNetPanel(o, az, vd, rt) {
+  // Net = (amazon_revenue − |amazon_fees| − |amazon_refunds|) − vendor_invoiced + vendor_credited
+  const amazonRev = az.gross_revenue || 0;
+  const amazonFees = Math.abs(az.fees_total || 0);
+  const amazonRefunds = Math.abs(az.refund_principal_sum || 0);
+  const vendorCost = vd.invoiced_gross || 0;
+  const vendorCredits = vd.credited_total || 0;
+  const amazonNet = amazonRev - amazonFees - amazonRefunds;
+  const pipelineNet = o.net_cash_profit;
+  const computedNet = amazonNet - vendorCost + vendorCredits;
+  const netValue = pipelineNet != null ? pipelineNet : computedNet;
+  const isPipelineValue = pipelineNet != null;
+  const netColor = netValue > 0 ? 'var(--class-a)' : (netValue < 0 ? 'var(--class-c)' : 'var(--text-secondary)');
+  const ageDays = o.created_at ? (Date.now() - new Date(o.created_at).getTime()) / (1000*60*60*24) : 999;
+  const settlementPending = (az.fees_total == null || az.fees_total === 0) && ageDays < 7;
+  return `
+    <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
+      <div>
+        ${fieldRow('Amazon revenue', fmtMoney(amazonRev))}
+        ${fieldRow('Amazon fees', '−' + fmtMoney(amazonFees))}
+        ${fieldRow('Refunds to customer', '−' + fmtMoney(amazonRefunds))}
+        <div class="field-row" style="border-top:1px solid var(--border-strong); padding-top:8px; margin-top:4px;"><span class="field-label" style="font-weight:600;">Amazon net</span><span class="field-value" style="font-weight:600;">${fmtMoney(amazonNet)}</span></div>
+      </div>
+      <div>
+        ${fieldRow('Vendor cost (invoiced)', '−' + fmtMoney(vendorCost))}
+        ${fieldRow('Vendor credits received', '+' + fmtMoney(vendorCredits))}
+        <div class="field-row" style="border-top:2px solid var(--border-strong); padding-top:10px; margin-top:6px;"><span class="field-label" style="font-weight:700; font-size:13px;">NET CASH PROFIT</span><span class="field-value" style="font-family:'Newsreader',serif; font-size:1.5rem; font-weight:500; color:${netColor};">${fmtMoney(netValue)}</span></div>
+        ${settlementPending ? '<div style="font-size:11px; color:var(--accent); margin-top:6px; font-style:italic;">Pending settlement — fees and refunds may be incomplete for orders &lt; 7 days old.</div>' : ''}
+        ${!isPipelineValue ? '<div style="font-size:11px; color:var(--text-tertiary); margin-top:4px;">Computed client-side. Will use pipeline net_cash_profit field once Change 6 lands.</div>' : ''}
+      </div>
+    </div>`;
 }
 
 // ============================================================================

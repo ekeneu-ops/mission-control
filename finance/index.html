@@ -859,7 +859,7 @@ function renderOrderList() {
   const selCount = STATE.selectedRowIds.size;
   // Action toolbar (top bar)
   document.getElementById('order-count').innerHTML = `
-    <span>${fmtInt(orders.length)} order${orders.length !== 1 ? 's' : ''} match${orders.length === 1 ? 'es' : ''}${selCount > 0 ? ` · ${fmtInt(selCount)} selected` : ''}</span>
+    <span id="visible-count-label">${fmtInt(orders.length)} order${orders.length !== 1 ? 's' : ''} match${orders.length === 1 ? 'es' : ''}${selCount > 0 ? ` · ${fmtInt(selCount)} selected` : ''}</span>
     <div class="actions">
       <select class="action-select" id="bulk-action-select" ${selCount === 0 ? 'disabled' : ''}>
         <option value="">Bulk action…</option>
@@ -940,20 +940,51 @@ function renderOrderList() {
   });
   list.querySelectorAll('.row-check').forEach(cb => {
     cb.addEventListener('change', (e) => {
+      e.stopPropagation();
       const id = e.target.dataset.id;
-      if (e.target.checked) STATE.selectedRowIds.add(id);
-      else STATE.selectedRowIds.delete(id);
-      renderOrderList();
+      const tr = e.target.closest('tr');
+      if (e.target.checked) {
+        STATE.selectedRowIds.add(id);
+        if (tr) tr.classList.add('selected');
+      } else {
+        STATE.selectedRowIds.delete(id);
+        if (tr) tr.classList.remove('selected');
+      }
+      updateSelectionToolbar(orders.length);
     });
   });
   const selectAll = document.getElementById('select-all-visible');
   if (selectAll) {
     selectAll.addEventListener('change', (e) => {
-      if (e.target.checked) sorted.forEach(o => STATE.selectedRowIds.add(o.channel_order_id));
-      else sorted.forEach(o => STATE.selectedRowIds.delete(o.channel_order_id));
-      renderOrderList();
+      e.stopPropagation();
+      const checked = e.target.checked;
+      sorted.forEach(o => {
+        if (checked) STATE.selectedRowIds.add(o.channel_order_id);
+        else STATE.selectedRowIds.delete(o.channel_order_id);
+      });
+      // Touch only the visible DOM rows instead of full re-render
+      list.querySelectorAll('tbody tr').forEach(tr => {
+        const cb = tr.querySelector('.row-check');
+        if (cb) cb.checked = checked;
+        tr.classList.toggle('selected', checked);
+      });
+      updateSelectionToolbar(orders.length);
     });
   }
+}
+
+function updateSelectionToolbar(visibleCount) {
+  // Touch-only update for the order-count bar — no row HTML rebuild.
+  const selCount = STATE.selectedRowIds.size;
+  const label = document.getElementById('visible-count-label');
+  if (label) {
+    const n = visibleCount;
+    label.textContent = `${fmtInt(n)} order${n !== 1 ? 's' : ''} match${n === 1 ? 'es' : ''}${selCount > 0 ? ` · ${fmtInt(selCount)} selected` : ''}`;
+  }
+  const selEl = document.getElementById('bulk-action-select');
+  const btnEl = document.getElementById('bulk-action-apply');
+  if (selEl) selEl.disabled = (selCount === 0);
+  if (btnEl) btnEl.disabled = (selCount === 0);
 }
 
 function applyBulkAction() {

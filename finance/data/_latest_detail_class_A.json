@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-05-15T17:54:21+00:00",
-    "methodology_version": "v1.3",
+    "generated_at": "2026-05-15T23:14:00+00:00",
+    "methodology_version": "v1.4.1",
     "data_window": {
       "start": "2025-12-01",
       "end": "2026-05-15"
@@ -244,9 +244,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -418,14 +416,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 26.0,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "114-9255055-2067416",
@@ -715,9 +709,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -896,14 +888,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 443.88,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "111-2611791-5844202",
@@ -1193,9 +1181,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -1415,14 +1401,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 82.03,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "112-2657260-4081847",
@@ -1712,9 +1694,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -1901,14 +1881,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 45.34,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "113-6462151-8648240",
@@ -2198,9 +2174,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -2475,14 +2449,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 27.94,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "111-4455405-2005051",
@@ -2772,9 +2742,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -3043,14 +3011,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 76.81,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "112-9000239-3532203",
@@ -3312,9 +3276,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -3510,14 +3472,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 78.64,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "112-7061040-4753847",
@@ -3807,9 +3765,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -4108,14 +4064,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 21.69,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "113-2695142-0196201",
@@ -4405,9 +4357,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -4627,14 +4577,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 218.6,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "111-0100158-7318667",
@@ -4924,9 +4870,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -5162,14 +5106,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 73.95,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "112-6115570-3800207",
@@ -5459,9 +5399,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -5769,14 +5707,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 82.03,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "113-4049931-6859452",
@@ -6052,9 +5986,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -6257,14 +6189,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 119.85,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "113-0134176-0537014",
@@ -6554,9 +6482,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -6808,14 +6734,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 59.32,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "111-4439429-0897814",
@@ -7105,9 +7027,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -7335,14 +7255,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 82.03,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "111-5786650-4410653",
@@ -7604,9 +7520,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -7849,14 +7763,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 178.9,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "114-1637788-3384224",
@@ -8090,9 +8000,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -8351,14 +8259,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 119.85,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "111-3388988-9225803",
@@ -8676,9 +8580,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -8889,14 +8791,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 119.85,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "113-9512274-0683452",
@@ -9172,9 +9070,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -9385,14 +9281,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 56.26,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "111-9310561-4201027",
@@ -9654,9 +9546,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           },
           {
             "invoice_id": 448947,
@@ -9670,9 +9560,7 @@
             "invoice_status": 1,
             "batch_id": 0,
             "created_at": "2026-01-28 10:17:08",
-            "items": [],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            "items": []
           }
         ],
         "credits": [
@@ -9859,14 +9747,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 147.39,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "111-2876562-0959422",
@@ -10142,9 +10026,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -10331,14 +10213,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 145.36,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "113-9487604-7779430",
@@ -10558,9 +10436,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -10739,14 +10615,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 77.57,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "114-1300924-0167429",
@@ -11022,9 +10894,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -11212,14 +11082,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 43.1,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "114-1346611-2923453",
@@ -11495,9 +11361,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -11741,14 +11605,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 140.38,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "114-3099650-6362645",
@@ -12024,9 +11884,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -12270,14 +12128,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 140.38,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "114-3426968-7224228",
@@ -12553,9 +12407,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -12750,14 +12602,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 20.86,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "111-1717353-2136224",
@@ -13033,9 +12881,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -13279,14 +13125,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 91.22,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "113-0516624-7398657",
@@ -13506,9 +13348,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -13672,14 +13512,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 46.03,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "113-8796393-2510655",
@@ -13941,9 +13777,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -14154,14 +13988,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 138.05,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "114-0808611-0552239",
@@ -14451,9 +14281,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -14689,14 +14517,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 79.53,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "111-2412443-7690609",
@@ -14972,9 +14796,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -15202,14 +15024,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 79.53,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "111-0184750-8801827",
@@ -15485,9 +15303,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -15675,14 +15491,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 90.86,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "111-4145370-3041806",
@@ -15902,9 +15714,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -16107,14 +15917,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 37.9,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "113-1029951-7078638",
@@ -16334,9 +16140,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -16531,14 +16335,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 17.86,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "111-9931552-0208217",
@@ -16786,9 +16586,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -17015,14 +16813,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 91.96,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "113-8075453-1697039",
@@ -17242,9 +17036,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -17415,14 +17207,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 58.19,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "114-6298305-7853840",
@@ -17628,9 +17416,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -17809,14 +17595,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 53.26,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:01:29Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "112-7337613-0317046",
@@ -18078,9 +17860,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -18283,14 +18063,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 59.7,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:45:38Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     },
     {
       "channel_order_id": "112-2899173-4368240",
@@ -18566,9 +18342,7 @@
                 "cost": 0.0,
                 "ship_cost": 0.0
               }
-            ],
-            "paid_amount": 0.0,
-            "paid_batch_tab": null
+            ]
           }
         ],
         "credits": [
@@ -18780,14 +18554,10 @@
         },
         "benchmark_match": false
       },
-      "t_paid": 0.0,
-      "t_outstanding": 24.42,
-      "paid_batch_tabs": [],
-      "credit_memo_applied": 0.0,
-      "workflow_state": "OPEN",
-      "last_updated_by": null,
-      "last_updated_at": null,
-      "notes": null
+      "workflow_state": "PAID",
+      "last_updated_by": "backfill_2026_ess_payments",
+      "last_updated_at": "2026-05-15T22:45:38Z",
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
     }
   ]
 }

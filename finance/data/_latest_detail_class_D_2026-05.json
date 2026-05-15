@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-05-15T23:14:00+00:00",
-    "methodology_version": "v1.4.1",
+    "generated_at": "2026-05-15T23:57:45+00:00",
+    "methodology_version": "v1.4.2",
     "data_window": {
       "start": "2025-12-01",
       "end": "2026-05-15"
@@ -154,7 +154,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 61.0,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7821934-8946668",
@@ -298,7 +306,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-4506049-9591458",
@@ -442,7 +458,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-5052013-8217044",
@@ -586,7 +610,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 14.91,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-8813219-3601810",
@@ -730,7 +762,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 43.11,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-6692464-9024236",
@@ -874,7 +914,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 41.94,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9174602-3885004",
@@ -1018,7 +1066,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 39.81,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6554554-1519452",
@@ -1162,7 +1218,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 24.23,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9341115-6489837",
@@ -1327,7 +1391,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 404.68,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-8858192-0273812",
@@ -1471,7 +1543,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 215.94,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-5233732-5038634",
@@ -1615,7 +1695,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 41.94,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5643982-9277804",
@@ -1759,7 +1847,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 147.2,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-4171277-5028203",
@@ -1903,7 +1999,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.22,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5280282-0285847",
@@ -2047,7 +2151,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.22,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-8818517-5977865",
@@ -2191,7 +2303,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 92.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-8768333-9137800",
@@ -2335,7 +2455,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7600821-4561063",
@@ -2479,7 +2607,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 42.55,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-8404129-2561851",
@@ -2623,7 +2759,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 25.33,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-0684815-3701807",
@@ -2786,7 +2930,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:45:38Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": -43.17,
+      "t_outstanding": 194.41,
+      "paid_batch_tabs": [
+        "5_13"
+      ],
+      "paid_date": "2026-05-13",
+      "paid_amount_net": -43.17,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "704998001;704998002",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5346276-6027429",
@@ -2930,7 +3084,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 41.94,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-1399766-3658612",
@@ -3074,7 +3236,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 17.32,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8789142-6707437",
@@ -3218,7 +3388,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 112.05,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7450729-5419419",
@@ -3362,7 +3540,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 120.38,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9725992-9412233",
@@ -3506,7 +3692,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 20.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-4518562-7278628",
@@ -3650,7 +3844,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 142.07,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-8128400-5900241",
@@ -3794,7 +3996,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 14.91,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-2786662-3208255",
@@ -3938,7 +4148,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 544.8,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-0208295-5468247",
@@ -4082,7 +4300,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 15.24,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7916134-7342609",
@@ -4226,7 +4452,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 24.81,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-6536927-2604267",
@@ -4370,7 +4604,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 113.43,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-4211523-5655462",
@@ -4514,7 +4756,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 133.14,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-6993708-7619429",
@@ -4658,7 +4908,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 47.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-0459410-1739407",
@@ -4802,7 +5060,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 42.57,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-4264988-5308218",
@@ -4946,7 +5212,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 13.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-3871489-3040244",
@@ -5090,7 +5364,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 1465.62,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-6877897-9313805",
@@ -5234,7 +5516,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 30.42,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-7711802-2953014",
@@ -5378,7 +5668,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 17.31,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5121558-0608231",
@@ -5522,7 +5820,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.8,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7203913-3620244",
@@ -5666,7 +5972,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 19.38,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1003393-2111431",
@@ -5810,7 +6124,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 145.73,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-9698392-6255431",
@@ -5954,7 +6276,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 64.67,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5290426-1115426",
@@ -6098,7 +6428,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 86.38,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-7263359-3313000",
@@ -6242,7 +6580,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 85.94,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2161342-2261046",
@@ -6386,7 +6732,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 18.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-3244374-4256204",
@@ -6576,7 +6930,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 199.27,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-1485949-5408201",
@@ -6720,7 +7082,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 63.34,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7710590-7745020",
@@ -6864,7 +7234,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 11.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-8787340-3247451",
@@ -7008,7 +7386,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 23.48,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6477742-6244221",
@@ -7152,7 +7538,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 37.96,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-7019513-6481043",
@@ -7296,7 +7690,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 198.81,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-2276741-4397821",
@@ -7440,7 +7842,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 193.14,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9365449-7887449",
@@ -7584,7 +7994,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 2998.1,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2467084-1520242",
@@ -7728,7 +8146,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 28.88,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-0270150-7929851",
@@ -7872,7 +8298,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 76.93,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8247664-1180222",
@@ -8016,7 +8450,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 18.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0583284-2237017",
@@ -8160,7 +8602,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 30.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0067789-8111459",
@@ -8304,7 +8754,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 52.38,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-5707314-0344207",
@@ -8448,7 +8906,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 42.57,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-3838321-1266631",
@@ -8592,7 +9058,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 83.09,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-0733863-4699417",
@@ -8736,7 +9210,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 459.08,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-8334009-8750666",
@@ -8880,7 +9362,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 47.42,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9265526-9313029",
@@ -9024,7 +9514,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 11.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5781323-0689846",
@@ -9168,7 +9666,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 52.38,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-4497564-7441021",
@@ -9312,7 +9818,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 14.91,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-7690589-0483427",
@@ -9456,7 +9970,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 9.41,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-9007702-7940231",
@@ -9600,7 +10122,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 71.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-4374893-9137837",
@@ -9744,7 +10274,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-3790249-9009041",
@@ -9888,7 +10426,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 23.14,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-5207504-3885033",
@@ -10032,7 +10578,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 11.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6853266-3277836",
@@ -10176,7 +10730,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 23.14,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8911970-7607402",
@@ -10320,7 +10882,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.68,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-0461086-6445039",
@@ -10464,7 +11034,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 9.41,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-9198830-6934643",
@@ -10608,7 +11186,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 36.04,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5878978-5705050",
@@ -10752,7 +11338,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 39.9,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7611285-3912204",
@@ -10896,7 +11490,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 11.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9733326-8985812",
@@ -11040,7 +11642,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.16,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-1973425-4213060",
@@ -11184,7 +11794,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 9.35,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-1248190-1758661",
@@ -11328,7 +11946,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 33.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-3350602-3704213",
@@ -11472,7 +12098,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 773.92,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-3352122-6189019",
@@ -11616,7 +12250,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 97.2,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0001329-4928235",
@@ -11760,7 +12402,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6414170-4616227",
@@ -11904,7 +12554,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 41.94,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-4469959-6874632",
@@ -12048,7 +12706,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 20.14,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-2474738-5313052",
@@ -12192,7 +12858,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 20.5,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2753255-8114662",
@@ -12336,7 +13010,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 28.37,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2969023-2957839",
@@ -12480,7 +13162,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 21.37,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9606937-0758644",
@@ -12624,7 +13314,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 41.94,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-3324090-6567406",
@@ -12768,7 +13466,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 295.02,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-0612650-7366611",
@@ -12912,7 +13618,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 15.6,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-3032915-9627465",
@@ -13056,7 +13770,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 41.94,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-8355715-6427435",
@@ -13200,7 +13922,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 20.52,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-6014560-8297061",
@@ -13344,7 +14074,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 36.3,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "CBS2338",
@@ -13464,7 +14202,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 110.59,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-5811047-7536259",
@@ -13608,7 +14354,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 120.38,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-2680338-1793060",
@@ -13752,7 +14506,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 62.2,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9026505-8205812",
@@ -13896,7 +14658,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-0614921-6742637",
@@ -14040,7 +14810,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 28.52,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-5053962-1976250",
@@ -14184,7 +14962,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 23.14,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-8191278-6069012",
@@ -14328,7 +15114,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 11.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-9569801-5963420",
@@ -14472,7 +15266,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 36.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6631165-5534637",
@@ -14616,7 +15418,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 25.33,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8982965-2050600",
@@ -14760,7 +15570,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 17.51,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-7139026-9814628",
@@ -14904,7 +15722,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 14.2,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5032307-5982620",
@@ -15048,7 +15874,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 100.22,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-6345106-9866617",
@@ -15192,7 +16026,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 9.41,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-5204443-7121812",
@@ -15336,7 +16178,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.68,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-4427211-6501843",
@@ -15480,7 +16330,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.22,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2728027-4941849",
@@ -15624,7 +16482,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 42.57,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-0749045-4111405",
@@ -15768,7 +16634,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 229.54,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8421005-9251457",
@@ -15912,7 +16786,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 78.34,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9480919-0611417",
@@ -16056,7 +16938,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 87.68,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7418596-0052250",
@@ -16200,7 +17090,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 15.24,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-1573714-0930622",
@@ -16363,7 +17261,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:45:38Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": -27.68,
+      "t_outstanding": 55.36,
+      "paid_batch_tabs": [
+        "5_13"
+      ],
+      "paid_date": "2026-05-13",
+      "paid_amount_net": -27.68,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "705015001;705015002",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-5372336-2656212",
@@ -16507,7 +17415,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.42,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-2004393-1813835",
@@ -16661,7 +17577,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 9.35,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8542617-9624215",
@@ -16824,7 +17748,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:45:38Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": -9.41,
+      "t_outstanding": 18.82,
+      "paid_batch_tabs": [
+        "5_13"
+      ],
+      "paid_date": "2026-05-13",
+      "paid_amount_net": -9.41,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "704861001;704861002",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-6748305-6299401",
@@ -16968,7 +17902,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 21.77,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7077050-7064202",
@@ -17112,7 +18054,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 11.92,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-4863047-2274643",
@@ -17287,7 +18237,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:45:38Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": -253.08,
+      "t_outstanding": 930.26,
+      "paid_batch_tabs": [
+        "5_13"
+      ],
+      "paid_date": "2026-05-13",
+      "paid_amount_net": -253.08,
+      "paid_invoice_count": 1,
+      "vendor_invoices_paid": "704829001",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8900904-8420205",
@@ -17431,7 +18391,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 197.55,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-6207425-8538651",
@@ -17575,7 +18543,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 11.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-1603059-2949823",
@@ -17719,7 +18695,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 14.91,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-0172450-6107449",
@@ -17863,7 +18847,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 12.44,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0037252-7205812",
@@ -18007,7 +18999,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7154879-8058605",
@@ -18151,7 +19151,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 20.16,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-2721805-9696265",
@@ -18295,7 +19303,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 11.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-3528931-7305006",
@@ -18439,7 +19455,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 82.88,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-8395786-5064219",
@@ -18583,7 +19607,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.68,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1949531-8183444",
@@ -18727,7 +19759,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 66.9,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-9265834-4225063",
@@ -18871,7 +19911,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 44.86,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-1938876-1618637",
@@ -19015,7 +20063,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 20.89,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-1761105-5945864",
@@ -19159,7 +20215,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 14.91,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-2267613-1228212",
@@ -19303,7 +20367,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-9228962-9717855",
@@ -19466,7 +20538,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:45:38Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": -26.63,
+      "t_outstanding": 53.26,
+      "paid_batch_tabs": [
+        "5_13"
+      ],
+      "paid_date": "2026-05-13",
+      "paid_amount_net": -26.63,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "704999001;704999002",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-3437013-2527446",
@@ -19610,7 +20692,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 11.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9434871-9551408",
@@ -19754,7 +20844,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-9689577-0525850",
@@ -19898,7 +20996,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 73.5,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9288662-0215427",
@@ -20042,7 +21148,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 53.84,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-0007171-3828244",
@@ -20186,7 +21300,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.93,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-6547781-8521852",
@@ -20330,7 +21452,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-3501093-3542642",
@@ -20474,7 +21604,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 11.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-7069859-6761810",
@@ -20618,7 +21756,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 17.5,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-3353552-0179419",
@@ -20762,7 +21908,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 549.21,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-8273166-2514648",
@@ -20906,7 +22060,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 21.61,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6535690-9078661",
@@ -21050,7 +22212,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 18.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-3657354-3929061",
@@ -21194,7 +22364,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 77.87,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7082634-7912269",
@@ -21338,7 +22516,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 86.78,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-8729678-4344246",
@@ -21482,7 +22668,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 18.0,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-6709899-0784247",
@@ -21626,7 +22820,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 18.68,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-1149142-9705847",
@@ -21770,7 +22972,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 17.5,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-5445961-5683400",
@@ -21914,7 +23124,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 9.41,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-4721255-5409061",
@@ -22058,7 +23276,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 44.69,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1176532-1812222",
@@ -22202,7 +23428,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 47.42,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-6803680-9612264",
@@ -22346,7 +23580,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 119.58,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-4976034-4397812",
@@ -22490,7 +23732,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 229.54,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-5103583-2822659",
@@ -22634,7 +23884,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 34.14,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-6556827-4541033",
@@ -22778,7 +24036,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 18.0,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-5407473-0060246",
@@ -22922,7 +24188,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 127.0,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-1382969-9831401",
@@ -23066,7 +24340,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-3597795-7014651",
@@ -23210,7 +24492,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 78.34,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9129976-4118622",
@@ -23354,7 +24644,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 51.23,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-6180116-6677065",
@@ -23498,7 +24796,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 580.8,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-3688717-8630654",
@@ -23642,7 +24948,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 120.38,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-3655527-4827465",
@@ -23786,7 +25100,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 99.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8811380-7721813",
@@ -23951,7 +25273,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 181.32,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7795365-3040259",
@@ -24095,7 +25425,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 151.05,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0841079-8199446",
@@ -24239,7 +25577,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 234.07,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6923518-9614661",
@@ -24383,7 +25729,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 46.14,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-0908360-1262652",
@@ -24527,7 +25881,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 45.92,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-1049259-2128204",
@@ -24671,7 +26033,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 47.04,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0004158-4313825",
@@ -24815,7 +26185,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 549.21,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2663742-1194643",
@@ -24959,7 +26337,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 86.78,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-7309373-6398658",
@@ -25103,7 +26489,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-7977257-4145847",
@@ -25247,7 +26641,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 15.14,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8080064-2741069",
@@ -25391,7 +26793,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 113.43,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-4498854-5582655",
@@ -25535,7 +26945,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 69.38,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0686174-5546607",
@@ -25679,7 +27097,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 66.72,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1567727-8108227",
@@ -25823,7 +27249,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 23.42,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-1574503-5723432",
@@ -25967,7 +27401,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-0141403-5304258",
@@ -26111,7 +27553,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5228951-7377810",
@@ -26255,7 +27705,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 52.92,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-7490993-1033027",
@@ -26399,7 +27857,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 41.94,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9333791-8540269",
@@ -26543,7 +28009,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 86.78,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-3403377-0365845",
@@ -26687,7 +28161,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-1346437-9245065",
@@ -26831,7 +28313,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 98.16,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5432058-5600268",
@@ -26975,7 +28465,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 9.41,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-3055708-3901839",
@@ -27119,7 +28617,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 2005.6,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7631194-4741002",
@@ -27263,7 +28769,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 42.57,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7285631-0973037",
@@ -27407,7 +28921,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 75.64,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-4991906-6413853",
@@ -27551,7 +29073,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-3557969-1113011",
@@ -27695,7 +29225,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 87.68,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-3885999-3877866",
@@ -27839,7 +29377,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 10.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-0936130-9477011",
@@ -27983,7 +29529,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 83.86,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-1553835-1709820",
@@ -28127,7 +29681,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 21.42,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9217717-0529850",
@@ -28271,7 +29833,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 36.04,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-8213440-1339464",
@@ -28415,7 +29985,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 549.21,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7302063-1387452",
@@ -28559,7 +30137,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 86.78,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7438043-4834662",
@@ -28703,7 +30289,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 189.05,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9717419-7802604",
@@ -28847,7 +30441,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-7812171-0073022",
@@ -28991,7 +30593,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 74.6,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-0926838-8251450",
@@ -29135,7 +30745,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 17.31,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1164461-0039408",
@@ -29279,7 +30897,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 30.59,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-8090114-5579441",
@@ -29423,7 +31049,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:45:38Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": -55.65,
+      "t_outstanding": 142.43,
+      "paid_batch_tabs": [
+        "5_13"
+      ],
+      "paid_date": "2026-05-13",
+      "paid_amount_net": -55.65,
+      "paid_invoice_count": 1,
+      "vendor_invoices_paid": "4759249001",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0217674-3272224",
@@ -29567,7 +31203,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 114.77,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-8164543-8037009",
@@ -29711,7 +31355,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 36.02,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1475648-6734641",
@@ -29855,7 +31507,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 773.92,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1658117-2085034",
@@ -29999,7 +31659,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:45:38Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": -35.33,
+      "t_outstanding": 125.99,
+      "paid_batch_tabs": [
+        "5_13"
+      ],
+      "paid_date": "2026-05-13",
+      "paid_amount_net": -35.33,
+      "paid_invoice_count": 1,
+      "vendor_invoices_paid": "4759381001",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-6370202-8197806",
@@ -30143,7 +31813,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 54.44,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-3753589-6173011",
@@ -30287,7 +31965,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 34.14,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-6200450-4238646",
@@ -30431,7 +32117,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 17.31,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-9128765-9583412",
@@ -30575,7 +32269,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-7093543-5480219",
@@ -30719,7 +32421,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 184.97,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6511212-0652225",
@@ -30863,7 +32573,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-6428434-1505819",
@@ -31007,7 +32725,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 23.42,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-9366848-7581855",
@@ -31151,7 +32877,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 39.9,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-3098351-7437032",
@@ -31295,7 +33029,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 68.08,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-6804415-7981017",
@@ -31439,7 +33181,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 12.44,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-2820195-8717863",
@@ -31583,7 +33333,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 9.35,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-1218307-8601024",
@@ -31727,7 +33485,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 61.2,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7689954-0596225",
@@ -31871,7 +33637,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 32.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-3798545-8801868",
@@ -32015,7 +33789,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 99.62,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2868304-6825057",
@@ -32159,7 +33941,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 555.3,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-3016520-8758654",
@@ -32303,7 +34093,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 31.55,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-1226912-2389032",
@@ -32447,7 +34245,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 36.04,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-1733325-4188205",
@@ -32591,7 +34397,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 29.43,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-6949750-9273060",
@@ -32735,7 +34549,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 13.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-0881047-9895418",
@@ -32879,7 +34701,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 47.51,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1632500-6771408",
@@ -33023,7 +34853,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6529000-1380224",
@@ -33167,7 +35005,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 14.91,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7349671-7816245",
@@ -33311,7 +35157,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 51.89,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-4110352-0442664",
@@ -33455,7 +35309,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 15.19,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-4225718-2761800",
@@ -33599,7 +35461,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 36.02,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0789158-2483447",
@@ -33743,7 +35613,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 9.35,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-8523788-6337004",
@@ -33887,7 +35765,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 35.11,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5922511-6717805",
@@ -34031,7 +35917,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 47.04,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7133154-5623402",
@@ -34175,7 +36069,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 15.99,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-8699399-7717004",
@@ -34319,7 +36221,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 62.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-5675131-9212222",
@@ -34463,7 +36373,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9517455-4023443",
@@ -34607,7 +36525,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-8239339-0258653",
@@ -34751,7 +36677,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:45:38Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": -68.34,
+      "t_outstanding": 455.54,
+      "paid_batch_tabs": [
+        "5_13"
+      ],
+      "paid_date": "2026-05-13",
+      "paid_amount_net": -68.34,
+      "paid_invoice_count": 1,
+      "vendor_invoices_paid": "705430001",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-5296416-1305061",
@@ -34895,7 +36831,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-9742445-5504237",
@@ -35039,7 +36983,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 549.21,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9525868-3424219",
@@ -35183,7 +37135,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 21.12,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0044091-7809864",
@@ -35327,7 +37287,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 60.24,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9999772-0961043",
@@ -35471,7 +37439,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 141.23,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-2671355-7285028",
@@ -35615,7 +37591,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.0,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-4156390-5256260",
@@ -35759,7 +37743,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-3019526-2831426",
@@ -35933,7 +37925,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 182.24,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-1825339-3717851",
@@ -36077,7 +38077,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 130.08,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-3643464-2974609",
@@ -36221,7 +38229,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 891.04,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-3407690-1573843",
@@ -36365,7 +38381,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 42.57,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-8321463-9595439",
@@ -36509,7 +38533,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 42.57,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1059726-6437868",
@@ -36653,7 +38685,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 28.34,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "47QDCC26M6X39",
@@ -36786,7 +38826,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 61.65,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-4749863-9401840",
@@ -36930,7 +38978,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 28.37,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-3464681-5771415",
@@ -37074,7 +39130,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-4159254-7984203",
@@ -37218,7 +39282,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 14.87,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5304647-7497824",
@@ -37362,7 +39434,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 62.19,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9945648-9126629",
@@ -37506,7 +39586,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 9.9,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "CBS2339",
@@ -37626,7 +39714,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 46.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9904491-1889809",
@@ -37770,7 +39866,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 35.2,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-4132399-0579408",
@@ -37914,7 +40018,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 31.13,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-6101871-6143451",
@@ -38058,7 +40170,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 196.0,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0959523-9881846",
@@ -38202,7 +40322,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 9.41,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-9462765-0618612",
@@ -38346,7 +40474,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 52.86,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9637399-5177028",
@@ -38490,7 +40626,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 580.44,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-2775352-5314629",
@@ -38634,7 +40778,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 549.21,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6316616-4717864",
@@ -38778,7 +40930,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 76.78,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-3671028-5720247",
@@ -38922,7 +41082,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 22.86,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-2269553-5931421",
@@ -39066,7 +41234,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 58.39,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-3468501-7869850",
@@ -39231,7 +41407,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 175.36,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-4279779-5297837",
@@ -39375,7 +41559,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 50.64,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-8399505-5268210",
@@ -39519,7 +41711,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 35.2,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1862507-3992215",
@@ -39663,7 +41863,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 30.46,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-5647601-3354665",
@@ -39807,7 +42015,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 204.23,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-4895694-1520202",
@@ -39951,7 +42167,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 241.0,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-3459772-6728216",
@@ -40095,7 +42319,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 21.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-9540259-8424224",
@@ -40285,7 +42517,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 70.24,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1215575-2483450",
@@ -40429,7 +42669,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 66.13,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7734054-9713011",
@@ -40573,7 +42821,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 20.2,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-8456682-3239453",
@@ -40717,7 +42973,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 76.78,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-5904083-9621842",
@@ -40861,7 +43125,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 151.05,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-5365274-3765801",
@@ -41005,7 +43277,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 127.54,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1399037-5007416",
@@ -41149,7 +43429,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 65.2,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-7629937-5769832",
@@ -41293,7 +43581,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 34.61,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-3565648-4690622",
@@ -41437,7 +43733,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 20.16,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0940911-8627447",
@@ -41581,7 +43885,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 47.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-9458573-3533867",
@@ -41725,7 +44037,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 93.01,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6973479-0219409",
@@ -41869,7 +44189,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 158.14,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-4701415-6333068",
@@ -42013,7 +44341,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 22.8,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-2757845-0331424",
@@ -42157,7 +44493,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.68,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9986084-0627435",
@@ -42347,7 +44691,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 55.34,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-3705100-9539457",
@@ -42491,7 +44843,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 36.04,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6904770-5725847",
@@ -42635,7 +44995,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7127112-8213868",
@@ -42779,7 +45147,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 11.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-3399885-1279412",
@@ -42923,7 +45299,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 174.06,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6066326-7885815",
@@ -43067,7 +45451,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 52.2,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2768967-8602639",
@@ -43211,7 +45603,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.68,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-7124229-8113065",
@@ -43355,7 +45755,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 45.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1962292-1502628",
@@ -43520,7 +45928,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 146.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-1366701-5418616",
@@ -43664,7 +46080,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 44.03,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-0349198-8965850",
@@ -43808,7 +46232,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 36.3,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-4337851-3971417",
@@ -43952,7 +46384,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 39.9,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-7357842-4364241",
@@ -44096,7 +46536,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 16.62,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0132903-5612212",
@@ -44240,7 +46688,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 11.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-4463088-3835443",
@@ -44384,7 +46840,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 9.35,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-8345027-1186656",
@@ -44528,7 +46992,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-5806547-3311426",
@@ -44672,7 +47144,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 11.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-8385239-5677011",
@@ -44816,7 +47296,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 128.22,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7512021-2886627",
@@ -44960,7 +47448,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 57.68,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-7005392-8360255",
@@ -45104,7 +47600,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9555656-7449065",
@@ -45248,7 +47752,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 39.24,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-0616759-4012241",
@@ -45392,7 +47904,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 12.44,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7403653-4268210",
@@ -45536,7 +48056,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 18.8,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-5078478-1381840",
@@ -45680,7 +48208,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 42.57,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-5545719-4711449",
@@ -45824,7 +48360,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 40.35,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-3113240-0579400",
@@ -45968,7 +48512,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 37.88,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7808202-0535430",
@@ -46112,7 +48664,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 39.9,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-3893634-6335440",
@@ -46256,7 +48816,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 18.87,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2632774-5653062",
@@ -46400,7 +48968,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 28.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-4064970-0619428",
@@ -46544,7 +49120,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 549.21,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-2943482-9439462",
@@ -46688,7 +49272,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 76.78,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-8699695-6914663",
@@ -46832,7 +49424,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 28.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8432556-2259418",
@@ -46976,7 +49576,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 21.64,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "47QDCC26M6ZPH",
@@ -47096,7 +49704,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 384.13,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-0775028-2438604",
@@ -47240,7 +49856,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.0,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-5705646-3874629",
@@ -47384,7 +50008,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 17.51,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-8600146-7470642",
@@ -47528,7 +50160,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 15.39,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-4558597-6402646",
@@ -47717,7 +50357,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 84.19,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-3939995-6601023",
@@ -47861,7 +50509,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.0,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0159402-3277061",
@@ -48005,7 +50661,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7057605-2530609",
@@ -48149,7 +50813,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 143.2,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9157146-8025814",
@@ -48293,7 +50965,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8442540-8391415",
@@ -48437,7 +51117,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 36.04,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7832819-0462668",
@@ -48581,7 +51269,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 85.26,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-4151585-5284250",
@@ -48725,7 +51421,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 41.94,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-1871930-1132263",
@@ -48869,7 +51573,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 549.21,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8035964-5392240",
@@ -49013,7 +51725,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 47.8,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6903837-6488249",
@@ -49157,7 +51877,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 21.42,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-4657743-3615430",
@@ -49301,7 +52029,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2915608-3140259",
@@ -49445,7 +52181,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 47.08,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-8003707-9656234",
@@ -49589,7 +52333,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-6645902-1872263",
@@ -49733,7 +52485,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 1187.24,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-5647930-6688203",
@@ -49877,7 +52637,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 549.21,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-6833257-2222627",
@@ -50021,7 +52789,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-4629348-5937020",
@@ -50165,7 +52941,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 113.43,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-9163815-2097836",
@@ -50309,7 +53093,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:45:38Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": -27.68,
+      "t_outstanding": 55.36,
+      "paid_batch_tabs": [
+        "5_13"
+      ],
+      "paid_date": "2026-05-13",
+      "paid_amount_net": -27.68,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "705544001;705544002",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-2345521-7885850",
@@ -50453,7 +53247,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 13.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-4904440-5530606",
@@ -50597,7 +53399,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 80.88,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-2209908-4495432",
@@ -50741,7 +53551,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 98.04,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-7907453-7141052",
@@ -50885,7 +53703,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 13.4,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2481347-1597844",
@@ -51029,7 +53855,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 64.61,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9949895-8757027",
@@ -51173,7 +54007,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 78.34,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-2815411-8027435",
@@ -51317,7 +54159,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 28.01,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-2242337-5001065",
@@ -51461,7 +54311,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 354.69,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-4620276-3564219",
@@ -51605,7 +54463,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 26.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9823894-8632231",
@@ -51749,7 +54615,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.66,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5963529-7626631",
@@ -51893,7 +54767,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 36.3,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8120513-6729867",
@@ -52037,7 +54919,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-7856922-2691431",
@@ -52181,7 +55071,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-5090322-0006618",
@@ -52325,7 +55223,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9948903-1300245",
@@ -52469,7 +55375,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 18.96,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-3325160-8716236",
@@ -52613,7 +55527,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 650.68,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-6571283-8313018",
@@ -52757,7 +55679,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 76.78,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5706123-0167413",
@@ -52901,7 +55831,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7178617-5629024",
@@ -53045,7 +55983,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 30.63,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-5892671-5005054",
@@ -53189,7 +56135,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 36.04,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1514068-7138629",
@@ -53333,7 +56287,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 229.54,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-8378916-7440267",
@@ -53477,7 +56439,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 52.38,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-6484667-5513004",
@@ -53621,7 +56591,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 386.96,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-6317207-1753863",
@@ -53765,7 +56743,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 42.57,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-6444022-8457030",
@@ -53909,7 +56895,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 24.81,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-6821730-9197801",
@@ -54053,7 +57047,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 62.2,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-8350682-7503446",
@@ -54197,7 +57199,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 87.24,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-1698461-9524211",
@@ -54341,7 +57351,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 66.9,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-4260637-3135410",
@@ -54485,7 +57503,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 9.41,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "47QDCC26M7289",
@@ -54624,7 +57650,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 210.2,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-7052597-6636249",
@@ -54768,7 +57802,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 157.22,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-5439145-7489047",
@@ -54912,7 +57954,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 78.34,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-3521016-6574601",
@@ -55056,7 +58106,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 36.3,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-5494983-8127432",
@@ -55200,7 +58258,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 69.96,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-7624258-0949839",
@@ -55344,7 +58410,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 55.57,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-7054253-2304235",
@@ -55488,7 +58562,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 42.57,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-8070599-2053816",
@@ -55632,7 +58714,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 31.55,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-8151539-1689066",
@@ -55776,7 +58866,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 25.33,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-3190967-4977033",
@@ -55920,7 +59018,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 21.42,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-8621609-5304244",
@@ -56064,7 +59170,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 33.82,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-1444231-8585063",
@@ -56208,7 +59322,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 47.04,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-1460298-1455452",
@@ -56352,7 +59474,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 188.53,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-5736827-0665032",
@@ -56496,7 +59626,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 21.42,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-5430413-6667416",
@@ -56640,7 +59778,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 83.12,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-3795493-5737068",
@@ -56784,7 +59930,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 173.02,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2097571-7305016",
@@ -56928,7 +60082,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 14.91,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "47QDCC26M73PE",
@@ -57048,7 +60210,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 87.18,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-3172667-0621066",
@@ -57192,7 +60362,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 16.18,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-9503821-0845052",
@@ -57336,7 +60514,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 27.93,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-4986252-1724229",
@@ -57480,7 +60666,15 @@
       "workflow_state": "OPEN",
       "last_updated_by": null,
       "last_updated_at": null,
-      "notes": null
+      "notes": null,
+      "t_paid": 0.0,
+      "t_outstanding": 47.42,
+      "paid_batch_tabs": [],
+      "paid_date": null,
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 0,
+      "vendor_invoices_paid": "",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-5982334-0894633",
@@ -57588,7 +60782,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:45:38Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": -68.34,
+      "t_outstanding": 68.34,
+      "paid_batch_tabs": [
+        "5_13"
+      ],
+      "paid_date": "2026-05-13",
+      "paid_amount_net": -68.34,
+      "paid_invoice_count": 1,
+      "vendor_invoices_paid": "705578001",
+      "credit_memo_applied": 0.0
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-05-15T23:14:00+00:00",
-    "methodology_version": "v1.4.1",
+    "generated_at": "2026-05-15T23:57:45+00:00",
+    "methodology_version": "v1.4.2",
     "data_window": {
       "start": "2025-12-01",
       "end": "2026-05-15"
@@ -444,7 +444,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 145.41,
+      "t_outstanding": 0.0,
+      "paid_batch_tabs": [
+        "1_23"
+      ],
+      "paid_date": "2026-01-23",
+      "paid_amount_net": 145.41,
+      "paid_invoice_count": 1,
+      "vendor_invoices_paid": "BKTTTK2",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-0419020-7929805",
@@ -954,7 +964,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 1023.78,
+      "paid_batch_tabs": [
+        "3_26",
+        "4_16"
+      ],
+      "paid_date": "2026-04-16",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "799277001;BKYDDTV",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-4829998-8469841",
@@ -1404,7 +1425,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 66.41,
+      "t_outstanding": 0.0,
+      "paid_batch_tabs": [
+        "4_23"
+      ],
+      "paid_date": "2026-04-23",
+      "paid_amount_net": 66.41,
+      "paid_invoice_count": 1,
+      "vendor_invoices_paid": "BKY36F6",
+      "credit_memo_applied": 0.0
     }
   ]
 }

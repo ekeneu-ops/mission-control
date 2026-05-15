@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-05-15T23:14:00+00:00",
-    "methodology_version": "v1.4.1",
+    "generated_at": "2026-05-15T23:57:45+00:00",
+    "methodology_version": "v1.4.2",
     "data_window": {
       "start": "2025-12-01",
       "end": "2026-05-15"
@@ -419,7 +419,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 2.5,
+      "t_outstanding": 23.5,
+      "paid_batch_tabs": [
+        "1_9"
+      ],
+      "paid_date": "2026-01-09",
+      "paid_amount_net": 2.5,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "789829001;789829002;BKSD6RT",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-9255055-2067416",
@@ -891,7 +901,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 410.04,
+      "t_outstanding": 33.84,
+      "paid_batch_tabs": [
+        "1_9",
+        "1_23"
+      ],
+      "paid_date": "2026-01-23",
+      "paid_amount_net": 410.04,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "790206001;BKSQ34G",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-2611791-5844202",
@@ -1404,7 +1425,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 2.5,
+      "t_outstanding": 79.53,
+      "paid_batch_tabs": [
+        "1_9",
+        "1_23"
+      ],
+      "paid_date": "2026-01-23",
+      "paid_amount_net": 2.5,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "790701001;791367001;97BXLFR",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2657260-4081847",
@@ -1884,7 +1916,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 11.86,
+      "t_outstanding": 33.48,
+      "paid_batch_tabs": [
+        "1_9",
+        "1_23"
+      ],
+      "paid_date": "2026-01-23",
+      "paid_amount_net": 11.86,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "790205001;BKSYYP8",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-6462151-8648240",
@@ -2452,7 +2495,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 11.86,
+      "t_outstanding": 16.08,
+      "paid_batch_tabs": [
+        "1_9",
+        "2_25"
+      ],
+      "paid_date": "2026-02-25",
+      "paid_amount_net": 11.86,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "59CWQHQ;792289001",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-4455405-2005051",
@@ -3014,7 +3068,19 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": -11.86,
+      "t_outstanding": 88.67,
+      "paid_batch_tabs": [
+        "1_23",
+        "2_25",
+        "3_11"
+      ],
+      "paid_date": "2026-03-11",
+      "paid_amount_net": -11.86,
+      "paid_invoice_count": 4,
+      "vendor_invoices_paid": "791046001;791046002;793419001;BKTJQCP",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-9000239-3532203",
@@ -3475,7 +3541,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 78.64,
+      "paid_batch_tabs": [
+        "1_23"
+      ],
+      "paid_date": "2026-01-23",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "791103001;791105001;BKTNFRP",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-7061040-4753847",
@@ -4067,7 +4143,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 14.36,
+      "t_outstanding": 7.33,
+      "paid_batch_tabs": [
+        "1_9",
+        "2_25"
+      ],
+      "paid_date": "2026-02-25",
+      "paid_amount_net": 14.36,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "792286001;BKTL8WQ",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-2695142-0196201",
@@ -4580,7 +4667,19 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 218.6,
+      "paid_batch_tabs": [
+        "1_23",
+        "2_25",
+        "3_11"
+      ],
+      "paid_date": "2026-03-11",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "25RKSGD;793202001;793202002",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-0100158-7318667",
@@ -5109,7 +5208,19 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 73.95,
+      "paid_batch_tabs": [
+        "1_23",
+        "2_25",
+        "3_11"
+      ],
+      "paid_date": "2026-03-11",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "792229002;792229003;BKTTWRZ",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-6115570-3800207",
@@ -5710,7 +5821,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 2.5,
+      "t_outstanding": 79.53,
+      "paid_batch_tabs": [
+        "1_23",
+        "3_11"
+      ],
+      "paid_date": "2026-03-11",
+      "paid_amount_net": 2.5,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "59CW832;792377003;798452001",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-4049931-6859452",
@@ -6192,7 +6314,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 119.85,
+      "paid_batch_tabs": [
+        "1_23",
+        "2_25"
+      ],
+      "paid_date": "2026-02-25",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "63CRHNT;793211001",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0134176-0537014",
@@ -6737,7 +6870,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 59.32,
+      "paid_batch_tabs": [
+        "1_23",
+        "2_25"
+      ],
+      "paid_date": "2026-02-25",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "791167001;793844001;BKTWHH7",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-4439429-0897814",
@@ -7258,7 +7402,19 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 2.5,
+      "t_outstanding": 79.53,
+      "paid_batch_tabs": [
+        "1_23",
+        "2_12",
+        "3_11"
+      ],
+      "paid_date": "2026-03-11",
+      "paid_amount_net": 2.5,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "792285001;792285002;83B2F2R",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-5786650-4410653",
@@ -7766,7 +7922,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 95.38,
+      "t_outstanding": 83.52,
+      "paid_batch_tabs": [
+        "1_23",
+        "2_25"
+      ],
+      "paid_date": "2026-02-25",
+      "paid_amount_net": 95.38,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "792861003;BKT3HDF",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-1637788-3384224",
@@ -8262,7 +8429,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 119.85,
+      "paid_batch_tabs": [
+        "1_23",
+        "2_25"
+      ],
+      "paid_date": "2026-02-25",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "794314001;83B2G38",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-3388988-9225803",
@@ -8794,7 +8972,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 119.85,
+      "paid_batch_tabs": [
+        "1_23",
+        "3_11"
+      ],
+      "paid_date": "2026-03-11",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "792282001;98B7NKH",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9512274-0683452",
@@ -9284,7 +9473,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 11.86,
+      "t_outstanding": 44.4,
+      "paid_batch_tabs": [
+        "2_12",
+        "2_25"
+      ],
+      "paid_date": "2026-02-25",
+      "paid_amount_net": 11.86,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "792552001;BKVF5X9",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9310561-4201027",
@@ -9750,7 +9950,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 147.39,
+      "paid_batch_tabs": [
+        "2_12",
+        "2_25"
+      ],
+      "paid_date": "2026-02-25",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "4744027001;BKVF8XS",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-2876562-0959422",
@@ -10216,7 +10427,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 11.86,
+      "t_outstanding": 133.5,
+      "paid_batch_tabs": [
+        "2_12",
+        "2_25"
+      ],
+      "paid_date": "2026-02-25",
+      "paid_amount_net": 11.86,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "793086001;BKVJWKZ",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-9487604-7779430",
@@ -10618,7 +10840,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 4.36,
+      "t_outstanding": 73.21,
+      "paid_batch_tabs": [
+        "2_12",
+        "2_25"
+      ],
+      "paid_date": "2026-02-25",
+      "paid_amount_net": 4.36,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "793196001;BKVPLHP",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-1300924-0167429",
@@ -11085,7 +11318,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 43.1,
+      "paid_batch_tabs": [
+        "2_25"
+      ],
+      "paid_date": "2026-02-25",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "794315001;794315002;BKV8PDV",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-1346611-2923453",
@@ -11608,7 +11851,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 2.5,
+      "t_outstanding": 137.88,
+      "paid_batch_tabs": [
+        "3_11"
+      ],
+      "paid_date": "2026-03-11",
+      "paid_amount_net": 2.5,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "72CZGBB;795344001;795344002",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-3099650-6362645",
@@ -12131,7 +12384,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 140.38,
+      "paid_batch_tabs": [
+        "3_11",
+        "3_26"
+      ],
+      "paid_date": "2026-03-26",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "64B7ZYL;795075001;795075002",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-3426968-7224228",
@@ -12605,7 +12869,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 11.86,
+      "t_outstanding": 9.0,
+      "paid_batch_tabs": [
+        "2_25"
+      ],
+      "paid_date": "2026-02-25",
+      "paid_amount_net": 11.86,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "795158001;BKWTSFX",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-1717353-2136224",
@@ -13128,7 +13402,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 91.22,
+      "paid_batch_tabs": [
+        "2_25",
+        "3_11"
+      ],
+      "paid_date": "2026-03-11",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "73BYD5D;795160001;795160002",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-0516624-7398657",
@@ -13515,7 +13800,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 46.03,
+      "paid_batch_tabs": [
+        "2_12",
+        "3_11"
+      ],
+      "paid_date": "2026-03-11",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "794951001;794951002;BKWWGDW",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8796393-2510655",
@@ -13991,7 +14287,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 13.1,
+      "t_outstanding": 124.95,
+      "paid_batch_tabs": [
+        "3_11",
+        "3_26"
+      ],
+      "paid_date": "2026-03-26",
+      "paid_amount_net": 13.1,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "795316001;BKW26LQ",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-0808611-0552239",
@@ -14520,7 +14827,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 79.53,
+      "paid_batch_tabs": [
+        "2_25",
+        "3_11"
+      ],
+      "paid_date": "2026-03-11",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "72CZP49;795804001;795805001",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-2412443-7690609",
@@ -15027,7 +15345,19 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 79.53,
+      "paid_batch_tabs": [
+        "2_25",
+        "3_11",
+        "3_26"
+      ],
+      "paid_date": "2026-03-26",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "796090001;796090002;83B29D3",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-0184750-8801827",
@@ -15494,7 +15824,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 90.86,
+      "paid_batch_tabs": [
+        "2_25",
+        "3_11"
+      ],
+      "paid_date": "2026-03-11",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "796674001;796674002;97BZNGY",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-4145370-3041806",
@@ -15920,7 +16261,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 11.86,
+      "t_outstanding": 26.04,
+      "paid_batch_tabs": [
+        "3_26",
+        "4_16"
+      ],
+      "paid_date": "2026-04-16",
+      "paid_amount_net": 11.86,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "796964002;BKXTPP7",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-1029951-7078638",
@@ -16338,7 +16690,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 11.86,
+      "t_outstanding": 6.0,
+      "paid_batch_tabs": [
+        "3_26"
+      ],
+      "paid_date": "2026-03-26",
+      "paid_amount_net": 11.86,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "798447001;BKX9LHV",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "111-9931552-0208217",
@@ -16816,7 +17178,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 19.87,
+      "t_outstanding": 72.09,
+      "paid_batch_tabs": [
+        "4_16"
+      ],
+      "paid_date": "2026-04-16",
+      "paid_amount_net": 19.87,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "798949001;BKYLFPF",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "113-8075453-1697039",
@@ -17210,7 +17582,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 13.97,
+      "t_outstanding": 44.22,
+      "paid_batch_tabs": [
+        "3_26",
+        "4_16"
+      ],
+      "paid_date": "2026-04-16",
+      "paid_amount_net": 13.97,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "799159001;BKYSW99",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "114-6298305-7853840",
@@ -17598,7 +17981,17 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:01:29Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 12.67,
+      "t_outstanding": 40.59,
+      "paid_batch_tabs": [
+        "4_16"
+      ],
+      "paid_date": "2026-04-16",
+      "paid_amount_net": 12.67,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "700553001;BKY7LSX",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-7337613-0317046",
@@ -18066,7 +18459,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:45:38Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 51.3,
+      "t_outstanding": 8.4,
+      "paid_batch_tabs": [
+        "4_23",
+        "5_13"
+      ],
+      "paid_date": "2026-05-13",
+      "paid_amount_net": 51.3,
+      "paid_invoice_count": 2,
+      "vendor_invoices_paid": "4755540001;BKZX2RH",
+      "credit_memo_applied": 0.0
     },
     {
       "channel_order_id": "112-2899173-4368240",
@@ -18557,7 +18961,18 @@
       "workflow_state": "PAID",
       "last_updated_by": "backfill_2026_ess_payments",
       "last_updated_at": "2026-05-15T22:45:38Z",
-      "notes": "Historical backfill from 2026_ESS_Payments.xlsx"
+      "notes": "Historical backfill from 2026_ESS_Payments.xlsx",
+      "t_paid": 0.0,
+      "t_outstanding": 24.42,
+      "paid_batch_tabs": [
+        "4_16",
+        "5_13"
+      ],
+      "paid_date": "2026-05-13",
+      "paid_amount_net": 0.0,
+      "paid_invoice_count": 3,
+      "vendor_invoices_paid": "702321001;702321002;BKZ2KF3",
+      "credit_memo_applied": 0.0
     }
   ]
 }
